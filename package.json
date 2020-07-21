@@ -1,0 +1,8 @@
+{
+  "name": "congress-the-card-game",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:rpivo/congress-the-card-game.git",
+  "author": "Ryan Pivovar <ryanpivovar@gmail.com>",
+  "license": "MIT"
+}
