@@ -9,3 +9,4 @@ Documentation: 2
 - added sprint doc.
 - added changelog.
 - initialized repo.
+- added readme.
