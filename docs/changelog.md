@@ -2,7 +2,10 @@
 Ends August 3, 2020
 
 #### Issues closed
-Documentation: 2
+Documentation: 3
+Feature: 1
+Gameplay: 1
+Sidequest: 1
 
 ### Updates
 
@@ -10,3 +13,6 @@ Documentation: 2
 - added changelog.
 - initialized repo.
 - added readme.
+- added .gitignore file.
+- added TypeScript.
+- added tsconfig.

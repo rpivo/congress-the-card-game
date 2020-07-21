@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:rpivo/congress-the-card-game.git",
   "author": "Ryan Pivovar <ryanpivovar@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
 }
