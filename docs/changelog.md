@@ -17,3 +17,4 @@ Sidequest: 1
 - added TypeScript.
 - added tsconfig.
 - added Vue.
+- forced npm to generate package-lock.json.
