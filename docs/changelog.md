@@ -3,7 +3,7 @@ Ends August 3, 2020
 
 #### Issues closed
 Documentation: 3
-Feature: 1
+Feature: 4
 Gameplay: 1
 Sidequest: 1
 
@@ -16,3 +16,4 @@ Sidequest: 1
 - added .gitignore file.
 - added TypeScript.
 - added tsconfig.
+- added Vue.
