@@ -18,3 +18,4 @@ Sidequest: 1
 - added tsconfig.
 - added Vue.
 - forced npm to generate package-lock.json.
+- added Rollup.
