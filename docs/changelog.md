@@ -16,3 +16,4 @@ Ends August 3, 2020
 - added @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @vue/eslint-config-typescript, eslint, and eslint-plugin-vue.
 - added ESLint config.
 - updated packages.
+- added `App.vue` and `main.ts` entry points in `src` folder.
