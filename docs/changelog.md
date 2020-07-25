@@ -15,3 +15,4 @@ Ends August 3, 2020
 - added Rollup.
 - added @typescript-eslint/eslint-plugin, @typescript-eslint/parser, @vue/eslint-config-typescript, eslint, and eslint-plugin-vue.
 - added ESLint config.
+- updated packages.
