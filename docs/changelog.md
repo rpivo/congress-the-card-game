@@ -23,3 +23,4 @@ Ends August 3, 2020
 - added build script for rollup.
 - added vue composition API package.
 - added dist folder to .gitignore.
+- added initial template to App.vue (once I understand the composition API more clearly).
