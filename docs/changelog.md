@@ -21,3 +21,5 @@ Ends August 3, 2020
 - removed several unnecessary config extensions from the ESLint config.
 - added rollup config.
 - added build script for rollup.
+- added vue composition API package.
+- added dist folder to .gitignore.
