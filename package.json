@@ -6,12 +6,17 @@
   "author": "Ryan Pivovar <ryanpivovar@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@rollup/plugin-typescript": "^5.0.2",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "@vue/eslint-config-typescript": "^5.0.2",
     "eslint": "^6.0.0",
     "eslint-plugin-vue": "^6.0.0",
     "rollup": "^2.23.0",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-vue": "^6.0.0-beta.9",
     "typescript": "^3.9.7"
   },
   "dependencies": {
