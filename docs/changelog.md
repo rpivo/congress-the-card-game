@@ -17,3 +17,4 @@ Ends August 3, 2020
 - added ESLint config.
 - updated packages.
 - added `App.vue` and `main.ts` entry points in `src` folder.
+- removed properties from the tsconfig that were duplicated by setting `strict` to `true`.
