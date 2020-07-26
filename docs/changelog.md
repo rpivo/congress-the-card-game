@@ -19,3 +19,5 @@ Ends August 3, 2020
 - added `App.vue` and `main.ts` entry points in `src` folder.
 - removed properties from the tsconfig that were duplicated by setting `strict` to `true`.
 - removed several unnecessary config extensions from the ESLint config.
+- added rollup config.
+- added build script for rollup.
