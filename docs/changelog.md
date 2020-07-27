@@ -36,3 +36,4 @@ Ends August 3, 2020
 - updated main.ts to use Composition API.
 - completely gut repo.
 - install TypeScript.
+- install React and ReactDOM.
