@@ -6,9 +6,8 @@
   "author": "Ryan Pivovar <ryanpivovar@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "typescript": "^3.9.7"
   },
-  "dependencies": {
-  },
-  "scripts": {
-  }
+  "dependencies": {},
+  "scripts": {}
 }

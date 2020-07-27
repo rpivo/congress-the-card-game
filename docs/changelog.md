@@ -34,3 +34,5 @@ Ends August 3, 2020
 - updated JSX field in tsconfig to `preserve`.
 - replaced App.vue with App.tsx.
 - updated main.ts to use Composition API.
+- completely gut repo.
+- install TypeScript.
