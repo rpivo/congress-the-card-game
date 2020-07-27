@@ -41,3 +41,4 @@ Ends August 3, 2020
 - add index file.
 - add Rollup and Rollup plugins.
 - add build, build-js, clean, and serve scripts.
+- update Rollup config for React, Brotli compression.

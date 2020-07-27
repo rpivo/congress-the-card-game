@@ -1,25 +1,32 @@
-// import brotli from "rollup-plugin-brotli";
+import { brotliCompressSync } from 'zlib';
 import commonjs from '@rollup/plugin-commonjs';
-// import replace from '@rollup/plugin-replace';
+import gzipPlugin from 'rollup-plugin-gzip';
+import replace from '@rollup/plugin-replace';
 import resolve from '@rollup/plugin-node-resolve';
 import {terser} from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 
 export default {
-  input: 'src/index.ts',
+  input: 'src/index.tsx',
   output: {
     dir: 'dist',
     format: 'esm',
+    manualChunks: {
+      react: ['react'],
+      reactDOM: ['react-dom'],
+    },
     plugins: [terser()],
   },
   plugins: [
-    // brotli(),
-    // replace({
-    //   'process.env.NODE_ENV': JSON.stringify('production')
-    // }),
-    typescript({
-      tsconfig: false,
+    gzipPlugin({
+      customCompression: content =>
+          brotliCompressSync(Buffer.from(content)),
+      fileName: '.br',
     }),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    typescript(),
     resolve(),
     commonjs({
       include: 'node_modules/**'
