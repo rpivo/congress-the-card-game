@@ -37,3 +37,4 @@ Ends August 3, 2020
 - completely gut repo.
 - install TypeScript.
 - install React and ReactDOM.
+- add types for React and ReactDOM.
