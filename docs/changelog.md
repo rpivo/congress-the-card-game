@@ -44,3 +44,4 @@ Ends August 3, 2020
 - update Rollup config for React, Brotli compression.
 - add index.html template file.
 - add relative path for components folder in tsconfig.
+- add App component.
