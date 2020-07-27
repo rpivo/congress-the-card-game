@@ -3,7 +3,7 @@
     "baseUrl": "./src",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitReturns": true,

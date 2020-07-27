@@ -31,3 +31,4 @@ Ends August 3, 2020
 - rolled back rollup-plugin-vue.
 - updated build script.
 - updated Rollup config for Vue.
+- updated JSX field in tsconfig to `preserve`.
