@@ -30,3 +30,4 @@ Ends August 3, 2020
 - added Babel packages for JSX support.
 - rolled back rollup-plugin-vue.
 - updated build script.
+- updated Rollup config for Vue.
