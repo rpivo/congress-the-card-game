@@ -4,16 +4,14 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import {terser} from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
-import vue from 'rollup-plugin-vue';
 
 export default {
-  input: 'src/main.ts',
+  input: 'src/index.ts',
   output: {
     dir: 'dist',
     format: 'esm',
     plugins: [terser()],
   },
-  external: ['vue'],
   plugins: [
     // brotli(),
     // replace({
@@ -22,7 +20,6 @@ export default {
     typescript({
       tsconfig: false,
     }),
-    vue(),
     resolve(),
     commonjs({
       include: 'node_modules/**'
