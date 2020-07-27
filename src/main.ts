@@ -1,10 +1,9 @@
 import Vue from 'vue';
+import VueCompositionApi from '@vue/composition-api';
+import App from './App';
 
-const App = Vue.extend({
-  el: '#app',
-  data: () => ({
-    message: 'Hello Vue!',
-  }),
-});
+Vue.use(VueCompositionApi);
 
-export default App;
+new Vue({
+  render: h => h(App),
+}).$mount('#app');
