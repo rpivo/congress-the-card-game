@@ -28,4 +28,5 @@ Ends August 3, 2020
 - added initial main script in main.ts (may completely refactor once I understand the composition API more clearly).
 - added Babel config.
 - added Babel packages for JSX support.
-- roll back rollup-plugin-vue.
+- rolled back rollup-plugin-vue.
+- updated build script.

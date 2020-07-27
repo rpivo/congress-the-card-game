@@ -26,6 +26,6 @@
     "vue": "^2.6.11"
   },
   "scripts": {
-    "build": "rm -rf dist && mkdir dist && cp src/index.html dist/index.html && rollup -c"
+    "build": "rm -rf dist && mkdir dist && cp src/index.html dist/index.html && rollup -c --environment BUILD:production"
   }
 }
