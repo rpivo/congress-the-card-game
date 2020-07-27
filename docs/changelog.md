@@ -32,3 +32,4 @@ Ends August 3, 2020
 - updated build script.
 - updated Rollup config for Vue.
 - updated JSX field in tsconfig to `preserve`.
+- replaced App.vue with App.tsx.
