@@ -22,5 +22,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
-  "scripts": {}
+  "scripts": {
+    "build": "npm run clean && rollup -c && rm dist/*.js",
+    "build-js": "npm run clean && rollup -c",
+    "clean": "rm -rf dist && mkdir dist && cp src/index.html dist/index.html",
+    "serve": "express-compression-server --build=dist --port=1235"
+  }
 }

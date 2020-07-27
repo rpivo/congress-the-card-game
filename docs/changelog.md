@@ -40,3 +40,4 @@ Ends August 3, 2020
 - add types for React and ReactDOM.
 - add index file.
 - add Rollup and Rollup plugins.
+- add build, build-js, clean, and serve scripts.
