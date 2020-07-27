@@ -39,3 +39,4 @@ Ends August 3, 2020
 - install React and ReactDOM.
 - add types for React and ReactDOM.
 - add index file.
+- add Rollup and Rollup plugins.
