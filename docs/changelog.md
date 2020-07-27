@@ -26,3 +26,4 @@ Ends August 3, 2020
 - added initial template to App.vue (may completely refactor once I understand the composition API more clearly).
 - added template index.html file in src folder.
 - added initial main script in main.ts (may completely refactor once I understand the composition API more clearly).
+- added Babel config.
