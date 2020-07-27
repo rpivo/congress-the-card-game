@@ -7,6 +7,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitReturns": true,
+    "paths": {
+      "@components/*": ["components/*"],
+    },
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "esnext",
