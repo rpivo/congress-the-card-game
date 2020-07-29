@@ -1,5 +1,6 @@
 import React from 'react';
+import Style from './style';
 
-const Card = () => <div className='card'>Hello</div>;
+const Card = () => <Style><div className='card'>Hello</div></Style>;
 
 export default Card;
