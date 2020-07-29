@@ -11,7 +11,6 @@
       "@components/*": ["components/*"],
     },
     "strict": true,
-    "suppressImplicitAnyIndexErrors": true,
     "target": "esnext",
   }
 }
