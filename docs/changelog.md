@@ -49,3 +49,4 @@ Ends August 3, 2020
 - remove `"suppressImplicitAnyIndexErrors"` rule from tsconfig.
 - add Card component.
 - install styled-components.
+- add style.tsx for App component.
