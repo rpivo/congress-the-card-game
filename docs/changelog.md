@@ -47,3 +47,4 @@ Ends August 3, 2020
 - add App component.
 - update serve script to run build script first.
 - remove `"suppressImplicitAnyIndexErrors"` rule from tsconfig.
+- add Card component.
