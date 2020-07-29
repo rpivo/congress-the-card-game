@@ -48,3 +48,4 @@ Ends August 3, 2020
 - update serve script to run build script first.
 - remove `"suppressImplicitAnyIndexErrors"` rule from tsconfig.
 - add Card component.
+- install styled-components.
