@@ -51,3 +51,4 @@ Ends August 3, 2020
 - install styled-components.
 - add style.tsx for App component.
 - add styles to Card component.
+- add ESLint config.
