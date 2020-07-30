@@ -34,6 +34,7 @@
     "build": "npm run clean && rollup -c && rm dist/*.js",
     "build-js": "npm run clean && rollup -c",
     "clean": "rm -rf dist && mkdir dist && cp src/index.html dist/index.html",
-    "serve": "npm run build && express-compression-server --build=dist --port=1235"
+    "serve": "express-compression-server --build=dist --port=1235",
+    "watch": "npx nodemon --watch src --ext js,ts,jsx,tsx --exec \"npm run build\""
   }
 }

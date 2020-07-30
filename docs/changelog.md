@@ -54,4 +54,5 @@ Ends August 3, 2020
 - install ESLint.
 - add ESLint config.
 - lint.
-- install nodemon. 
+- install nodemon.
+- add watch script and update serve script.
