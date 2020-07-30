@@ -58,3 +58,5 @@ Ends August 3, 2020
 - add watch script and update serve script.
 - install Jest, Enzyme, and React Test Renderer.
 - add Jest config and setup file for Enzyme.
+- refactor App component to wrap cards inside a new component called PlayArea.
+- add Arial font at App level.
