@@ -60,3 +60,4 @@ Ends August 3, 2020
 - add Jest config and setup file for Enzyme.
 - refactor App component to wrap cards inside a new component called PlayArea.
 - add Arial font at App level.
+- remove margin on Card components in favor of relying on PlayArea component as a CSS grid.

@@ -8,7 +8,6 @@ const Style = styled.div`
   cursor: pointer;
   display: inline-block;
   height: 140px;
-  margin: 8px 4px;
   padding: 8px;
   width: 100px;
 `;
