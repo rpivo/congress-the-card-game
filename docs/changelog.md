@@ -57,3 +57,4 @@ Ends August 3, 2020
 - install nodemon.
 - add watch script and update serve script.
 - install Jest, Enzyme, and React Test Renderer.
+- add Jest config and setup file for Enzyme.
