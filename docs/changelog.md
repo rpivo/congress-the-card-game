@@ -53,3 +53,4 @@ Ends August 3, 2020
 - add styles to Card component.
 - install ESLint.
 - add ESLint config.
+- lint.

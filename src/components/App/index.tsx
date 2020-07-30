@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '@components/Card';
 import Style from './style';
 
-const App = () => 
+const App = (): JSX.Element =>
   <Style>
     <div className='app'>
       <Card />
