@@ -8,6 +8,7 @@ const App = (): JSX.Element =>
       <Card />
       <Card />
       <Card />
+      <Card />
     </div>
   </Style>;
 

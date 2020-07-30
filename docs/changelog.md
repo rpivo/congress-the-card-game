@@ -56,3 +56,4 @@ Ends August 3, 2020
 - lint.
 - install nodemon.
 - add watch script and update serve script.
+- install Jest, Enzyme, and React Test Renderer.
