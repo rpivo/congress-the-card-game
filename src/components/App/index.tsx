@@ -1,15 +1,7 @@
 import React from 'react';
-import Card from '@components/Card';
+import PlayArea from '@components/PlayArea';
 import Style from './style';
 
-const App = (): JSX.Element =>
-  <Style>
-    <div className='app'>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </div>
-  </Style>;
+const App = (): JSX.Element => <Style><PlayArea /></Style>;
 
 export default App;
