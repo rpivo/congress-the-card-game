@@ -64,3 +64,4 @@ Ends August 3, 2020
 - add coverage to gitignore.
 - set up test script.
 - add tests.
+- add hover styles for Card component.
