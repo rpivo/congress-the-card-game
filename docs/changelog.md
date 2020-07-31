@@ -62,3 +62,4 @@ Ends August 3, 2020
 - add Arial font at App level.
 - remove margin on Card components in favor of relying on PlayArea component as a CSS grid.
 - add coverage to gitignore.
+- set up test script.

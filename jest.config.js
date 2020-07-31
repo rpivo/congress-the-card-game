@@ -8,7 +8,7 @@ module.exports = {
     "@components/(.*)": "<rootDir>/src/components/$1",
   },
   roots: ["<rootDir>/src"],
-  setupFiles: ["<rootDir>/src/spec/setupTests.js"],
+  setupFiles: ["<rootDir>/src/setupTests.ts"],
   testMatch: [
     "**/__tests__/**/*.+(ts|tsx|js)",
     "**/?(*.)+(spec|test).+(ts|tsx|js)",
