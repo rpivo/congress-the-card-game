@@ -66,3 +66,4 @@ Ends August 3, 2020
 - add tests.
 - add hover styles for Card component.
 - install jest-styled-components.
+- add types file to hold type declarations.
