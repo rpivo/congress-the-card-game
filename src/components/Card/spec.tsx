@@ -18,5 +18,26 @@ describe('App', () => {
         .toJSON();
       expect(tree).toHaveStyleRule('background', '#EAEAEA');
     });
+
+    it('should default box-shadow', () => {
+      const tree = renderer
+        .create(<Card />)
+        .toJSON();
+      expect(tree).toHaveStyleRule(
+        'box-shadow',
+        '0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24)',
+      );
+    });
+
+    it('should update box-shadow on hover', () => {
+      const tree = renderer
+        .create(<Card />)
+        .toJSON();
+      expect(tree).toHaveStyleRule(
+        'box-shadow',
+        '0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22)',
+        { modifier: ':hover' },
+      );
+    });
   });
 });
