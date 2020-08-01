@@ -3,7 +3,7 @@ import Style from './style';
 import Card from '@components/Card';
 
 const PlayArea = (): JSX.Element =>
-  <Style>
+  <Style className='playArea'>
     <Card />
     <Card />
     <Card />
