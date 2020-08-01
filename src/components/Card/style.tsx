@@ -6,10 +6,11 @@ const Style = styled.div`
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   cursor: pointer;
   display: inline-block;
-  height: 140px;
+  height: 182px;
   padding: 8px;
+  place-self: center;
   transition: box-shadow 0.2s ease-in-out;
-  width: 100px;
+  width: 130px;
 
   :active {
     background: #9FFFB0
