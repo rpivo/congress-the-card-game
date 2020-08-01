@@ -65,3 +65,4 @@ Ends August 3, 2020
 - set up test script.
 - add tests.
 - add hover styles for Card component.
+- install jest-styled-components.
