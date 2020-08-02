@@ -68,5 +68,5 @@ Ends August 3, 2020
 - install jest-styled-components.
 - add types file to hold type declarations.
 - add highlight on Card click.
-- add classNames for Card and PlayArea components.
+- add classNames for App, Card, PlayArea components.
 - center PlayArea and Card alignment on 1920x1080 screens.
