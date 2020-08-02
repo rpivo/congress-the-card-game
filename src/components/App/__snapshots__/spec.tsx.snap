@@ -8,76 +8,83 @@ exports[`App should render correctly 1`] = `
     className="sc-AxjAm ljnGzd playArea"
   >
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ jBPyGX card "
+      className="sc-AxirZ cmKDcl card "
       onClick={[Function]}
     >
       Hello
+    </div>
+    <div
+      className="sc-AxirZ cmKDcl deck"
+    >
+      <div>
+        Deck
+      </div>
     </div>
   </div>
 </div>

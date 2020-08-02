@@ -37,9 +37,10 @@ exports[`App should render correctly 1`] = `
 }
 
 <div
-  className="c0 card "
-  onClick={[Function]}
+  className="c0 deck"
 >
-  Hello
+  <div>
+    Deck
+  </div>
 </div>
 `;
