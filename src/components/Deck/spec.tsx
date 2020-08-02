@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import Deck from '@components/Deck';
 
-describe('App', () => {
+describe('Deck', () => {
   it('should render correctly', () => {
     const tree = renderer
       .create(<Deck />)

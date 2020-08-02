@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import Card from '@components/Card';
 
-describe('App', () => {
+describe('Card', () => {
   it('should render correctly', () => {
     const tree = renderer
       .create(<Card />)

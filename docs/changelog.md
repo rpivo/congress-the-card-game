@@ -72,3 +72,4 @@ Ends August 3, 2020
 - center PlayArea and Card alignment on 1920x1080 screens.
 - add .active class to Card component on click.
 - combine Deck styles with Card styles.
+- add Deck component.
