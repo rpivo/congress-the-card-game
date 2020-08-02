@@ -70,3 +70,5 @@ Ends August 3, 2020
 - add highlight on Card click.
 - add classNames for App, Card, PlayArea components.
 - center PlayArea and Card alignment on 1920x1080 screens.
+- add .active class to Card component on click.
+- combine Deck styles with Card styles.
