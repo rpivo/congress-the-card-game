@@ -12,8 +12,12 @@ const Style = styled.div`
   transition: box-shadow 0.2s ease-in-out;
   width: 130px;
 
+  &.active {
+    background: #9FFFB0;
+  }
+
   :active {
-    background: #9FFFB0
+    background: #9FFFB0;
   }
 
   :hover {
