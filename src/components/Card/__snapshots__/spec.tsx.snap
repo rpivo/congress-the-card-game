@@ -15,6 +15,10 @@ exports[`App should render correctly 1`] = `
   width: 130px;
 }
 
+.c0.active {
+  background: #9FFFB0;
+}
+
 .c0:active {
   background: #9FFFB0;
 }
@@ -24,7 +28,8 @@ exports[`App should render correctly 1`] = `
 }
 
 <div
-  className="c0 card"
+  className="c0 card "
+  onClick={[Function]}
 >
   Hello
 </div>

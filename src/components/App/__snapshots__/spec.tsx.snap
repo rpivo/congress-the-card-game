@@ -2,68 +2,80 @@
 
 exports[`App should render correctly 1`] = `
 <div
-  className="sc-AxiKw gGABgI"
+  className="sc-AxiKw gGABgI app"
 >
   <div
     className="sc-AxjAm ljnGzd playArea"
   >
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ eaqbOz card"
+      className="sc-AxirZ jBPyGX card "
+      onClick={[Function]}
     >
       Hello
     </div>
