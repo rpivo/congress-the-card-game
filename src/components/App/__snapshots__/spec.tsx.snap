@@ -6,7 +6,7 @@ exports[`App should render correctly 1`] = `
   onClick={[Function]}
 >
   <div
-    className="sc-AxjAm ljnGzd playArea"
+    className="sc-AxjAm hnLhyz playArea"
   >
     <div
       className="sc-AxirZ cmKDcl card"

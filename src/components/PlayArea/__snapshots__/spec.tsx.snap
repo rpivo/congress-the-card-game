@@ -45,6 +45,20 @@ exports[`PlayArea should render correctly 1`] = `
   width: 1560px;
 }
 
+@media screen and (max-width:1750px) {
+  .c0 {
+    grid-template-columns: repeat(8,156px [col-start]);
+    width: 1248px;
+  }
+}
+
+@media screen and (max-width:1500px) {
+  .c0 {
+    grid-template-columns: repeat(6,156px [col-start]);
+    width: 936px;
+  }
+}
+
 <div
   className="c0 playArea"
 >
