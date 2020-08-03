@@ -8,74 +8,62 @@ exports[`App should render correctly 1`] = `
     className="sc-AxjAm ljnGzd playArea"
   >
     <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
+      className="sc-AxirZ cmKDcl card"
+      onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
+      className="sc-AxirZ cmKDcl card"
+      onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
+      className="sc-AxirZ cmKDcl card"
+      onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
+      className="sc-AxirZ cmKDcl card"
+      onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
+      className="sc-AxirZ cmKDcl card"
+      onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
+      className="sc-AxirZ cmKDcl card"
+      onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
+      className="sc-AxirZ cmKDcl card"
+      onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
+      className="sc-AxirZ cmKDcl card"
+      onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
+      className="sc-AxirZ cmKDcl card"
+      onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
-    >
-      Hello
-    </div>
-    <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
-    >
-      Hello
-    </div>
-    <div
-      className="sc-AxirZ cmKDcl card "
-      onClick={[Function]}
+      className="sc-AxirZ cmKDcl card"
+      onMouseDown={[Function]}
     >
       Hello
     </div>
