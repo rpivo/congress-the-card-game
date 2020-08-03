@@ -38,6 +38,7 @@ exports[`Card should render correctly 1`] = `
 
 <div
   className="c0 card"
+  onClick={[Function]}
   onMouseDown={[Function]}
 >
   Hello

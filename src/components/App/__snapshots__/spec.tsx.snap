@@ -3,66 +3,77 @@
 exports[`App should render correctly 1`] = `
 <div
   className="sc-AxiKw gGABgI app"
+  onClick={[Function]}
 >
   <div
     className="sc-AxjAm ljnGzd playArea"
   >
     <div
       className="sc-AxirZ cmKDcl card"
+      onClick={[Function]}
       onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
+      onClick={[Function]}
       onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
+      onClick={[Function]}
       onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
+      onClick={[Function]}
       onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
+      onClick={[Function]}
       onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
+      onClick={[Function]}
       onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
+      onClick={[Function]}
       onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
+      onClick={[Function]}
       onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
+      onClick={[Function]}
       onMouseDown={[Function]}
     >
       Hello
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
+      onClick={[Function]}
       onMouseDown={[Function]}
     >
       Hello

@@ -50,60 +50,70 @@ exports[`PlayArea should render correctly 1`] = `
 >
   <div
     className="c1 card"
+    onClick={[Function]}
     onMouseDown={[Function]}
   >
     Hello
   </div>
   <div
     className="c1 card"
+    onClick={[Function]}
     onMouseDown={[Function]}
   >
     Hello
   </div>
   <div
     className="c1 card"
+    onClick={[Function]}
     onMouseDown={[Function]}
   >
     Hello
   </div>
   <div
     className="c1 card"
+    onClick={[Function]}
     onMouseDown={[Function]}
   >
     Hello
   </div>
   <div
     className="c1 card"
+    onClick={[Function]}
     onMouseDown={[Function]}
   >
     Hello
   </div>
   <div
     className="c1 card"
+    onClick={[Function]}
     onMouseDown={[Function]}
   >
     Hello
   </div>
   <div
     className="c1 card"
+    onClick={[Function]}
     onMouseDown={[Function]}
   >
     Hello
   </div>
   <div
     className="c1 card"
+    onClick={[Function]}
     onMouseDown={[Function]}
   >
     Hello
   </div>
   <div
     className="c1 card"
+    onClick={[Function]}
     onMouseDown={[Function]}
   >
     Hello
   </div>
   <div
     className="c1 card"
+    onClick={[Function]}
     onMouseDown={[Function]}
   >
     Hello
