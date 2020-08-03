@@ -9,6 +9,7 @@
     "noImplicitReturns": true,
     "paths": {
       "@components/*": ["components/*"],
+      "@utilities/*": ["utilities/*"],
     },
     "strict": true,
     "target": "esnext",

@@ -82,3 +82,4 @@ Ended August 3, 2020
 - combine Deck styles with Card styles.
 - add Deck component.
 - add mousedown logic to Card component to toggle the `.active` class.
+- create utlities folder.
