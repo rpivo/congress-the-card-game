@@ -62,4 +62,11 @@ describe('Card', () => {
       expect(wrapper.find('.card').hasClass('active')).toBe(false);
     });
   });
+
+  describe('onClick', () => {
+    const event = { stopPropagation: jest.fn() };
+    const wrapper = shallow(CardMock);
+    wrapper.simulate('click', event);
+    expect(event.stopPropagation).toHaveBeenCalled();
+  });
 });

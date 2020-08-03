@@ -74,3 +74,4 @@ Ends August 3, 2020
 - combine Deck styles with Card styles.
 - add Deck component.
 - add mousedown logic to Card component to toggle the `.active` class.
+- move `useState` up to App component so that the `.active` class can be controlled by both Card and App-level component clicks.

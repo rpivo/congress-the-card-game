@@ -10,6 +10,7 @@ type CardProps = {
 const Card = ({ active, index, handleCardClick }: CardProps): JSX.Element =>
   <Style
     className={`card${active ? ' active' : ''}`}
+    onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}
     onMouseDown={(): void => handleCardClick(index)}>
     Hello
   </Style>;
