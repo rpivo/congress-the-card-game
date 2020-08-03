@@ -83,3 +83,4 @@ Ended August 3, 2020
 - add Deck component.
 - add mousedown logic to Card component to toggle the `.active` class.
 - create utlities folder.
+- add Breakpoints enums.
