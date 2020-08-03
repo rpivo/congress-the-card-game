@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Style from './style';
 
 type CardProps = {
@@ -15,4 +15,4 @@ const Card = ({ active, index, handleCardClick }: CardProps): JSX.Element =>
     Hello
   </Style>;
 
-export default Card;
+export default memo(Card);
