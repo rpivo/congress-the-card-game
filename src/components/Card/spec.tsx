@@ -5,9 +5,11 @@ import 'jest-styled-components';
 import Card from '@components/Card';
 
 describe('Card', () => {
+  const CardMock = <Card active={false} index={0} handleCardClick={() => null} />;
+
   it('should render correctly', () => {
     const tree = renderer
-      .create(<Card />)
+      .create(CardMock)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -15,14 +17,14 @@ describe('Card', () => {
   describe('style', () => {
     it('should default to a background of #EAEAEA', () => {
       const tree = renderer
-        .create(<Card />)
+        .create(CardMock)
         .toJSON();
       expect(tree).toHaveStyleRule('background', '#EAEAEA');
     });
 
     it('should have a default box-shadow', () => {
       const tree = renderer
-        .create(<Card />)
+        .create(CardMock)
         .toJSON();
       expect(tree).toHaveStyleRule(
         'box-shadow',
@@ -33,7 +35,7 @@ describe('Card', () => {
 
     it('should update background on active', () => {
       const tree = renderer
-        .create(<Card />)
+        .create(CardMock)
         .toJSON();
       expect(tree).toHaveStyleRule(
         'background',
@@ -44,7 +46,7 @@ describe('Card', () => {
 
     it('should update box-shadow on hover', () => {
       const tree = renderer
-        .create(<Card />)
+        .create(CardMock)
         .toJSON();
       expect(tree).toHaveStyleRule(
         'box-shadow',
@@ -56,14 +58,8 @@ describe('Card', () => {
 
   describe('classList', () => {
     it('should not initialize with the .active class', () => {
-      const wrapper = shallow(<Card />);
+      const wrapper = shallow(CardMock);
       expect(wrapper.find('.card').hasClass('active')).toBe(false);
-    });
-
-    it('should update to have the .active class on click', () => {
-      const wrapper = shallow(<Card />);
-      wrapper.simulate('click');
-      expect(wrapper.find('.card').hasClass('active')).toBe(true);
     });
   });
 });

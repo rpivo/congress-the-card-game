@@ -73,3 +73,4 @@ Ends August 3, 2020
 - add .active class to Card component on click.
 - combine Deck styles with Card styles.
 - add Deck component.
+- add mousedown logic to Card component to toggle the `.active` class.

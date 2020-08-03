@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Style from './style';
 
-const Card = (): JSX.Element => {
-  const [isActive, setIsActive] = useState(false);
-  return (
-    <Style
-      className={`card ${isActive ? 'active' : ''}`}
-      onClick={(): void => setIsActive(!isActive)}>
-      Hello
-    </Style>
-  );
+type CardProps = {
+  readonly active: boolean;
+  readonly index: number;
+  readonly handleCardClick: (index: number) => void;
 };
+
+const Card = ({ active, index, handleCardClick }: CardProps): JSX.Element =>
+  <Style
+    className={`card${active ? ' active' : ''}`}
+    onMouseDown={(): void => handleCardClick(index)}>
+    Hello
+  </Style>;
 
 export default Card;
