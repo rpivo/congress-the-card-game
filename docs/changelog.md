@@ -12,6 +12,7 @@ Ends August 17, 2020
 - add small and medium breakpoints to PlayArea component.
 - rename `handleCardClick` to `handleCardMouseDown`.
 - memoize Deck component.
+- pass in title prop to Card components.
 
 ## Sprint 1
 Ended August 3, 2020

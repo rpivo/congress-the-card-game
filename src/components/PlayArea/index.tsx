@@ -8,20 +8,33 @@ type PlayAreaProps = {
   setActiveCard: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const PlayArea = ({ activeCard, setActiveCard }: PlayAreaProps): JSX.Element => {
+const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.Element => {
   const handleCardMouseDown = (index: number) => {
     if (index === activeCard) index = -1;
     setActiveCard(index);
   };
 
+  const states = [
+    'Alabama',
+    'Alaska',
+    'Arizona',
+    'Arkansas',
+    'California',
+    'Colorado',
+    'Connecticut',
+    'Delaware',
+    'Florida',
+    'Georgia',
+  ];
   const cards = [];
-  for (let index = 0; index < 10; index++) {
+  for (let index = 0; index < states.length; index++) {
     cards.push(
       <Card
         active={activeCard === index}
+        handleCardMouseDown={handleCardMouseDown}
         index={index}
         key={index}
-        handleCardMouseDown={handleCardMouseDown}
+        title={states[index]}
       />
     );
   }
