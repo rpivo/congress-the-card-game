@@ -41,6 +41,6 @@ exports[`Card should render correctly 1`] = `
   onClick={[Function]}
   onMouseDown={[Function]}
 >
-  Hello
+  
 </div>
 `;

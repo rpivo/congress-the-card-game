@@ -2,7 +2,7 @@
 
 exports[`App should render correctly 1`] = `
 <div
-  className="sc-AxiKw gGABgI app"
+  className="sc-AxiKw jNWLeH app"
   onClick={[Function]}
 >
   <div
@@ -13,70 +13,70 @@ exports[`App should render correctly 1`] = `
       onClick={[Function]}
       onMouseDown={[Function]}
     >
-      Hello
+      Alabama
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
-      Hello
+      Alaska
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
-      Hello
+      Arizona
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
-      Hello
+      Arkansas
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
-      Hello
+      California
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
-      Hello
+      Colorado
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
-      Hello
+      Connecticut
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
-      Hello
+      Delaware
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
-      Hello
+      Florida
     </div>
     <div
       className="sc-AxirZ cmKDcl card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
-      Hello
+      Georgia
     </div>
     <div
       className="sc-AxirZ cmKDcl deck"

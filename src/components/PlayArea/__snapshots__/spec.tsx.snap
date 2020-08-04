@@ -67,70 +67,70 @@ exports[`PlayArea should render correctly 1`] = `
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Hello
+    Alabama
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Hello
+    Alaska
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Hello
+    Arizona
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Hello
+    Arkansas
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Hello
+    California
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Hello
+    Colorado
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Hello
+    Connecticut
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Hello
+    Delaware
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Hello
+    Florida
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Hello
+    Georgia
   </div>
   <div
     className="c1 deck"
