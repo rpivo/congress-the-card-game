@@ -5,6 +5,13 @@ Ends August 17, 2020
 
 - move `useState` up to App component so that the `.active` class can be controlled by both Card and App-level component clicks.
 - memoize Card component.
+- add Deck component.
+- add mousedown logic to Card component to toggle the `.active` class.
+- create utlities folder.
+- add Breakpoints enums.
+- add small and medium breakpoints to PlayArea component.
+- rename `handleCardClick` to `handleCardMouseDown`.
+- memoize Deck component.
 
 ## Sprint 1
 Ended August 3, 2020
@@ -80,9 +87,3 @@ Ended August 3, 2020
 - center PlayArea and Card alignment on 1920x1080 screens.
 - add .active class to Card component on click.
 - combine Deck styles with Card styles.
-- add Deck component.
-- add mousedown logic to Card component to toggle the `.active` class.
-- create utlities folder.
-- add Breakpoints enums.
-- add small and medium breakpoints to PlayArea component.
-- rename `handleCardClick` to `handleCardMouseDown`.
