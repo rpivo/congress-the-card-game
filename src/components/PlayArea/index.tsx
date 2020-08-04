@@ -9,7 +9,7 @@ type PlayAreaProps = {
 };
 
 const PlayArea = ({ activeCard, setActiveCard }: PlayAreaProps): JSX.Element => {
-  const handleCardClick = (index: number) => {
+  const handleCardMouseDown = (index: number) => {
     if (index === activeCard) index = -1;
     setActiveCard(index);
   };
@@ -21,7 +21,7 @@ const PlayArea = ({ activeCard, setActiveCard }: PlayAreaProps): JSX.Element => 
         active={activeCard === index}
         index={index}
         key={index}
-        handleCardClick={handleCardClick}
+        handleCardMouseDown={handleCardMouseDown}
       />
     );
   }

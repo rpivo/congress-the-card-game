@@ -85,3 +85,4 @@ Ended August 3, 2020
 - create utlities folder.
 - add Breakpoints enums.
 - add small and medium breakpoints to PlayArea component.
+- rename `handleCardClick` to `handleCardMouseDown`.
