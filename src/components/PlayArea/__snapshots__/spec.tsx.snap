@@ -134,10 +134,13 @@ exports[`PlayArea should render correctly 1`] = `
   </div>
   <div
     className="c1 deck"
+    onClick={[Function]}
   >
-    <div>
-      Deck
-    </div>
+    <p
+      className="deck-paragraph"
+    >
+      Draw a card.
+    </p>
   </div>
 </div>
 `;

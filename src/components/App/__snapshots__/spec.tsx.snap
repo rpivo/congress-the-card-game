@@ -80,10 +80,13 @@ exports[`App should render correctly 1`] = `
     </div>
     <div
       className="sc-AxirZ cmKDcl deck"
+      onClick={[Function]}
     >
-      <div>
-        Deck
-      </div>
+      <p
+        className="deck-paragraph"
+      >
+        Draw a card.
+      </p>
     </div>
   </div>
 </div>

@@ -38,9 +38,12 @@ exports[`Deck should render correctly 1`] = `
 
 <div
   className="c0 deck"
+  onClick={[Function]}
 >
-  <div>
-    Deck
-  </div>
+  <p
+    className="deck-paragraph"
+  >
+    Draw a card.
+  </p>
 </div>
 `;
