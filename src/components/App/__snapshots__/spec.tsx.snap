@@ -9,84 +9,88 @@ exports[`App should render correctly 1`] = `
     className="sc-AxjAm hnLhyz playArea"
   >
     <div
-      className="sc-AxirZ cmKDcl card"
+      className="sc-AxirZ bQClrS card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Alabama
     </div>
     <div
-      className="sc-AxirZ cmKDcl card"
+      className="sc-AxirZ bQClrS card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Alaska
     </div>
     <div
-      className="sc-AxirZ cmKDcl card"
+      className="sc-AxirZ bQClrS card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Arizona
     </div>
     <div
-      className="sc-AxirZ cmKDcl card"
+      className="sc-AxirZ bQClrS card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Arkansas
     </div>
     <div
-      className="sc-AxirZ cmKDcl card"
+      className="sc-AxirZ bQClrS card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       California
     </div>
     <div
-      className="sc-AxirZ cmKDcl card"
+      className="sc-AxirZ bQClrS card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Colorado
     </div>
     <div
-      className="sc-AxirZ cmKDcl card"
+      className="sc-AxirZ bQClrS card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Connecticut
     </div>
     <div
-      className="sc-AxirZ cmKDcl card"
+      className="sc-AxirZ bQClrS card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Delaware
     </div>
     <div
-      className="sc-AxirZ cmKDcl card"
+      className="sc-AxirZ bQClrS card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Florida
     </div>
     <div
-      className="sc-AxirZ cmKDcl card"
+      className="sc-AxirZ bQClrS card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Georgia
     </div>
     <div
-      className="sc-AxirZ cmKDcl deck"
-      onClick={[Function]}
+      className="sc-AxirZ bQClrS deck"
     >
-      <p
-        className="deck-paragraph"
+      <div
+        className="sc-AxirZ bQClrS stackedCard"
+        onClick={[Function]}
       >
-        Draw a card.
-      </p>
+        <p
+          className="deckParagraph"
+        >
+          Draw a card.
+        </p>
+      </div>
     </div>
   </div>
 </div>

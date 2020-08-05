@@ -31,9 +31,16 @@ exports[`PlayArea should render correctly 1`] = `
 }
 
 .c1.deck {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.72),0 1px 2px rgba(0,0,0,0.84);
+  background: #DADADA;
   grid-row: 3;
   grid-column: 1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.72),0 1px 2px rgba(0,0,0,0.84);
+}
+
+.c1.stackedCard {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12),0 1px 1px rgba(0,0,0,0.24);
+  margin-left: -11px;
+  margin-top: -11px;
 }
 
 .c0 {
@@ -134,13 +141,17 @@ exports[`PlayArea should render correctly 1`] = `
   </div>
   <div
     className="c1 deck"
-    onClick={[Function]}
   >
-    <p
-      className="deck-paragraph"
+    <div
+      className="c1 stackedCard"
+      onClick={[Function]}
     >
-      Draw a card.
-    </p>
+      <p
+        className="deckParagraph"
+      >
+        Draw a card.
+      </p>
+    </div>
   </div>
 </div>
 `;
