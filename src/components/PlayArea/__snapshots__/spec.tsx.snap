@@ -98,48 +98,6 @@ exports[`PlayArea should render correctly 1`] = `
     Arkansas
   </div>
   <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    California
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    Colorado
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    Connecticut
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    Delaware
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    Florida
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    Georgia
-  </div>
-  <div
     className="c1 deck"
   >
     <div

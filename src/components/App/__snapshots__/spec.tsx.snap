@@ -37,48 +37,6 @@ exports[`App should render correctly 1`] = `
       Arkansas
     </div>
     <div
-      className="sc-AxiKw cQEObW card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      California
-    </div>
-    <div
-      className="sc-AxiKw cQEObW card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      Colorado
-    </div>
-    <div
-      className="sc-AxiKw cQEObW card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      Connecticut
-    </div>
-    <div
-      className="sc-AxiKw cQEObW card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      Delaware
-    </div>
-    <div
-      className="sc-AxiKw cQEObW card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      Florida
-    </div>
-    <div
-      className="sc-AxiKw cQEObW card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      Georgia
-    </div>
-    <div
       className="sc-AxiKw cQEObW deck"
     >
       <div
