@@ -2,87 +2,87 @@
 
 exports[`App should render correctly 1`] = `
 <div
-  className="sc-AxiKw jNWLeH app"
+  className="sc-AxhCb bRRScL app"
   onClick={[Function]}
 >
   <div
-    className="sc-AxjAm hnLhyz playArea"
+    className="sc-AxirZ kyZKvQ playArea"
   >
     <div
-      className="sc-AxirZ bQClrS card"
+      className="sc-AxiKw cQEObW card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Alabama
     </div>
     <div
-      className="sc-AxirZ bQClrS card"
+      className="sc-AxiKw cQEObW card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Alaska
     </div>
     <div
-      className="sc-AxirZ bQClrS card"
+      className="sc-AxiKw cQEObW card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Arizona
     </div>
     <div
-      className="sc-AxirZ bQClrS card"
+      className="sc-AxiKw cQEObW card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Arkansas
     </div>
     <div
-      className="sc-AxirZ bQClrS card"
+      className="sc-AxiKw cQEObW card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       California
     </div>
     <div
-      className="sc-AxirZ bQClrS card"
+      className="sc-AxiKw cQEObW card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Colorado
     </div>
     <div
-      className="sc-AxirZ bQClrS card"
+      className="sc-AxiKw cQEObW card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Connecticut
     </div>
     <div
-      className="sc-AxirZ bQClrS card"
+      className="sc-AxiKw cQEObW card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Delaware
     </div>
     <div
-      className="sc-AxirZ bQClrS card"
+      className="sc-AxiKw cQEObW card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Florida
     </div>
     <div
-      className="sc-AxirZ bQClrS card"
+      className="sc-AxiKw cQEObW card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
       Georgia
     </div>
     <div
-      className="sc-AxirZ bQClrS deck"
+      className="sc-AxiKw cQEObW deck"
     >
       <div
-        className="sc-AxirZ bQClrS stackedCard"
+        className="sc-AxiKw cQEObW stackedCard"
         onClick={[Function]}
       >
         <p
@@ -92,6 +92,86 @@ exports[`App should render correctly 1`] = `
         </p>
       </div>
     </div>
+  </div>
+  <div
+    className="sc-AxjAm iqxMPA"
+  >
+    <svg
+      height="421.425"
+      viewBox="0 0 445.805 421.425"
+      width="445.805"
+    >
+      <g
+        transform="translate(-195.558 -456.564)"
+      >
+        <g
+          className="svgCard"
+          fill="#707070"
+          stroke="#fff"
+          strokeWidth="12"
+          transform="matrix(0.995, 0.105, -0.105, 0.995, 392.732, 495.977)"
+        >
+          <rect
+            height="350"
+            rx="15"
+            stroke="none"
+            width="250"
+          />
+          <rect
+            fill="none"
+            height="338"
+            rx="9"
+            width="238"
+            x="6"
+            y="6"
+          />
+        </g>
+        <g
+          className="svgCard"
+          fill="#707070"
+          stroke="#fff"
+          strokeWidth="12"
+          transform="translate(290.401 516.605) rotate(-9)"
+        >
+          <rect
+            height="350"
+            rx="15"
+            stroke="none"
+            width="250"
+          />
+          <rect
+            fill="none"
+            height="338"
+            rx="9"
+            width="238"
+            x="6"
+            y="6"
+          />
+        </g>
+        <g
+          className="svgCard"
+          fill="#707070"
+          stroke="#fff"
+          strokeWidth="12"
+          transform="matrix(0.914, -0.407, 0.407, 0.914, 195.558, 558.248)"
+        >
+          <rect
+            height="350"
+            rx="15"
+            stroke="none"
+            width="250"
+          />
+          <rect
+            fill="none"
+            height="338"
+            rx="9"
+            width="238"
+            x="6"
+            y="6"
+          />
+        </g>
+      </g>
+    </svg>
   </div>
 </div>
 `;
