@@ -28,9 +28,16 @@ const Style = styled.div`
   }
 
   &.deck {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.72), 0 1px 2px rgba(0,0,0,0.84);
+    background: #DADADA;
     grid-row: 3; 
     grid-column: 1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.72), 0 1px 2px rgba(0,0,0,0.84);
+  }
+
+  &.stackedCard {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24);
+    margin-left: -11px;
+    margin-top: -11px;
   }
 `;
 

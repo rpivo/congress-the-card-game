@@ -38,7 +38,7 @@ describe('PlayArea', () => {
 
     it('should not contain a "Draw a card." paragraph tag after being clicked', () => {
       const wrapper = mount(PlayAreaMock);
-      const selector = wrapper.find('.deck').at(0).prop('onClick');
+      const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
       const event = {} as React.MouseEvent;
       if (selector) act(() => selector(event));
       wrapper.update();

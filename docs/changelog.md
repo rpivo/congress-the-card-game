@@ -14,6 +14,7 @@ Ends August 17, 2020
 - memoize Deck component.
 - pass in title prop to Card components.
 - add "Draw a Card." experience to Deck component.
+- make Deck component look more believable.
 
 ## Sprint 1
 Ended August 3, 2020
