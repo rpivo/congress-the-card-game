@@ -2,6 +2,7 @@ import React from 'react';
 import Style from './style';
 import Card from '@components/Card';
 import Deck from '@components/Deck';
+import * as cardData from '@utilities/cards.json';
 
 type PlayAreaProps = {
   activeCard: number;
@@ -14,27 +15,15 @@ const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.E
     setActiveCard(index);
   };
 
-  const states = [
-    'Alabama',
-    'Alaska',
-    'Arizona',
-    'Arkansas',
-    'California',
-    'Colorado',
-    'Connecticut',
-    'Delaware',
-    'Florida',
-    'Georgia',
-  ];
   const cards = [];
-  for (let index = 0; index < states.length; index++) {
+  for (let index = 0; index < cardData.states.length; index++) {
     cards.push(
       <Card
         active={activeCard === index}
         handleCardMouseDown={handleCardMouseDown}
         index={index}
         key={index}
-        title={states[index]}
+        title={cardData.states[index]}
       />
     );
   }

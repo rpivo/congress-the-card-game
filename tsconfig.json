@@ -11,6 +11,7 @@
       "@components/*": ["components/*"],
       "@utilities/*": ["utilities/*"],
     },
+    "resolveJsonModule": true,
     "strict": true,
     "target": "esnext",
   }

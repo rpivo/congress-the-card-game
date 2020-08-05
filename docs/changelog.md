@@ -17,6 +17,7 @@ Ends August 17, 2020
 - make Deck component look more believable.
 - add HandIcon component.
 - install @rollup/plugin-json.
+- pull in card data from JSON file rather than inline in the PlayArea component.
 
 ## Sprint 1
 Ended August 3, 2020
