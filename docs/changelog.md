@@ -15,6 +15,7 @@ Ends August 17, 2020
 - pass in title prop to Card components.
 - add "Draw a Card." experience to Deck component.
 - make Deck component look more believable.
+- add HandIcon component.
 
 ## Sprint 1
 Ended August 3, 2020
