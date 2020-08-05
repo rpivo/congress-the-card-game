@@ -1,9 +1,10 @@
 import { brotliCompressSync } from 'zlib';
 import commonjs from '@rollup/plugin-commonjs';
 import gzipPlugin from 'rollup-plugin-gzip';
-import replace from '@rollup/plugin-replace';
+import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
-import {terser} from 'rollup-plugin-terser';
+import replace from '@rollup/plugin-replace';
+import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 
 export default {
@@ -19,17 +20,17 @@ export default {
   },
   plugins: [
     gzipPlugin({
-      customCompression: content =>
-          brotliCompressSync(Buffer.from(content)),
+      customCompression: (content) => brotliCompressSync(Buffer.from(content)),
       fileName: '.br',
     }),
+    json(),
     replace({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     typescript(),
     resolve(),
     commonjs({
-      include: 'node_modules/**'
-    })
-  ]
+      include: 'node_modules/**',
+    }),
+  ],
 };

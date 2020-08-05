@@ -16,6 +16,7 @@ Ends August 17, 2020
 - add "Draw a Card." experience to Deck component.
 - make Deck component look more believable.
 - add HandIcon component.
+- install @rollup/plugin-json.
 
 ## Sprint 1
 Ended August 3, 2020
