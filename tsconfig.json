@@ -13,6 +13,6 @@
     },
     "resolveJsonModule": true,
     "strict": true,
-    "target": "esnext",
+    "target": "es2019", // change to esnext once terser supports optional chaining
   }
 }
