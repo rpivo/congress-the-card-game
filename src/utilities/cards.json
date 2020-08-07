@@ -25,6 +25,12 @@
     "type": "place"
   },
   "0005": {
+    "abilities": {
+      "ability1": {
+        "title": "Judo Chop",
+        "description": "Deal 20 damage to player."
+      }
+    },
     "name": "Sonny Perdue",
     "group": "cabinet",
     "type": "person"

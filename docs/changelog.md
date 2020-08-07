@@ -21,6 +21,7 @@ Ends August 17, 2020
 - update cards JSON data with IDs and other fields.
 - update Card component format to accept subtitle text.
 - roll back tsconfig `target` key to 2019 until terser supports optional chaining.
+- add ability text to Card components.
 
 ## Sprint 1
 Ended August 3, 2020

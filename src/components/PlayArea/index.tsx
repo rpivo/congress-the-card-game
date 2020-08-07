@@ -4,6 +4,18 @@ import Card from '@components/Card';
 import Deck from '@components/Deck';
 import cardData from '@utilities/cards.json';
 
+type CardType = {
+  abilities?: {
+    ability1?: {
+      title: string;
+      description: string;
+    }
+  };
+  name: string;
+  group: string;
+  type: string;
+};
+
 type PlayAreaProps = {
   activeCard: string;
   setActiveCard: React.Dispatch<React.SetStateAction<string>>;
@@ -16,15 +28,16 @@ const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.E
   };
 
   const cards = [];
-  for (const [key, value] of Object.entries(cardData)) {
+  for (const [id, card] of Object.entries(cardData)) {
     cards.push(
       <Card
-        active={activeCard === key}
+        ability1Title={(card as CardType).abilities?.ability1?.title}
+        active={activeCard === id}
         handleCardMouseDown={handleCardMouseDown}
-        id={key}
-        key={key}
-        title={value.name}
-        subtitle={value.group}
+        id={id}
+        key={id}
+        title={card.name}
+        subtitle={card.group}
       />
     );
   }

@@ -15,9 +15,13 @@ const Style = styled.div`
     margin-bottom: 0;
     margin-top: 0;
 
-    &.subtitle {
+    &.subtext {
       font-size: 11px;
       margin-top: 3px;
+    }
+
+    &.ability1Title {
+      margin-top: 15px;
     }
   }
 
