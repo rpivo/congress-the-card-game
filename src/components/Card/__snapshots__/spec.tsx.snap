@@ -14,6 +14,16 @@ exports[`Card should render correctly 1`] = `
   width: 130px;
 }
 
+.c0 p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.c0 p.subtitle {
+  font-size: 11px;
+  margin-top: 3px;
+}
+
 .c0.active {
   background: #9FFFB0;
 }
@@ -48,6 +58,15 @@ exports[`Card should render correctly 1`] = `
   onClick={[Function]}
   onMouseDown={[Function]}
 >
-  
+  <p
+    className="title"
+  >
+    
+  </p>
+  <p
+    className="subtitle"
+  >
+    
+  </p>
 </div>
 `;

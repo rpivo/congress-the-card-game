@@ -14,6 +14,16 @@ exports[`PlayArea should render correctly 1`] = `
   width: 130px;
 }
 
+.c1 p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.c1 p.subtitle {
+  font-size: 11px;
+  margin-top: 3px;
+}
+
 .c1.active {
   background: #9FFFB0;
 }
@@ -74,42 +84,128 @@ exports[`PlayArea should render correctly 1`] = `
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Alabama
+    <p
+      className="title"
+    >
+      Alabama
+    </p>
+    <p
+      className="subtitle"
+    >
+      state
+    </p>
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Alaska
+    <p
+      className="title"
+    >
+      Alaska
+    </p>
+    <p
+      className="subtitle"
+    >
+      state
+    </p>
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Arizona
+    <p
+      className="title"
+    >
+      Arizona
+    </p>
+    <p
+      className="subtitle"
+    >
+      state
+    </p>
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Arkansas
+    <p
+      className="title"
+    >
+      Arkansas
+    </p>
+    <p
+      className="subtitle"
+    >
+      state
+    </p>
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Secretary of Agriculture Sonny Perdue
+    <p
+      className="title"
+    >
+      California
+    </p>
+    <p
+      className="subtitle"
+    >
+      state
+    </p>
   </div>
   <div
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
   >
-    Lamar Alexander
+    <p
+      className="title"
+    >
+      Sonny Perdue
+    </p>
+    <p
+      className="subtitle"
+    >
+      cabinet
+    </p>
+  </div>
+  <div
+    className="c1 card"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+  >
+    <p
+      className="title"
+    >
+      William Barr
+    </p>
+    <p
+      className="subtitle"
+    >
+      cabinet
+    </p>
+  </div>
+  <div
+    className="c1 card"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+  >
+    <p
+      className="title"
+    >
+      Lamar Alexander
+    </p>
+    <p
+      className="subtitle"
+    >
+      congress
+    </p>
   </div>
   <div
     className="c1 deck"
