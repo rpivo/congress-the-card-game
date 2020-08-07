@@ -37,6 +37,20 @@ exports[`App should render correctly 1`] = `
       Arkansas
     </div>
     <div
+      className="sc-AxiKw cQEObW card"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      Secretary of Agriculture Sonny Perdue
+    </div>
+    <div
+      className="sc-AxiKw cQEObW card"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      Lamar Alexander
+    </div>
+    <div
       className="sc-AxiKw cQEObW deck"
     >
       <div

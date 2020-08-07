@@ -98,6 +98,20 @@ exports[`PlayArea should render correctly 1`] = `
     Arkansas
   </div>
   <div
+    className="c1 card"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+  >
+    Secretary of Agriculture Sonny Perdue
+  </div>
+  <div
+    className="c1 card"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+  >
+    Lamar Alexander
+  </div>
+  <div
     className="c1 deck"
   >
     <div
