@@ -24,6 +24,7 @@ const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.E
         id={key}
         key={key}
         title={value.name}
+        subtitle={value.group}
       />
     );
   }

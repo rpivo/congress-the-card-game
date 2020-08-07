@@ -19,6 +19,7 @@ Ends August 17, 2020
 - install @rollup/plugin-json.
 - pull in card data from JSON file rather than inline in the PlayArea component.
 - update cards JSON data with IDs and other fields.
+- update Card component format to accept subtitle text.
 
 ## Sprint 1
 Ended August 3, 2020

@@ -1,28 +1,42 @@
 {
   "0000": {
     "name": "Alabama",
-    "type": "state"
+    "group": "state",
+    "type": "place"
   },
   "0001": {
     "name": "Alaska",
-    "type": "state"
+    "group": "state",
+    "type": "place"
   },
   "0002": {
     "name": "Arizona",
-    "type": "state"
+    "group": "state",
+    "type": "place"
   },
   "0003": {
     "name": "Arkansas",
-    "type": "state"
+    "group": "state",
+    "type": "place"
   },
   "0004": {
-    "name": "Secretary of Agriculture Sonny Perdue",
-    "group": "cabinet",
-    "type": "people"
+    "name": "California",
+    "group": "state",
+    "type": "place"
   },
   "0005": {
+    "name": "Sonny Perdue",
+    "group": "cabinet",
+    "type": "person"
+  },
+  "0006": {
+    "name": "William Barr",
+    "group": "cabinet",
+    "type": "person"
+  },
+  "0007": {
     "name": "Lamar Alexander",
     "group": "congress",
-    "type": "people"
+    "type": "person"
   }
 }

@@ -21,7 +21,7 @@ describe('PlayArea', () => {
   describe('Cards', () => {
     it('should render the correct amount of Card components', () => {
       const wrapper = mount(PlayAreaMock);
-      expect(wrapper.find(Card)).toHaveLength(6);
+      expect(wrapper.find(Card)).toHaveLength(8);
     });
   });
 
@@ -42,7 +42,7 @@ describe('PlayArea', () => {
       const event = {} as React.MouseEvent;
       if (selector) act(() => selector(event));
       wrapper.update();
-      expect(wrapper.find('p')).toHaveLength(0);
+      expect(wrapper.find(Deck).find('p')).toHaveLength(0);
     });
   });
 });

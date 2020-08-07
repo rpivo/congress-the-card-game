@@ -11,6 +11,16 @@ const Style = styled.div`
   transition: box-shadow 0.2s ease-in-out;
   width: 130px;
 
+  p {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    &.subtitle {
+      font-size: 11px;
+      margin-top: 3px;
+    }
+  }
+
   &.active {
     background: #9FFFB0;
   }
