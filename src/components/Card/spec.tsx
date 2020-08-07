@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import Card from '@components/Card';
 
 describe('Card', () => {
-  const CardMock = <Card active={false} handleCardMouseDown={() => null} index={0} title={''} />;
+  const CardMock = <Card active={false} handleCardMouseDown={() => null} id={''} title={''} />;
 
   it('should render correctly', () => {
     const tree = renderer

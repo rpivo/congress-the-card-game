@@ -4,9 +4,9 @@ import PlayArea from '@components/PlayArea';
 import Style from './style';
 
 const App = (): JSX.Element => {
-  const [activeCard, setActiveCard] = useState(-1);
+  const [activeCard, setActiveCard] = useState('');
   return (
-    <Style className='app' onClick={() => setActiveCard(-1)}>
+    <Style className='app' onClick={() => setActiveCard('')}>
       <PlayArea activeCard={activeCard} setActiveCard={setActiveCard} />
       <HandIcon />
     </Style>

@@ -18,6 +18,7 @@ Ends August 17, 2020
 - add HandIcon component.
 - install @rollup/plugin-json.
 - pull in card data from JSON file rather than inline in the PlayArea component.
+- update cards JSON data with IDs and other fields.
 
 ## Sprint 1
 Ended August 3, 2020

@@ -1,8 +1,28 @@
 {
-  "states": [
-    "Alabama",
-    "Alaska",
-    "Arizona",
-    "Arkansas"
-  ]
+  "0000": {
+    "name": "Alabama",
+    "type": "state"
+  },
+  "0001": {
+    "name": "Alaska",
+    "type": "state"
+  },
+  "0002": {
+    "name": "Arizona",
+    "type": "state"
+  },
+  "0003": {
+    "name": "Arkansas",
+    "type": "state"
+  },
+  "0004": {
+    "name": "Secretary of Agriculture Sonny Perdue",
+    "group": "cabinet",
+    "type": "people"
+  },
+  "0005": {
+    "name": "Lamar Alexander",
+    "group": "congress",
+    "type": "people"
+  }
 }

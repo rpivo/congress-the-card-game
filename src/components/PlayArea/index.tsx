@@ -2,28 +2,28 @@ import React from 'react';
 import Style from './style';
 import Card from '@components/Card';
 import Deck from '@components/Deck';
-import * as cardData from '@utilities/cards.json';
+import cardData from '@utilities/cards.json';
 
 type PlayAreaProps = {
-  activeCard: number;
-  setActiveCard: React.Dispatch<React.SetStateAction<number>>;
+  activeCard: string;
+  setActiveCard: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.Element => {
-  const handleCardMouseDown = (index: number) => {
-    if (index === activeCard) index = -1;
-    setActiveCard(index);
+  const handleCardMouseDown = (id: string) => {
+    if (id === activeCard) id = '';
+    setActiveCard(id);
   };
 
   const cards = [];
-  for (let index = 0; index < cardData.states.length; index++) {
+  for (const [key, value] of Object.entries(cardData)) {
     cards.push(
       <Card
-        active={activeCard === index}
+        active={activeCard === key}
         handleCardMouseDown={handleCardMouseDown}
-        index={index}
-        key={index}
-        title={cardData.states[index]}
+        id={key}
+        key={key}
+        title={value.name}
       />
     );
   }
