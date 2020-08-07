@@ -9,7 +9,7 @@ exports[`App should render correctly 1`] = `
     className="sc-AxirZ kyZKvQ playArea"
   >
     <div
-      className="sc-AxiKw bGFNq card"
+      className="sc-AxiKw ceZKiz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -19,13 +19,13 @@ exports[`App should render correctly 1`] = `
         Alabama
       </p>
       <p
-        className="subtitle"
+        className="subtext subtitle"
       >
         state
       </p>
     </div>
     <div
-      className="sc-AxiKw bGFNq card"
+      className="sc-AxiKw ceZKiz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -35,13 +35,13 @@ exports[`App should render correctly 1`] = `
         Alaska
       </p>
       <p
-        className="subtitle"
+        className="subtext subtitle"
       >
         state
       </p>
     </div>
     <div
-      className="sc-AxiKw bGFNq card"
+      className="sc-AxiKw ceZKiz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -51,13 +51,13 @@ exports[`App should render correctly 1`] = `
         Arizona
       </p>
       <p
-        className="subtitle"
+        className="subtext subtitle"
       >
         state
       </p>
     </div>
     <div
-      className="sc-AxiKw bGFNq card"
+      className="sc-AxiKw ceZKiz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -67,13 +67,13 @@ exports[`App should render correctly 1`] = `
         Arkansas
       </p>
       <p
-        className="subtitle"
+        className="subtext subtitle"
       >
         state
       </p>
     </div>
     <div
-      className="sc-AxiKw bGFNq card"
+      className="sc-AxiKw ceZKiz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -83,13 +83,13 @@ exports[`App should render correctly 1`] = `
         California
       </p>
       <p
-        className="subtitle"
+        className="subtext subtitle"
       >
         state
       </p>
     </div>
     <div
-      className="sc-AxiKw bGFNq card"
+      className="sc-AxiKw ceZKiz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -99,13 +99,18 @@ exports[`App should render correctly 1`] = `
         Sonny Perdue
       </p>
       <p
-        className="subtitle"
+        className="subtext subtitle"
       >
         cabinet
       </p>
+      <p
+        className="subtext ability1Title"
+      >
+        Judo Chop
+      </p>
     </div>
     <div
-      className="sc-AxiKw bGFNq card"
+      className="sc-AxiKw ceZKiz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -115,13 +120,13 @@ exports[`App should render correctly 1`] = `
         William Barr
       </p>
       <p
-        className="subtitle"
+        className="subtext subtitle"
       >
         cabinet
       </p>
     </div>
     <div
-      className="sc-AxiKw bGFNq card"
+      className="sc-AxiKw ceZKiz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -131,16 +136,16 @@ exports[`App should render correctly 1`] = `
         Lamar Alexander
       </p>
       <p
-        className="subtitle"
+        className="subtext subtitle"
       >
         congress
       </p>
     </div>
     <div
-      className="sc-AxiKw bGFNq deck"
+      className="sc-AxiKw ceZKiz deck"
     >
       <div
-        className="sc-AxiKw bGFNq stackedCard"
+        className="sc-AxiKw ceZKiz stackedCard"
         onClick={[Function]}
       >
         <p

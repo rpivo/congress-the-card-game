@@ -19,9 +19,13 @@ exports[`Card should render correctly 1`] = `
   margin-top: 0;
 }
 
-.c0 p.subtitle {
+.c0 p.subtext {
   font-size: 11px;
   margin-top: 3px;
+}
+
+.c0 p.ability1Title {
+  margin-top: 15px;
 }
 
 .c0.active {
@@ -64,7 +68,7 @@ exports[`Card should render correctly 1`] = `
     
   </p>
   <p
-    className="subtitle"
+    className="subtext subtitle"
   >
     
   </p>
