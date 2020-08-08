@@ -5,6 +5,7 @@ const Style = styled.div`
   font-family: Arial;
   font-size: 12px;
   font-weight: bold;
+  min-height: calc(100vh - 16px);
 `;
 
 export default Style;

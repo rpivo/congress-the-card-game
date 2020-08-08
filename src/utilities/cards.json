@@ -25,6 +25,11 @@
     "type": "place"
   },
   "0005": {
+    "name": "Colorado",
+    "group": "state",
+    "type": "place"
+  },
+  "0006": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -35,12 +40,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "0006": {
+  "0007": {
     "name": "William Barr",
     "group": "cabinet",
     "type": "person"
   },
-  "0007": {
+  "0008": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"
