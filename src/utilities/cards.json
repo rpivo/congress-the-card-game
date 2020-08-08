@@ -30,6 +30,11 @@
     "type": "place"
   },
   "0006": {
+    "name": "Connecticut",
+    "group": "state",
+    "type": "place"
+  },
+  "0007": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -40,17 +45,23 @@
     "group": "cabinet",
     "type": "person"
   },
-  "0007": {
+  "0008": {
+    "abilities": {
+      "ability1": {
+        "title": "Banshee Call",
+        "description": "Skip opponent's next turn."
+      }
+    },
     "name": "William Barr",
     "group": "cabinet",
     "type": "person"
   },
-  "0008": {
+  "0009": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "0009": {
+  "0010": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

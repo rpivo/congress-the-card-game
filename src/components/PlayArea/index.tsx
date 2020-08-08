@@ -33,6 +33,7 @@ const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.E
       cards.push(
         <Card
           ability1Title={(card as CardType).abilities?.ability1?.title}
+          ability1Description={(card as CardType).abilities?.ability1?.description}
           active={activeCard === id}
           handleCardMouseDown={handleCardMouseDown}
           id={id}

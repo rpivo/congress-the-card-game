@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import Style from './style';
 
 type CardProps = {
+  ability1Description?: string;
   ability1Title?: string;
   active: boolean;
   id: string;
@@ -11,6 +12,7 @@ type CardProps = {
 };
 
 const Card = ({
+  ability1Description,
   ability1Title,
   active,
   id,
@@ -24,7 +26,9 @@ const Card = ({
     onMouseDown={(): void => handleCardMouseDown(id)}>
     <p className='title'>{title}</p>
     <p className={'subtext subtitle'}>{subtitle}</p>
-    {ability1Title && <p className='subtext ability1Title'>{ability1Title}</p>}
+    {ability1Title &&
+      <p className='subtext ability1Title'>{ability1Title} - {ability1Description}</p>
+    }
   </Style>;
 
 export default memo(Card);
