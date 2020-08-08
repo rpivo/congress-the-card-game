@@ -2,7 +2,7 @@
 
 exports[`App should render correctly 1`] = `
 <div
-  className="sc-AxhCb fdCcWR app"
+  className="sc-AxhCb ibZCxn app"
   onClick={[Function]}
 >
   <div
@@ -81,6 +81,22 @@ exports[`App should render correctly 1`] = `
         className="title"
       >
         California
+      </p>
+      <p
+        className="subtext subtitle"
+      >
+        state
+      </p>
+    </div>
+    <div
+      className="sc-AxiKw ceZKiz card"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <p
+        className="title"
+      >
+        Colorado
       </p>
       <p
         className="subtext subtitle"
