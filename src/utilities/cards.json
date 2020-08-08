@@ -46,6 +46,11 @@
     "type": "person"
   },
   "0008": {
+    "name": "Gina Haspel",
+    "group": "cabinet",
+    "type": "person"
+  },
+  "0009": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

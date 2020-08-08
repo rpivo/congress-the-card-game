@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Style from './style';
 
 const HandIcon = (): JSX.Element =>
@@ -36,4 +36,4 @@ const HandIcon = (): JSX.Element =>
     </svg>
   </Style>;
 
-export default HandIcon;
+export default memo(HandIcon);
