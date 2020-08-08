@@ -1,4 +1,5 @@
 import React, { memo, useState } from 'react';
+import TakeIcon from './TakeIcon';
 import Style from '@components/Card/style';
 
 const Deck = (): JSX.Element => {
@@ -8,7 +9,7 @@ const Deck = (): JSX.Element => {
       <Style
         className={`stackedCard${canDrawCard ? ' canDrawCard' : ''}`}
         onClick={() => setCanDrawCard(false)}>
-        {canDrawCard && <p className='deckParagraph'>Draw a card.</p>}
+        {canDrawCard && <TakeIcon />}
       </Style>
     </Style>
   );

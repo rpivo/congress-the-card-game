@@ -27,6 +27,7 @@ Ends August 17, 2020
 - wrap Card-populating logic in its own function.
 - format ability text with both title and description.
 - add green highlight to Deck component when a card can be drawn.
+- add TakeIcon to Deck component.
 
 ## Sprint 1
 Ended August 3, 2020

@@ -55,6 +55,15 @@ const Style = styled.div`
     &.canDrawCard:hover {
       background: #9FFFB0;
     }
+
+    .takeIcon {
+      margin-top: 60px;
+      text-align: center;
+  
+      p {
+        margin-top: 10px;
+      }
+    }
   }
 `;
 
