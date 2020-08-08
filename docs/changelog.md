@@ -26,6 +26,7 @@ Ends August 17, 2020
 - memoize HandIcon component.
 - wrap Card-populating logic in its own function.
 - format ability text with both title and description.
+- add green highlight to Deck component when a card can be drawn.
 
 ## Sprint 1
 Ended August 3, 2020

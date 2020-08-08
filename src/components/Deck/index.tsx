@@ -5,7 +5,9 @@ const Deck = (): JSX.Element => {
   const [canDrawCard, setCanDrawCard] = useState(true);
   return (
     <Style className='deck'>
-      <Style className='stackedCard' onClick={() => setCanDrawCard(false)}>
+      <Style
+        className={`stackedCard${canDrawCard ? ' canDrawCard' : ''}`}
+        onClick={() => setCanDrawCard(false)}>
         {canDrawCard && <p className='deckParagraph'>Draw a card.</p>}
       </Style>
     </Style>

@@ -51,6 +51,10 @@ const Style = styled.div`
   &.stackedCard {
     margin-left: -11px;
     margin-top: -11px;
+
+    &.canDrawCard:hover {
+      background: #9FFFB0;
+    }
   }
 `;
 
