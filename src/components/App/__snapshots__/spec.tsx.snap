@@ -149,6 +149,22 @@ exports[`App should render correctly 1`] = `
       <p
         className="title"
       >
+        Gina Haspel
+      </p>
+      <p
+        className="subtext subtitle"
+      >
+        cabinet
+      </p>
+    </div>
+    <div
+      className="sc-AxiKw ceZKiz card"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <p
+        className="title"
+      >
         Lamar Alexander
       </p>
       <p
