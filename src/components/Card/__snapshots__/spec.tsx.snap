@@ -60,6 +60,15 @@ exports[`Card should render correctly 1`] = `
   background: #9FFFB0;
 }
 
+.c0.stackedCard .takeIcon {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.c0.stackedCard .takeIcon p {
+  margin-top: 10px;
+}
+
 <div
   className="c0 card"
   onClick={[Function]}

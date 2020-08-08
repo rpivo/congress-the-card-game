@@ -60,6 +60,15 @@ exports[`PlayArea should render correctly 1`] = `
   background: #9FFFB0;
 }
 
+.c1.stackedCard .takeIcon {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.c1.stackedCard .takeIcon p {
+  margin-top: 10px;
+}
+
 .c0 {
   border: 1px solid blue;
   display: grid;
@@ -283,11 +292,48 @@ exports[`PlayArea should render correctly 1`] = `
       className="c1 stackedCard canDrawCard"
       onClick={[Function]}
     >
-      <p
-        className="deckParagraph"
+      <div
+        className="takeIcon"
       >
-        Draw a card.
-      </p>
+        <svg
+          height="50"
+          viewBox="0 0 703 703"
+          width="50"
+        >
+          <g
+            transform="translate(-398 -203)"
+          >
+            <circle
+              cx="351.5"
+              cy="351.5"
+              fill="#707070"
+              r="351.5"
+              transform="translate(398 203)"
+            />
+            <path
+              d="M136,136,0,272ZM0,0,136,136Z"
+              fill="none"
+              stroke="#fff"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="100"
+              transform="translate(805.5 418.5)"
+            />
+            <line
+              fill="none"
+              stroke="#fff"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="100"
+              transform="translate(556.5 554.5)"
+              x2="385"
+            />
+          </g>
+        </svg>
+        <p>
+          Take a Card
+        </p>
+      </div>
     </div>
   </div>
 </div>

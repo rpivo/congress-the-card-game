@@ -9,7 +9,7 @@ exports[`App should render correctly 1`] = `
     className="sc-AxirZ kyZKvQ playArea"
   >
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -25,7 +25,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -41,7 +41,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -57,7 +57,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -73,7 +73,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -89,7 +89,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -105,7 +105,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -121,7 +121,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -144,7 +144,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -167,7 +167,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -183,7 +183,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj card"
+      className="sc-AxiKw bsEENz card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -199,17 +199,54 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxiKw cFeAAj deck"
+      className="sc-AxiKw bsEENz deck"
     >
       <div
-        className="sc-AxiKw cFeAAj stackedCard canDrawCard"
+        className="sc-AxiKw bsEENz stackedCard canDrawCard"
         onClick={[Function]}
       >
-        <p
-          className="deckParagraph"
+        <div
+          className="takeIcon"
         >
-          Draw a card.
-        </p>
+          <svg
+            height="50"
+            viewBox="0 0 703 703"
+            width="50"
+          >
+            <g
+              transform="translate(-398 -203)"
+            >
+              <circle
+                cx="351.5"
+                cy="351.5"
+                fill="#707070"
+                r="351.5"
+                transform="translate(398 203)"
+              />
+              <path
+                d="M136,136,0,272ZM0,0,136,136Z"
+                fill="none"
+                stroke="#fff"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="100"
+                transform="translate(805.5 418.5)"
+              />
+              <line
+                fill="none"
+                stroke="#fff"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="100"
+                transform="translate(556.5 554.5)"
+                x2="385"
+              />
+            </g>
+          </svg>
+          <p>
+            Take a Card
+          </p>
+        </div>
       </div>
     </div>
   </div>
