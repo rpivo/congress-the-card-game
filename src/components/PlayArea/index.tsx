@@ -27,23 +27,27 @@ const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.E
     setActiveCard(id);
   };
 
-  const cards = [];
-  for (const [id, card] of Object.entries(cardData)) {
-    cards.push(
-      <Card
-        ability1Title={(card as CardType).abilities?.ability1?.title}
-        active={activeCard === id}
-        handleCardMouseDown={handleCardMouseDown}
-        id={id}
-        key={id}
-        title={card.name}
-        subtitle={card.group}
-      />
-    );
-  }
+  const getCards = () => {
+    const cards = [];
+    for (const [id, card] of Object.entries(cardData)) {
+      cards.push(
+        <Card
+          ability1Title={(card as CardType).abilities?.ability1?.title}
+          active={activeCard === id}
+          handleCardMouseDown={handleCardMouseDown}
+          id={id}
+          key={id}
+          title={card.name}
+          subtitle={card.group}
+        />
+      );
+    }
+    return cards;
+  };
+
   return (
     <Style className='playArea'>
-      {cards}
+      {getCards()}
       <Deck />
     </Style>
   );

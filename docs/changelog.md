@@ -24,6 +24,7 @@ Ends August 17, 2020
 - add ability text to Card components.
 - update styles for App component so that it fills the screen.
 - memoize HandIcon component.
+- wrap Card-populating logic in its own function.
 
 ## Sprint 1
 Ended August 3, 2020
