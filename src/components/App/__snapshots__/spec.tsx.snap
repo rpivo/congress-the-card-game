@@ -112,6 +112,22 @@ exports[`App should render correctly 1`] = `
       <p
         className="title"
       >
+        Connecticut
+      </p>
+      <p
+        className="subtext subtitle"
+      >
+        state
+      </p>
+    </div>
+    <div
+      className="sc-AxiKw ceZKiz card"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <p
+        className="title"
+      >
         Sonny Perdue
       </p>
       <p
@@ -123,6 +139,8 @@ exports[`App should render correctly 1`] = `
         className="subtext ability1Title"
       >
         Judo Chop
+         - 
+        Deal 20 damage to player.
       </p>
     </div>
     <div
@@ -139,6 +157,13 @@ exports[`App should render correctly 1`] = `
         className="subtext subtitle"
       >
         cabinet
+      </p>
+      <p
+        className="subtext ability1Title"
+      >
+        Banshee Call
+         - 
+        Skip opponent's next turn.
       </p>
     </div>
     <div
