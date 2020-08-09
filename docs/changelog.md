@@ -28,6 +28,7 @@ Ends August 17, 2020
 - format ability text with both title and description.
 - add green highlight to Deck component when a card can be drawn.
 - add TakeIcon to Deck component.
+- make Card components slightly bigger.
 
 ## Sprint 1
 Ended August 3, 2020

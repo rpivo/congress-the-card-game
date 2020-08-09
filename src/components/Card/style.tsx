@@ -5,11 +5,11 @@ const Style = styled.div`
   border-radius: 5px;
   cursor: pointer;
   display: inline-block;
-  height: 182px;
+  height: 210px;
   padding: 8px;
   place-self: center;
   transition: box-shadow 0.2s ease-in-out;
-  width: 130px;
+  width: 150px;
 
   p {
     margin-bottom: 0;
