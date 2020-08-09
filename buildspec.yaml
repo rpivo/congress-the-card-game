@@ -8,9 +8,9 @@ phases:
   build:
     commands:
       - echo running tests...
-      - npm run test
+      - npx test
       - echo building...
-      - npx jest
+      - npm run build
 
 artifacts:
   files:
