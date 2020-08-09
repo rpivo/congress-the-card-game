@@ -6,12 +6,12 @@ exports[`PlayArea should render correctly 1`] = `
   border-radius: 5px;
   cursor: pointer;
   display: inline-block;
-  height: 182px;
+  height: 210px;
   padding: 8px;
   place-self: center;
   -webkit-transition: box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
-  width: 130px;
+  width: 150px;
 }
 
 .c1 p {
@@ -73,22 +73,22 @@ exports[`PlayArea should render correctly 1`] = `
   border: 1px solid blue;
   display: grid;
   grid-row-gap: 8px;
-  grid-template-columns: repeat(10,156px [col-start]);
+  grid-template-columns: repeat(10,175px [col-start]);
   margin: 0 auto;
-  width: 1560px;
+  width: 1750px;
 }
 
 @media screen and (max-width:1750px) {
   .c0 {
-    grid-template-columns: repeat(8,156px [col-start]);
-    width: 1248px;
+    grid-template-columns: repeat(8,175px [col-start]);
+    width: 1400px;
   }
 }
 
 @media screen and (max-width:1500px) {
   .c0 {
-    grid-template-columns: repeat(6,156px [col-start]);
-    width: 936px;
+    grid-template-columns: repeat(6,175px [col-start]);
+    width: 1050px;
   }
 }
 
