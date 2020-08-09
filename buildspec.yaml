@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - echo running tests...
-      - npx test
+      - npx jest
       - echo building...
       - npm run build
 
