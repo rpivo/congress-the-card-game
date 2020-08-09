@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo installing packages...
+      - npm install
+  build:
+    commands:
+      - echo running tests...
+      - npm run test
+      - echo building...
+      - npm run build
+
+artifacts:
+  files:
+    - dist/*
+  discard-paths: yes
