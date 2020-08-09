@@ -10,7 +10,7 @@ phases:
       - echo running tests...
       - npm run test
       - echo building...
-      - npm run build
+      - npx jest
 
 artifacts:
   files:

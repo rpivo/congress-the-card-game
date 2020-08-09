@@ -32,6 +32,7 @@ Ends August 17, 2020
 - add Hand component.
 - add back `svgCard` classname on HandIcon `<g />` elements.
 - add buildspec for AWS CodeBuild.
+- update buildspec so that testing closes onces finished.
 
 ## Sprint 1
 Ended August 3, 2020
