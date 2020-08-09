@@ -29,6 +29,7 @@ Ends August 17, 2020
 - add green highlight to Deck component when a card can be drawn.
 - add TakeIcon to Deck component.
 - make Card components slightly bigger.
+- add Hand component.
 
 ## Sprint 1
 Ended August 3, 2020
