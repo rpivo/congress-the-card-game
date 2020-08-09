@@ -30,6 +30,7 @@ Ends August 17, 2020
 - add TakeIcon to Deck component.
 - make Card components slightly bigger.
 - add Hand component.
+- add back `svgCard` classname on HandIcon `<g />` elements.
 
 ## Sprint 1
 Ended August 3, 2020
