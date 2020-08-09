@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Deck should render correctly 1`] = `
+.c0 {
+  bottom: 25px;
+  cursor: pointer;
+  position: fixed;
+  right: 25px;
+}
+
+.c0 svg {
+  height: 75px;
+  width: 75px;
+}
+
+.c0 svg:hover .svgCard {
+  fill: rgb(255,255,255);
+  stroke: rgb(112,112,112);
+}
+
+<div
+  className="c0 handIcon"
+  onClick={[Function]}
+>
+  <svg
+    height="421.425"
+    viewBox="0 0 445.805 421.425"
+    width="445.805"
+  >
+    <g
+      transform="translate(-195.558 -456.564)"
+    >
+      <g
+        className="svgCard"
+        fill="#707070"
+        stroke="#fff"
+        strokeWidth="12"
+        transform="matrix(0.995, 0.105, -0.105, 0.995, 392.732, 495.977)"
+      >
+        <rect
+          height="350"
+          rx="15"
+          stroke="none"
+          width="250"
+        />
+        <rect
+          fill="none"
+          height="338"
+          rx="9"
+          width="238"
+          x="6"
+          y="6"
+        />
+      </g>
+      <g
+        className="svgCard"
+        fill="#707070"
+        stroke="#fff"
+        strokeWidth="12"
+        transform="translate(290.401 516.605) rotate(-9)"
+      >
+        <rect
+          height="350"
+          rx="15"
+          stroke="none"
+          width="250"
+        />
+        <rect
+          fill="none"
+          height="338"
+          rx="9"
+          width="238"
+          x="6"
+          y="6"
+        />
+      </g>
+      <g
+        className="svgCard"
+        fill="#707070"
+        stroke="#fff"
+        strokeWidth="12"
+        transform="matrix(0.914, -0.407, 0.407, 0.914, 195.558, 558.248)"
+      >
+        <rect
+          height="350"
+          rx="15"
+          stroke="none"
+          width="250"
+        />
+        <rect
+          fill="none"
+          height="338"
+          rx="9"
+          width="238"
+          x="6"
+          y="6"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;

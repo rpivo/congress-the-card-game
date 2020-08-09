@@ -263,6 +263,7 @@ exports[`App should render correctly 1`] = `
         transform="translate(-195.558 -456.564)"
       >
         <g
+          className="svgCard"
           fill="#707070"
           stroke="#fff"
           strokeWidth="12"
@@ -284,6 +285,7 @@ exports[`App should render correctly 1`] = `
           />
         </g>
         <g
+          className="svgCard"
           fill="#707070"
           stroke="#fff"
           strokeWidth="12"
@@ -305,6 +307,7 @@ exports[`App should render correctly 1`] = `
           />
         </g>
         <g
+          className="svgCard"
           fill="#707070"
           stroke="#fff"
           strokeWidth="12"
