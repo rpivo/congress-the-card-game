@@ -19,12 +19,20 @@ type CardType = {
 type PlayAreaProps = {
   activeCard: string;
   setActiveCard: React.Dispatch<React.SetStateAction<string>>;
+  setShouldDisplayHand: React.Dispatch<React.SetStateAction<boolean>>;
+  shouldDisplayHand: boolean;
 };
 
-const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.Element => {
+const PlayArea = ({
+  activeCard,
+  setActiveCard,
+  setShouldDisplayHand,
+  shouldDisplayHand,
+}: Readonly<PlayAreaProps>): JSX.Element => {
   const handleCardMouseDown = (id: string) => {
     if (id === activeCard) id = '';
     setActiveCard(id);
+    if (shouldDisplayHand) setShouldDisplayHand(false);
   };
 
   const getCards = () => {

@@ -15,7 +15,11 @@ const App = (): JSX.Element => {
 
   return (
     <Style className='app' onClick={() => (activeCard || shouldDisplayHand) && handleClick()}>
-      <PlayArea activeCard={activeCard} setActiveCard={setActiveCard} />
+      <PlayArea
+        activeCard={activeCard}
+        setActiveCard={setActiveCard}
+        setShouldDisplayHand={setShouldDisplayHand}
+        shouldDisplayHand={shouldDisplayHand} />
       <HandIcon setShouldDisplayHand={setShouldDisplayHand} />
       <Hand shouldDisplayHand={shouldDisplayHand} />
     </Style>

@@ -45,6 +45,16 @@ describe('App', () => {
       wrapper.find('.hand').at(0).simulate('click');
       expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
     });
+
+    it(`should hide the Hand component if it's already displaying and a Card compnent is
+    clicked`, () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      wrapper.find('.handIcon').at(0).simulate('click');
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      wrapper.find('.card').at(0).simulate('mousedown');
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+    });
   });
 
   describe('handleClick', () => {

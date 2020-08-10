@@ -8,8 +8,13 @@ import Deck from '@components/Deck';
 import PlayArea from '@components/PlayArea';
 
 describe('PlayArea', () => {
-  const setActiveCard = jest.fn();
-  const PlayAreaMock = <PlayArea activeCard={''} setActiveCard={setActiveCard} />;
+  const PlayAreaMock =
+    <PlayArea
+      activeCard={''}
+      setActiveCard={jest.fn()}
+      setShouldDisplayHand={jest.fn()}
+      shouldDisplayHand={false}
+    />;
 
   it('should render correctly', () => {
     const tree = renderer
