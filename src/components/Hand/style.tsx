@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Style = styled.div`
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.8);
   bottom: 0;
   height: 125px;
   left: 0;

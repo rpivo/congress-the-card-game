@@ -1,10 +1,8 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import { act } from 'react-dom/test-utils';
 import renderer from 'react-test-renderer';
 import App from '@components/App';
 import Hand from '@components/Hand';
-import HandIcon from '@components/HandIcon';
 import PlayArea from '@components/PlayArea';
 
 describe('App', () => {
@@ -15,7 +13,7 @@ describe('App', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  describe('PlayArea', () => {
+  describe('activeCard state', () => {
     it('should render the PlayArea', () => {
       const wrapper = mount(<App />);
       expect(wrapper.find(PlayArea)).toHaveLength(1);
@@ -35,6 +33,17 @@ describe('App', () => {
       expect(wrapper.find('.card').at(0).hasClass('active')).toBe(true);
       wrapper.find('.playArea').at(0).simulate('click');
       expect(wrapper.find('.card').at(0).hasClass('active')).toBe(false);
+    });
+  });
+
+  describe('shouldDisplayHand state', () => {
+    it('should not hide the Hand component if it\'s already displaying and it\'s clicked', () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      wrapper.find('.handIcon').at(0).simulate('click');
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      wrapper.find('.hand').at(0).simulate('click');
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
     });
   });
 

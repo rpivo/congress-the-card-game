@@ -332,7 +332,8 @@ exports[`App should render correctly 1`] = `
     </svg>
   </div>
   <div
-    className="sc-AxjAm kLEVMk hand hidden"
+    className="sc-AxjAm ctHpwa hand hidden"
+    onClick={[Function]}
   />
 </div>
 `;

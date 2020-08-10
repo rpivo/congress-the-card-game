@@ -6,6 +6,9 @@ type HandProps = {
 };
 
 const Hand = ({ shouldDisplayHand }: HandProps): JSX.Element =>
-  <Style className={`hand${shouldDisplayHand ? '' : ' hidden'}`}></Style>;
+  <Style
+    className={`hand${shouldDisplayHand ? '' : ' hidden'}`}
+    onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}>
+  </Style>;
 
 export default Hand;
