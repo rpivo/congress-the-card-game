@@ -5,18 +5,17 @@ import renderer from 'react-test-renderer';
 import HandIcon from '@components/HandIcon';
 
 describe('Deck', () => {
-  const HandIconMock = <HandIcon setShouldDisplayHand={jest.fn()} />;
 
   it('should render correctly', () => {
     const tree = renderer
-      .create(HandIconMock)
+      .create(<HandIcon />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   describe('hover', () => {
     it('should update style on hover', () => {
-      const wrapper = mount(HandIconMock);
+      const wrapper = mount(<HandIcon />);
       expect(wrapper.find('div')).toHaveStyleRule(
         'fill',
         'rgb(255,255,255)',

@@ -1,6 +1,5 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import { act } from 'react-dom/test-utils';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import Card from '@components/Card';
@@ -9,12 +8,7 @@ import PlayArea from '@components/PlayArea';
 
 describe('PlayArea', () => {
   const PlayAreaMock =
-    <PlayArea
-      activeCard={''}
-      setActiveCard={jest.fn()}
-      setShouldDisplayHand={jest.fn()}
-      shouldDisplayHand={false}
-    />;
+    <PlayArea activeCard={''} setActiveCard={jest.fn()} shouldDisplayHand={false} />;
 
   it('should render correctly', () => {
     const tree = renderer
@@ -39,15 +33,6 @@ describe('PlayArea', () => {
     it('should should initially contain the "Draw a Card." paragraph', () => {
       const wrapper = mount(PlayAreaMock);
       expect(wrapper.find(Deck).find('p')).toHaveLength(1);
-    });
-
-    it('should not contain a "Draw a card." paragraph tag after being clicked', () => {
-      const wrapper = mount(PlayAreaMock);
-      const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
-      const event = {} as React.MouseEvent;
-      if (selector) act(() => selector(event));
-      wrapper.update();
-      expect(wrapper.find(Deck).find('p')).toHaveLength(0);
     });
   });
 });

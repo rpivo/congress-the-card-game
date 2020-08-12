@@ -1,5 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
+import { act } from 'react-dom/test-utils';
 import renderer from 'react-test-renderer';
 import App from '@components/App';
 import Hand from '@components/Hand';
@@ -53,6 +54,41 @@ describe('App', () => {
       wrapper.find('.handIcon').at(0).simulate('click');
       expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
       wrapper.find('.card').at(0).simulate('mousedown');
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+    });
+
+    it('should not display the TakeIcon on the Deck once the deck is clicked', () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find('.takeIcon')).toHaveLength(1);
+      const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
+      const event = {} as React.MouseEvent;
+      if (selector) act(() => selector(event));
+      wrapper.update();
+      expect(wrapper.find('.takeIcon')).toHaveLength(0);
+    });
+
+    it('should show the Hand if the Deck is clicked when the TakeIcon is showing', () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find('.hand').find('.hidden').at(0)).toHaveLength(1);
+      expect(wrapper.find('.takeIcon')).toHaveLength(1);
+      const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
+      const event = {} as React.MouseEvent;
+      if (selector) act(() => selector(event));
+      wrapper.update();
+      expect(wrapper.find('.hand').find('.hidden').at(0)).toHaveLength(0);
+    });
+
+    it('should not show the Hand if the Deck is clicked when the TakeIcon is not showing', () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      const event = {} as React.MouseEvent;
+      const deckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (deckSelector) act(() => deckSelector(event));
+      wrapper.update();
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      const appSelector = wrapper.find('div').at(0).prop('onClick');
+      if (appSelector) act(() => appSelector(event));
+      wrapper.update();
       expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
     });
   });

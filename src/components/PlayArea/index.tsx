@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Style from './style';
 import Card from '@components/Card';
 import Deck from '@components/Deck';
+import { AppContext } from '@components/App';
 import cardData from '@utilities/cards.json';
 
 type CardType = {
@@ -19,16 +20,16 @@ type CardType = {
 type PlayAreaProps = {
   activeCard: string;
   setActiveCard: React.Dispatch<React.SetStateAction<string>>;
-  setShouldDisplayHand: React.Dispatch<React.SetStateAction<boolean>>;
   shouldDisplayHand: boolean;
 };
 
 const PlayArea = ({
   activeCard,
   setActiveCard,
-  setShouldDisplayHand,
   shouldDisplayHand,
 }: Readonly<PlayAreaProps>): JSX.Element => {
+  const { setShouldDisplayHand } = useContext(AppContext);
+
   const handleCardMouseDown = (id: string) => {
     if (id === activeCard) id = '';
     setActiveCard(id);

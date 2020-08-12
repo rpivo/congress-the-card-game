@@ -1,11 +1,10 @@
-import React, { memo } from 'react';
+import React, { memo, useContext } from 'react';
+import { AppContext } from '@components/App';
 import Style from './style';
 
-type HandIconProps = {
-  setShouldDisplayHand: React.Dispatch<React.SetStateAction<boolean>>;
-};
+const HandIcon = (): JSX.Element => {
+  const { setShouldDisplayHand } = useContext(AppContext);
 
-const HandIcon = ({ setShouldDisplayHand }: Readonly<HandIconProps>): JSX.Element => {
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
     event.stopPropagation();
     setShouldDisplayHand(true);

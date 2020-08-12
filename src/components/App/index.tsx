@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import Hand from '@components/Hand';
 import HandIcon from '@components/HandIcon';
 import PlayArea from '@components/PlayArea';
 import Style from './style';
+
+type Context = {
+  setShouldDisplayHand: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const AppContext = createContext({} as Context);
 
 const App = (): JSX.Element => {
   const [activeCard, setActiveCard] = useState('');
@@ -15,13 +21,14 @@ const App = (): JSX.Element => {
 
   return (
     <Style className='app' onClick={() => (activeCard || shouldDisplayHand) && handleClick()}>
-      <PlayArea
-        activeCard={activeCard}
-        setActiveCard={setActiveCard}
-        setShouldDisplayHand={setShouldDisplayHand}
-        shouldDisplayHand={shouldDisplayHand} />
-      <HandIcon setShouldDisplayHand={setShouldDisplayHand} />
-      <Hand shouldDisplayHand={shouldDisplayHand} />
+      <AppContext.Provider value={{ setShouldDisplayHand }}>
+        <PlayArea
+          activeCard={activeCard}
+          setActiveCard={setActiveCard}
+          shouldDisplayHand={shouldDisplayHand} />
+        <HandIcon />
+        <Hand shouldDisplayHand={shouldDisplayHand} />
+      </AppContext.Provider>
     </Style>
   );
 };
