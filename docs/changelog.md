@@ -37,6 +37,7 @@ Ends August 17, 2020
 - hide Hand component if it's already displaying and a Card compnent is clicked.
 - Refactor App component to pass down setShouldDisplayHand with Context.
 - usereducer for Hand actions, move App reducer logic to store file.
+- test out buildspec post_build phase.
 
 ## Sprint 1
 Ended August 3, 2020

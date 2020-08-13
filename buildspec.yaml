@@ -11,6 +11,9 @@ phases:
       - npx jest
       - echo building...
       - npm run build
+  post_build:
+    commands:
+      - aws s3 cp dist/* $BUCKET
 
 artifacts:
   files:
