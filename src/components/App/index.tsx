@@ -1,34 +1,27 @@
-import React, { createContext, useState } from 'react';
+import React from 'react';
 import Hand from '@components/Hand';
 import HandIcon from '@components/HandIcon';
 import PlayArea from '@components/PlayArea';
+import { Context, Reducer, State } from './store';
 import Style from './style';
 
-type Context = {
-  setShouldDisplayHand: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-export const AppContext = createContext({} as Context);
-
 const App = (): JSX.Element => {
-  const [activeCard, setActiveCard] = useState('');
-  const [shouldDisplayHand, setShouldDisplayHand] = useState(false);
+  const [activeCard, setActiveCard] = React.useState('');
+  const [state, dispatch] = React.useReducer(Reducer, State);
+  const { shouldDisplayHand } = state;
 
   const handleClick = () => {
-    setActiveCard('');
-    setShouldDisplayHand(false);
+    if (activeCard) setActiveCard('');
+    if (shouldDisplayHand) dispatch('HIDE_HAND');
   };
 
   return (
-    <Style className='app' onClick={() => (activeCard || shouldDisplayHand) && handleClick()}>
-      <AppContext.Provider value={{ setShouldDisplayHand }}>
-        <PlayArea
-          activeCard={activeCard}
-          setActiveCard={setActiveCard}
-          shouldDisplayHand={shouldDisplayHand} />
+    <Style className='app' onClick={() => handleClick()}>
+      <Context.Provider value={{ dispatch, state }}>
+        <PlayArea activeCard={activeCard} setActiveCard={setActiveCard} />
         <HandIcon />
-        <Hand shouldDisplayHand={shouldDisplayHand} />
-      </AppContext.Provider>
+        <Hand />
+      </Context.Provider>
     </Style>
   );
 };

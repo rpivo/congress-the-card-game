@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Style from './style';
 import Card from '@components/Card';
 import Deck from '@components/Deck';
-import { AppContext } from '@components/App';
+import { Context } from '@components/App/store';
 import cardData from '@utilities/cards.json';
 
 type CardType = {
@@ -20,20 +20,16 @@ type CardType = {
 type PlayAreaProps = {
   activeCard: string;
   setActiveCard: React.Dispatch<React.SetStateAction<string>>;
-  shouldDisplayHand: boolean;
 };
 
-const PlayArea = ({
-  activeCard,
-  setActiveCard,
-  shouldDisplayHand,
-}: Readonly<PlayAreaProps>): JSX.Element => {
-  const { setShouldDisplayHand } = useContext(AppContext);
+const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.Element => {
+  const { dispatch, state } = React.useContext(Context);
+  const { shouldDisplayHand } = state;
 
   const handleCardMouseDown = (id: string) => {
     if (id === activeCard) id = '';
     setActiveCard(id);
-    if (shouldDisplayHand) setShouldDisplayHand(false);
+    if (shouldDisplayHand) dispatch('HIDE_HAND');
   };
 
   const getCards = () => {

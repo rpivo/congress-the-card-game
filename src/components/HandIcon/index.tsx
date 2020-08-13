@@ -1,13 +1,13 @@
-import React, { memo, useContext } from 'react';
-import { AppContext } from '@components/App';
+import React from 'react';
+import { Context } from '@components/App/store';
 import Style from './style';
 
 const HandIcon = (): JSX.Element => {
-  const { setShouldDisplayHand } = useContext(AppContext);
+  const { dispatch } = React.useContext(Context);
 
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
     event.stopPropagation();
-    setShouldDisplayHand(true);
+    dispatch('SHOW_HAND');
   };
 
   return (
@@ -49,4 +49,4 @@ const HandIcon = (): JSX.Element => {
   );
 };
 
-export default memo(HandIcon);
+export default React.memo(HandIcon);

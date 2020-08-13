@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import Style from './style';
 
 type CardProps = {
@@ -31,4 +31,4 @@ const Card = ({
     }
   </Style>;
 
-export default memo(Card);
+export default React.memo(Card);

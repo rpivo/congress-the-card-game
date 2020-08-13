@@ -5,10 +5,13 @@ import 'jest-styled-components';
 import Card from '@components/Card';
 import Deck from '@components/Deck';
 import PlayArea from '@components/PlayArea';
+import { Context, State } from '@components/App/store';
 
 describe('PlayArea', () => {
   const PlayAreaMock =
-    <PlayArea activeCard={''} setActiveCard={jest.fn()} shouldDisplayHand={false} />;
+    <Context.Provider value={{ dispatch: jest.fn(), state: State }}>
+      <PlayArea activeCard={''} setActiveCard={jest.fn()} />
+    </Context.Provider>;
 
   it('should render correctly', () => {
     const tree = renderer

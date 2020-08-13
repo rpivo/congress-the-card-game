@@ -1,26 +1,21 @@
-import React, { memo, useContext, useState } from 'react';
+import React from 'react';
 import TakeIcon from './TakeIcon';
-import { AppContext } from '@components/App';
+import { Context } from '@components/App/store';
 import Style from '@components/Card/style';
 
 const Deck = (): JSX.Element => {
-  const { setShouldDisplayHand } = useContext(AppContext);
-  const [canDrawCard, setCanDrawCard] = useState(true);
-
-  const handleClick = () => {
-    setCanDrawCard(false);
-    setShouldDisplayHand(true);
-  };
+  const { dispatch, state } = React.useContext(Context);
+  const { canDrawCard } = state;
 
   return (
     <Style className='deck'>
       <Style
         className={`stackedCard${canDrawCard ? ' canDrawCard' : ''}`}
-        onClick={() => canDrawCard && handleClick()}>
+        onClick={() => canDrawCard && dispatch('DRAW_CARD')}>
         {canDrawCard && <TakeIcon />}
       </Style>
     </Style>
   );
 };
 
-export default memo(Deck);
+export default React.memo(Deck);

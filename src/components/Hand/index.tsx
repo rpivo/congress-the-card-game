@@ -1,11 +1,10 @@
 import React from 'react';
+import { Context } from '@components/App/store';
 import Style from './style';
 
-type HandProps = {
-  shouldDisplayHand: boolean;
-};
-
-const Hand = ({ shouldDisplayHand }: Readonly<HandProps>): JSX.Element => {
+const Hand = (): JSX.Element => {
+  const { state } = React.useContext(Context);
+  const { shouldDisplayHand } = state;
   return (
     <Style
       className={`hand${shouldDisplayHand ? '' : ' hidden'}`}
