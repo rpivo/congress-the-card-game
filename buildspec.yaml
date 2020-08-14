@@ -14,8 +14,3 @@ phases:
   post_build:
     commands:
       - aws s3 cp dist $BUCKET --recursive
-
-artifacts:
-  files:
-    - dist/*
-  discard-paths: yes
