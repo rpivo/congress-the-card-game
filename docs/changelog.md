@@ -41,6 +41,7 @@ Ends August 17, 2020
 - add brotli-request lambda function.
 - move tests to pre-build phase in buildspec.
 - install zip on linux in buildspec.
+- break up longish line in buildspec.
 
 ## Sprint 1
 Ended August 3, 2020

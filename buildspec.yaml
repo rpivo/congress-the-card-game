@@ -17,4 +17,9 @@ phases:
   post_build:
     commands:
       - aws s3 cp dist/index.html $BUCKET
-      - aws s3 cp dist $BUCKET --recursive --content-encoding "br" --content-type "text/javascript" --exclude "*" --include "*.br"
+      - aws s3 cp dist $BUCKET
+        --recursive
+        --content-encoding "br"
+        --content-type "text/javascript"
+        --exclude "*"
+        --include "*.br"
