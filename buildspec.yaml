@@ -13,7 +13,7 @@ phases:
   build:
     commands:
       - echo building...
-      - zip -r -D brotli-request.zip lambda/brotli-request/*
+      - zip -j brotli-request.zip lambda/brotli-request/index.py
       - npm run build
   post_build:
     commands:
