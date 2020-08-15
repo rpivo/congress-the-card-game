@@ -40,6 +40,7 @@ Ends August 17, 2020
 - update buildspec to add metadata for S3 objects.
 - add brotli-request lambda function.
 - move tests to pre-build phase in buildspec.
+- install zip on linux in buildspec.
 
 ## Sprint 1
 Ended August 3, 2020
