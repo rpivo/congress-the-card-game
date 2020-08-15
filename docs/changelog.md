@@ -46,6 +46,7 @@ Ends August 17, 2020
 - add buildspec script to update brotli-request lambda function.
 - remove -r flag for zip in buildspec.
 - add wildcard to catch any files inside zip directory in buildspec.
+- use dictionary `get()` in brotli-request lambda.
 
 ## Sprint 1
 Ended August 3, 2020
