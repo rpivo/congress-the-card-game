@@ -20,7 +20,7 @@ phases:
       - echo deploying...
       - aws lambda update-function-code
         --function-name  brotli-request
-        --zip-file fileb://lambda/brotli-request.zip
+        --zip-file fileb://brotli-request.zip
       - aws s3 cp dist/index.html $BUCKET
       - aws s3 cp dist $BUCKET
         --recursive
