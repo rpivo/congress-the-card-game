@@ -42,6 +42,7 @@ Ends August 17, 2020
 - move tests to pre-build phase in buildspec.
 - install zip on linux in buildspec.
 - break up longish line in buildspec.
+- zip brotli-request folder in buildspec.
 
 ## Sprint 1
 Ended August 3, 2020
