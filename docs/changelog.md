@@ -44,6 +44,7 @@ Ends August 17, 2020
 - break up longish line in buildspec.
 - zip brotli-request folder in buildspec.
 - add buildspec script to update brotli-request lambda function.
+- remove -r flag for zip in buildspec.
 
 ## Sprint 1
 Ended August 3, 2020
