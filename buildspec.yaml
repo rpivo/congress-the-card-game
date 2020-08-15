@@ -5,10 +5,12 @@ phases:
     commands:
       - echo installing packages...
       - npm install
-  build:
+  pre_build:
     commands:
       - echo running tests...
       - npx jest
+  build:
+    commands:
       - echo building...
       - npm run build
   post_build:
