@@ -3,12 +3,12 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo installing packages...
+      - echo installing...
       - apt install zip
       - npm install
   pre_build:
     commands:
-      - echo running tests...
+      - echo testing...
       - npx jest
   build:
     commands:
@@ -17,6 +17,10 @@ phases:
       - npm run build
   post_build:
     commands:
+      - echo deploying...
+      - aws lambda update-function-code
+        --function-name  brotli-request
+        --zip-file fileb://lambda/brotli-request.zip
       - aws s3 cp dist/index.html $BUCKET
       - aws s3 cp dist $BUCKET
         --recursive
