@@ -38,6 +38,7 @@ Ends August 17, 2020
 - Refactor App component to pass down setShouldDisplayHand with Context.
 - usereducer for Hand actions, move App reducer logic to store file.
 - update buildspec to add metadata for S3 objects.
+- add brotli-request lambda function.
 
 ## Sprint 1
 Ended August 3, 2020
