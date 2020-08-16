@@ -49,6 +49,7 @@ Ends August 17, 2020
 - use dictionary `get()` in brotli-request lambda.
 - update brotli-request lambda to handle pattern matching in Cloudfront.
 - add build scripts for prod and dev environments to allow for React profiling.
+- don't minify build for dev script.
 
 ## Sprint 1
 Ended August 3, 2020

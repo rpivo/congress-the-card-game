@@ -18,7 +18,7 @@ export default {
       react: ['react'],
       reactDOM: ['react-dom'],
     },
-    plugins: [terser()],
+    plugins: env === 'production' && [terser()],
   },
   plugins: [
     gzipPlugin({
