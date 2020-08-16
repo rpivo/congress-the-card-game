@@ -47,6 +47,7 @@ Ends August 17, 2020
 - remove -r flag for zip in buildspec.
 - add wildcard to catch any files inside zip directory in buildspec.
 - use dictionary `get()` in brotli-request lambda.
+- update brotli-request lambda to handle pattern matching in Cloudfront.
 
 ## Sprint 1
 Ended August 3, 2020
