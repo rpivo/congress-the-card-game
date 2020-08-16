@@ -8,11 +8,11 @@ import Style from './style';
 const App = (): JSX.Element => {
   const [activeCard, setActiveCard] = React.useState('');
   const [state, dispatch] = React.useReducer(Reducer, State);
-  const { shouldDisplayHand } = state;
+  const { shouldShowHand } = state;
 
   const handleClick = () => {
     if (activeCard) setActiveCard('');
-    if (shouldDisplayHand) dispatch('HIDE_HAND');
+    if (shouldShowHand) dispatch('HIDE_HAND');
   };
 
   return (

@@ -8,5 +8,10 @@ export const createStringEnum = <T extends string>(arr: Array<T>): { [K in T]: K
   }, Object.create(null));
 };
 
+// extends React's MouseEvent interface with stopPropagation()
+export interface StopPropagationMouseEvent extends React.MouseEvent {
+  stopPropagation: () => unknown;
+}
+
 // enzyme's ShallowWrapper interface with added `style` property
 export type StyledShallowWrapper = ShallowWrapper & { style: Record<string, unknown> };

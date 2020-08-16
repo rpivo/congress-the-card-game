@@ -3,11 +3,12 @@ import { Context } from '@components/App/store';
 import Style from './style';
 
 const HandIcon = (): JSX.Element => {
-  const { dispatch } = React.useContext(Context);
+  const { dispatch, state } = React.useContext(Context);
+  const { shouldShowHand } = state;
 
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
     event.stopPropagation();
-    dispatch('SHOW_HAND');
+    if (!shouldShowHand) dispatch('SHOW_HAND');
   };
 
   return (
@@ -49,4 +50,4 @@ const HandIcon = (): JSX.Element => {
   );
 };
 
-export default React.memo(HandIcon);
+export default HandIcon;

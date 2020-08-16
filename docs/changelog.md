@@ -35,7 +35,7 @@ Ends August 17, 2020
 - update buildspec so that testing closes onces finished.
 - prevent Hand component from hiding when it's clicked.
 - hide Hand component if it's already displaying and a Card compnent is clicked.
-- Refactor App component to pass down setShouldDisplayHand with Context.
+- Refactor App component to pass down setshouldShowHand with Context.
 - usereducer for Hand actions, move App reducer logic to store file.
 - update buildspec to add metadata for S3 objects.
 - add brotli-request lambda function.
@@ -50,6 +50,7 @@ Ends August 17, 2020
 - update brotli-request lambda to handle pattern matching in Cloudfront.
 - add build scripts for prod and dev environments to allow for React profiling.
 - don't minify build for dev script.
+- memoize TakeIcon.
 
 ## Sprint 1
 Ended August 3, 2020

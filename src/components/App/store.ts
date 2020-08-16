@@ -11,7 +11,7 @@ type Actions = keyof typeof Actions;
 
 export const State = {
   canDrawCard: true,
-  shouldDisplayHand: false,
+  shouldShowHand: false,
 };
 
 export const Reducer = (state: typeof State, action: Actions): typeof State => {
@@ -19,18 +19,18 @@ export const Reducer = (state: typeof State, action: Actions): typeof State => {
     case 'DRAW_CARD':
       return {
         canDrawCard: false,
-        shouldDisplayHand: true,
+        shouldShowHand: true,
       };
     case 'SHOW_HAND':
       return {
         ...state,
-        shouldDisplayHand: true,
+        shouldShowHand: true,
       };
     case 'HIDE_HAND':
     default:
       return {
         ...state,
-        shouldDisplayHand: false,
+        shouldShowHand: false,
       };
   }
 };

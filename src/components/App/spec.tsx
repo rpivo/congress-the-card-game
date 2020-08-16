@@ -2,6 +2,7 @@ import { mount } from 'enzyme';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
 import renderer from 'react-test-renderer';
+import { StopPropagationMouseEvent } from '@utilities/types';
 import App from '@components/App';
 import Hand from '@components/Hand';
 import PlayArea from '@components/PlayArea';
@@ -37,7 +38,7 @@ describe('App', () => {
     });
   });
 
-  describe('shouldDisplayHand state', () => {
+  describe('shouldShowHand state', () => {
     it('should not hide the Hand component if it\'s already displaying and it\'s clicked', () => {
       const wrapper = mount(<App />);
       expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
@@ -47,7 +48,7 @@ describe('App', () => {
       expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
     });
 
-    it(`should hide the Hand component if it's already displaying and a Card compnent is
+    it(`should hide the Hand component if it's already displaying and a Card component is
     clicked`, () => {
       const wrapper = mount(<App />);
       expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
@@ -90,6 +91,37 @@ describe('App', () => {
       if (appSelector) act(() => appSelector(event));
       wrapper.update();
       expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+    });
+
+    it('should show the hand when the HandIcon is clicked', () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      const event = {
+        altKey: false,
+        button: 0,
+        buttons: 0,
+        clientX: 0,
+        clientY: 0,
+        ctrlKey: false,
+        metaKey: false,
+        movementX: 0,
+        movementY: 0,
+        pageX: 0,
+        pageY: 0,
+        relatedTarget: null,
+        screenX: 0,
+        screenY: 0,
+        shiftKey: false,
+        stopPropagation: jest.fn(),
+      } as unknown as StopPropagationMouseEvent;
+      const selector = wrapper.find('.handIcon').find('div').at(0).prop('onClick');
+      if (selector) act(() => selector(event));
+      wrapper.update();
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      const updatedSelector = wrapper.find('.handIcon').find('div').at(0).prop('onClick');
+      if (updatedSelector) act(() => updatedSelector(event));
+      wrapper.update();
+      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
     });
   });
 

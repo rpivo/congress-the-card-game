@@ -3,19 +3,24 @@ import 'jest-styled-components';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import HandIcon from '@components/HandIcon';
+import { Context, State } from '@components/App/store';
 
 describe('Deck', () => {
+  const HandIconMock =
+    <Context.Provider value={{ dispatch: jest.fn(), state: State }}>
+      <HandIcon />
+    </Context.Provider>;
 
   it('should render correctly', () => {
     const tree = renderer
-      .create(<HandIcon />)
+      .create(HandIconMock)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   describe('hover', () => {
     it('should update style on hover', () => {
-      const wrapper = mount(<HandIcon />);
+      const wrapper = mount(HandIconMock);
       expect(wrapper.find('div')).toHaveStyleRule(
         'fill',
         'rgb(255,255,255)',

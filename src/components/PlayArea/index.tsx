@@ -24,12 +24,12 @@ type PlayAreaProps = {
 
 const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.Element => {
   const { dispatch, state } = React.useContext(Context);
-  const { shouldDisplayHand } = state;
+  const { shouldShowHand } = state;
 
   const handleCardMouseDown = (id: string) => {
     if (id === activeCard) id = '';
     setActiveCard(id);
-    if (shouldDisplayHand) dispatch('HIDE_HAND');
+    if (shouldShowHand) dispatch('HIDE_HAND');
   };
 
   const getCards = () => {

@@ -4,10 +4,10 @@ import Style from './style';
 
 const Hand = (): JSX.Element => {
   const { state } = React.useContext(Context);
-  const { shouldDisplayHand } = state;
+  const { shouldShowHand } = state;
   return (
     <Style
-      className={`hand${shouldDisplayHand ? '' : ' hidden'}`}
+      className={`hand${shouldShowHand ? '' : ' hidden'}`}
       onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}>
     </Style>
   );

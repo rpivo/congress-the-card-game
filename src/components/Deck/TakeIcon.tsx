@@ -26,4 +26,4 @@ const TakeIcon = (): JSX.Element =>
     <p>Take a Card</p>
   </div>;
 
-export default TakeIcon;
+export default React.memo(TakeIcon);
