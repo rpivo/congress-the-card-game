@@ -9,7 +9,7 @@ const TakeIcon = (): JSX.Element =>
           d='M136,136,0,272ZM0,0,136,136Z'
           transform='translate(805.5 418.5)'
           fill='none'
-          stroke='#fff'
+          stroke='#EAEAEA'
           strokeLinecap='round'
           strokeLinejoin='round'
           strokeWidth='100' />
@@ -17,7 +17,7 @@ const TakeIcon = (): JSX.Element =>
           x2='385'
           transform='translate(556.5 554.5)'
           fill='none'
-          stroke='#fff'
+          stroke='#EAEAEA'
           strokeLinecap='round'
           strokeLinejoin='round'
           strokeWidth='100' />

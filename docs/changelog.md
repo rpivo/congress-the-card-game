@@ -1,5 +1,11 @@
+## Sprint 3
+Ends August 31, 2020
+
+### Updates
+- update styles for TakeIcon component.
+
 ## Sprint 2
-Ends August 17, 2020
+Ended August 17, 2020
 
 ### Updates
 

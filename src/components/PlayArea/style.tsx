@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Breakpoints from '@utilities/breakpoints';
 
 const Style = styled.div`
-  border: 1px solid blue;
   display: grid;
   grid-row-gap: 8px;
   grid-template-columns: repeat(10, 175px [col-start]);
