@@ -6,10 +6,10 @@ exports[`App should render correctly 1`] = `
   onClick={[Function]}
 >
   <div
-    className="sc-AxiKw fGegve playArea"
+    className="sc-AxiKw fxYgNj playArea"
   >
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -25,7 +25,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -41,7 +41,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -57,7 +57,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -73,7 +73,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -89,7 +89,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -105,7 +105,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -121,7 +121,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -144,7 +144,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -167,7 +167,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -183,7 +183,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR card"
+      className="sc-AxhCb jMZOuL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -199,10 +199,10 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxhCb dAsTdR deck"
+      className="sc-AxhCb jMZOuL deck"
     >
       <div
-        className="sc-AxhCb dAsTdR stackedCard canDrawCard"
+        className="sc-AxhCb jMZOuL stackedCard canDrawCard"
         onClick={[Function]}
       >
         <div
@@ -226,7 +226,7 @@ exports[`App should render correctly 1`] = `
               <path
                 d="M136,136,0,272ZM0,0,136,136Z"
                 fill="none"
-                stroke="#fff"
+                stroke="#EAEAEA"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="100"
@@ -234,7 +234,7 @@ exports[`App should render correctly 1`] = `
               />
               <line
                 fill="none"
-                stroke="#fff"
+                stroke="#EAEAEA"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="100"

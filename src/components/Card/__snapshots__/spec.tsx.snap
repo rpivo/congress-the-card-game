@@ -60,6 +60,25 @@ exports[`Card should render correctly 1`] = `
   background: #9FFFB0;
 }
 
+.c0.stackedCard.canDrawCard:hover .takeIcon circle {
+  fill: #353;
+}
+
+.c0.stackedCard.canDrawCard:hover .takeIcon p {
+  margin-top: 7px;
+}
+
+.c0.stackedCard.canDrawCard:hover .takeIcon path,
+.c0.stackedCard.canDrawCard:hover .takeIcon line {
+  stroke: #9FFFB0;
+}
+
+.c0.stackedCard.canDrawCard:hover .takeIcon svg {
+  width: 56;
+  height: 56;
+  margin-top: -3px;
+}
+
 .c0.stackedCard .takeIcon {
   margin-top: 60px;
   text-align: center;
