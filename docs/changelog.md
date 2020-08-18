@@ -3,6 +3,7 @@ Ends August 31, 2020
 
 ### Updates
 - update styles for TakeIcon component.
+- refactor any event handlers that do not need to use arrow functions.
 
 ## Sprint 2
 Ended August 17, 2020

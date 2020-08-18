@@ -16,7 +16,7 @@ const App = (): JSX.Element => {
   };
 
   return (
-    <Style className='app' onClick={() => handleClick()}>
+    <Style className='app' onClick={handleClick}>
       <Context.Provider value={{ dispatch, state }}>
         <PlayArea activeCard={activeCard} setActiveCard={setActiveCard} />
         <HandIcon />
