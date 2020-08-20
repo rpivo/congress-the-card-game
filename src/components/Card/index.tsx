@@ -4,11 +4,11 @@ import Style from './style';
 type CardProps = {
   ability1Description?: string;
   ability1Title?: string;
-  active: boolean;
+  active?: boolean;
   id: string;
   handleCardMouseDown: (id: string) => void;
-  subtitle: string;
-  title: string;
+  subtitle?: string;
+  title?: string;
 };
 
 const Card = ({

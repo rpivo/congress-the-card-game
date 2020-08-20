@@ -9,6 +9,7 @@ Ends August 31, 2020
 - revert back to target: ES2019 to work with Node v12 in AWS CodeBuild.
 - move TakeIcon component to its own folder.
 - update Hand styles.
+- prepare Card component so that it can be ingested by Hand component.
 
 ## Sprint 2
 Ended August 17, 2020

@@ -41,21 +41,21 @@ describe('App', () => {
   describe('shouldShowHand state', () => {
     it('should not hide the Hand component if it\'s already displaying and it\'s clicked', () => {
       const wrapper = mount(<App />);
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
       wrapper.find('.handIcon').at(0).simulate('click');
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
       wrapper.find('.hand').at(0).simulate('click');
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
     });
 
     it(`should hide the Hand component if it's already displaying and a Card component is
     clicked`, () => {
       const wrapper = mount(<App />);
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
       wrapper.find('.handIcon').at(0).simulate('click');
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
       wrapper.find('.card').at(0).simulate('mousedown');
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
     });
 
     it('should not display the TakeIcon on the Deck once the deck is clicked', () => {
@@ -81,21 +81,21 @@ describe('App', () => {
 
     it('should not show the Hand if the Deck is clicked when the TakeIcon is not showing', () => {
       const wrapper = mount(<App />);
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
       const event = {} as React.MouseEvent;
       const deckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
       if (deckSelector) act(() => deckSelector(event));
       wrapper.update();
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
       const appSelector = wrapper.find('div').at(0).prop('onClick');
       if (appSelector) act(() => appSelector(event));
       wrapper.update();
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
     });
 
     it('should show the hand when the HandIcon is clicked', () => {
       const wrapper = mount(<App />);
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
       const event = {
         altKey: false,
         button: 0,
@@ -117,11 +117,11 @@ describe('App', () => {
       const selector = wrapper.find('.handIcon').find('div').at(0).prop('onClick');
       if (selector) act(() => selector(event));
       wrapper.update();
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
       const updatedSelector = wrapper.find('.handIcon').find('div').at(0).prop('onClick');
       if (updatedSelector) act(() => updatedSelector(event));
       wrapper.update();
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
     });
   });
 
@@ -137,11 +137,11 @@ describe('App', () => {
     it(`should hide Hand component when Hand component is showing and the App component is
     clicked`, () => {
       const wrapper = mount(<App />);
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
       wrapper.find('.handIcon').at(0).simulate('click');
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(false);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
       wrapper.find(App).simulate('click');
-      expect(wrapper.find(Hand).find('div').hasClass('hidden')).toBe(true);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
     });
   });
 });
