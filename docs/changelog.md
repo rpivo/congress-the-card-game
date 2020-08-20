@@ -11,6 +11,7 @@ Ends August 31, 2020
 - update Hand styles.
 - prepare Card component so that it can be ingested by Hand component.
 - add favicon.
+- move clean script to its own file.
 
 ## Sprint 2
 Ended August 17, 2020

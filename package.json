@@ -44,7 +44,7 @@
   "scripts": {
     "build": "npm run clean && rollup -c && rm dist/*.js",
     "build-js": "npm run clean && rollup -c",
-    "clean": "rm -rf dist && mkdir dist && cp src/index.html dist/index.html",
+    "clean": "bash clean.sh",
     "dev": "export NODE_ENV=development && npm run watch",
     "prod": "export NODE_ENV=production && npm run watch",
     "serve": "express-compression-server --build=dist --port=1235",
