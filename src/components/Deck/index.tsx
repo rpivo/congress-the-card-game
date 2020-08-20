@@ -1,5 +1,5 @@
 import React from 'react';
-import TakeIcon from './TakeIcon';
+import TakeIcon from '@components/TakeIcon';
 import { Context } from '@components/App/store';
 import Style from '@components/Card/style';
 
