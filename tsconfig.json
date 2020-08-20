@@ -13,6 +13,8 @@
     },
     "resolveJsonModule": true,
     "strict": true,
-    "target": "esnext", // change to esnext once terser supports optional chaining
+    /* refer to https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping for setting target
+     * based on Node LTS version. AWS CodeBuild only works up to Node v12 for now. */
+    "target": "ES2019",
   }
 }

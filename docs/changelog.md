@@ -6,6 +6,7 @@ Ends August 31, 2020
 - refactor any event handlers that do not need to use arrow functions.
 - update packages & update tsconfig with target of esnext.
 - specify Node version in buildspec.
+- revert back to target: ES2019 to work with Node v12 in AWS CodeBuild.
 
 ## Sprint 2
 Ended August 17, 2020
