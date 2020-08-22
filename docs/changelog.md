@@ -12,6 +12,7 @@ Ends August 31, 2020
 - prepare Card component so that it can be ingested by Hand component.
 - add favicon.
 - move clean script to its own file.
+- add End Turn button and ArrowIcon component (eventually will refactor TakeIcon into ArrowIcon).
 
 ## Sprint 2
 Ended August 17, 2020

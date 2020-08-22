@@ -1,4 +1,5 @@
 import React from 'react';
+import ArrowIcon from '@components/ArrowIcon';
 import Hand from '@components/Hand';
 import HandIcon from '@components/HandIcon';
 import PlayArea from '@components/PlayArea';
@@ -19,6 +20,7 @@ const App = (): JSX.Element => {
     <Style className='app' onClick={handleClick}>
       <Context.Provider value={{ dispatch, state }}>
         <PlayArea activeCard={activeCard} setActiveCard={setActiveCard} />
+        <ArrowIcon />
         <HandIcon />
         <Hand />
       </Context.Provider>
