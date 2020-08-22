@@ -2,14 +2,14 @@
 
 exports[`App should render correctly 1`] = `
 <div
-  className="sc-AxhUy kUQhyK app"
+  className="sc-AxgMl grnyfY app"
   onClick={[Function]}
 >
   <div
-    className="sc-AxhCb bWagvL playArea"
+    className="sc-AxhUy isiHme playArea"
   >
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -25,7 +25,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -41,7 +41,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -57,7 +57,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -73,7 +73,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -89,7 +89,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -105,7 +105,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -121,7 +121,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -144,7 +144,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -167,7 +167,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -183,7 +183,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -199,10 +199,10 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxjAm iGDweQ deck"
+      className="sc-AxirZ cSpPsL deck"
     >
       <div
-        className="sc-AxjAm iGDweQ stackedCard canDrawCard"
+        className="sc-AxirZ cSpPsL stackedCard canDrawCard"
         onClick={[Function]}
       >
         <div
@@ -251,7 +251,39 @@ exports[`App should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxiKw iQBgiD handIcon"
+    className="sc-AxjAm gbbZmW endTurnIcon"
+  >
+    <svg
+      height="50"
+      viewBox="0 0 703 703"
+      width="50"
+    >
+      <g
+        transform="translate(-398 -203)"
+      >
+        <path
+          d="M136,136,0,272ZM0,0,136,136Z"
+          fill="none"
+          stroke="#707070"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="100"
+          transform="translate(805.5 418.5)"
+        />
+        <line
+          fill="none"
+          stroke="#707070"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="100"
+          transform="translate(556.5 554.5)"
+          x2="385"
+        />
+      </g>
+    </svg>
+  </div>
+  <div
+    className="sc-AxhCb cFIxOX handIcon"
     onClick={[Function]}
   >
     <svg
@@ -332,11 +364,11 @@ exports[`App should render correctly 1`] = `
     </svg>
   </div>
   <div
-    className="sc-AxirZ cctFJL hand hidden"
+    className="sc-AxiKw fQdyLb hand hidden"
     onClick={[Function]}
   >
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -348,7 +380,7 @@ exports[`App should render correctly 1`] = `
       />
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -360,7 +392,7 @@ exports[`App should render correctly 1`] = `
       />
     </div>
     <div
-      className="sc-AxjAm iGDweQ card"
+      className="sc-AxirZ cSpPsL card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
