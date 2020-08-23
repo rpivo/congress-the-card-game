@@ -55,26 +55,26 @@ const Style = styled.div`
     &.canDrawCard:hover {
       background: #9FFFB0;
 
-      .takeIcon circle {
+      .drawCardIcon circle {
         fill: #353;
       }
 
-      .takeIcon p {
+      .drawCardIcon p {
         margin-top: 7px;
       }
 
-      .takeIcon path, .takeIcon line {
+      .drawCardIcon path, .drawCardIcon line {
         stroke: #9FFFB0;
       }
 
-      .takeIcon svg {
+      .drawCardIcon svg {
         width: 56;
         height: 56;
         margin-top: -3px;
       }
     }
 
-    .takeIcon {
+    .drawCardIcon {
       margin-top: 60px;
       text-align: center;
   

@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Deck should render correctly 1`] = `
+.c1 {
+  cursor: pointer;
+}
+
+.c1.endTurnIcon {
+  display: inline-block;
+  position: fixed;
+  right: 22px;
+  top: 22px;
+}
+
 .c0 {
   background: #EAEAEA;
   border-radius: 5px;
@@ -60,31 +71,31 @@ exports[`Deck should render correctly 1`] = `
   background: #9FFFB0;
 }
 
-.c0.stackedCard.canDrawCard:hover .takeIcon circle {
+.c0.stackedCard.canDrawCard:hover .drawCardIcon circle {
   fill: #353;
 }
 
-.c0.stackedCard.canDrawCard:hover .takeIcon p {
+.c0.stackedCard.canDrawCard:hover .drawCardIcon p {
   margin-top: 7px;
 }
 
-.c0.stackedCard.canDrawCard:hover .takeIcon path,
-.c0.stackedCard.canDrawCard:hover .takeIcon line {
+.c0.stackedCard.canDrawCard:hover .drawCardIcon path,
+.c0.stackedCard.canDrawCard:hover .drawCardIcon line {
   stroke: #9FFFB0;
 }
 
-.c0.stackedCard.canDrawCard:hover .takeIcon svg {
+.c0.stackedCard.canDrawCard:hover .drawCardIcon svg {
   width: 56;
   height: 56;
   margin-top: -3px;
 }
 
-.c0.stackedCard .takeIcon {
+.c0.stackedCard .drawCardIcon {
   margin-top: 60px;
   text-align: center;
 }
 
-.c0.stackedCard .takeIcon p {
+.c0.stackedCard .drawCardIcon p {
   margin-top: 10px;
 }
 
@@ -96,7 +107,7 @@ exports[`Deck should render correctly 1`] = `
     onClick={[Function]}
   >
     <div
-      className="takeIcon"
+      className="c1 drawCardIcon"
     >
       <svg
         height="50"

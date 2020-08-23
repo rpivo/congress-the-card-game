@@ -16,6 +16,7 @@ Ends August 31, 2020
 - update ArrowIcon styles.
 - add buildspec command to delete everything from the bucket before uploading new items.
 - update buildspec cp command to copy html and ico files together.
+- remove TakeIcon component in favor of ArrowIcon.
 
 ## Sprint 2
 Ended August 17, 2020

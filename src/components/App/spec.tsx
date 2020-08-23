@@ -58,20 +58,20 @@ describe('App', () => {
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
     });
 
-    it('should not display the TakeIcon on the Deck once the deck is clicked', () => {
+    it('should not display the drawCardIcon on the Deck once the deck is clicked', () => {
       const wrapper = mount(<App />);
-      expect(wrapper.find('.takeIcon')).toHaveLength(1);
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
       const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
       const event = {} as React.MouseEvent;
       if (selector) act(() => selector(event));
       wrapper.update();
-      expect(wrapper.find('.takeIcon')).toHaveLength(0);
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
     });
 
-    it('should show the Hand if the Deck is clicked when the TakeIcon is showing', () => {
+    it('should show the Hand if the Deck is clicked when the drawCardIcon is showing', () => {
       const wrapper = mount(<App />);
       expect(wrapper.find('.hand').find('.hidden').at(0)).toHaveLength(1);
-      expect(wrapper.find('.takeIcon')).toHaveLength(1);
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
       const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
       const event = {} as React.MouseEvent;
       if (selector) act(() => selector(event));
@@ -79,7 +79,8 @@ describe('App', () => {
       expect(wrapper.find('.hand').find('.hidden').at(0)).toHaveLength(0);
     });
 
-    it('should not show the Hand if the Deck is clicked when the TakeIcon is not showing', () => {
+    it(`should not show the Hand if the Deck is clicked when the drawCardIcon is not 
+    showing`, () => {
       const wrapper = mount(<App />);
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
       const event = {} as React.MouseEvent;

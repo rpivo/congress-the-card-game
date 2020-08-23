@@ -1,5 +1,5 @@
 import React from 'react';
-import TakeIcon from '@components/TakeIcon';
+import ArrowIcon from '@components/ArrowIcon';
 import { Context } from '@components/App/store';
 import Style from '@components/Card/style';
 
@@ -12,7 +12,7 @@ const Deck = (): JSX.Element => {
       <Style
         className={`stackedCard${canDrawCard ? ' canDrawCard' : ''}`}
         onClick={() => canDrawCard && dispatch('DRAW_CARD')}>
-        {canDrawCard && <TakeIcon />}
+        {canDrawCard && <ArrowIcon iconType='DRAW_CARD' />}
       </Style>
     </Style>
   );

@@ -9,7 +9,7 @@ exports[`App should render correctly 1`] = `
     className="sc-AxhUy isiHme playArea"
   >
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -25,7 +25,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -41,7 +41,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -57,7 +57,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -73,7 +73,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -89,7 +89,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -105,7 +105,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -121,7 +121,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -144,7 +144,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -167,7 +167,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -183,7 +183,7 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -199,14 +199,14 @@ exports[`App should render correctly 1`] = `
       </p>
     </div>
     <div
-      className="sc-AxirZ cSpPsL deck"
+      className="sc-AxirZ dLSlov deck"
     >
       <div
-        className="sc-AxirZ cSpPsL stackedCard canDrawCard"
+        className="sc-AxirZ dLSlov stackedCard canDrawCard"
         onClick={[Function]}
       >
         <div
-          className="takeIcon"
+          className="sc-AxjAm lkoMCz drawCardIcon"
         >
           <svg
             height="50"
@@ -251,7 +251,7 @@ exports[`App should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxjAm hDQwzG endTurnIcon"
+    className="sc-AxjAm lkoMCz endTurnIcon"
   >
     <svg
       height="75"
@@ -368,7 +368,7 @@ exports[`App should render correctly 1`] = `
     onClick={[Function]}
   >
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -380,7 +380,7 @@ exports[`App should render correctly 1`] = `
       />
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >
@@ -392,7 +392,7 @@ exports[`App should render correctly 1`] = `
       />
     </div>
     <div
-      className="sc-AxirZ cSpPsL card"
+      className="sc-AxirZ dLSlov card"
       onClick={[Function]}
       onMouseDown={[Function]}
     >

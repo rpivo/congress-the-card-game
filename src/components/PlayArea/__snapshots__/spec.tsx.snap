@@ -60,32 +60,43 @@ exports[`PlayArea should render correctly 1`] = `
   background: #9FFFB0;
 }
 
-.c1.stackedCard.canDrawCard:hover .takeIcon circle {
+.c1.stackedCard.canDrawCard:hover .drawCardIcon circle {
   fill: #353;
 }
 
-.c1.stackedCard.canDrawCard:hover .takeIcon p {
+.c1.stackedCard.canDrawCard:hover .drawCardIcon p {
   margin-top: 7px;
 }
 
-.c1.stackedCard.canDrawCard:hover .takeIcon path,
-.c1.stackedCard.canDrawCard:hover .takeIcon line {
+.c1.stackedCard.canDrawCard:hover .drawCardIcon path,
+.c1.stackedCard.canDrawCard:hover .drawCardIcon line {
   stroke: #9FFFB0;
 }
 
-.c1.stackedCard.canDrawCard:hover .takeIcon svg {
+.c1.stackedCard.canDrawCard:hover .drawCardIcon svg {
   width: 56;
   height: 56;
   margin-top: -3px;
 }
 
-.c1.stackedCard .takeIcon {
+.c1.stackedCard .drawCardIcon {
   margin-top: 60px;
   text-align: center;
 }
 
-.c1.stackedCard .takeIcon p {
+.c1.stackedCard .drawCardIcon p {
   margin-top: 10px;
+}
+
+.c2 {
+  cursor: pointer;
+}
+
+.c2.endTurnIcon {
+  display: inline-block;
+  position: fixed;
+  right: 22px;
+  top: 22px;
 }
 
 .c0 {
@@ -311,7 +322,7 @@ exports[`PlayArea should render correctly 1`] = `
       onClick={[Function]}
     >
       <div
-        className="takeIcon"
+        className="c2 drawCardIcon"
       >
         <svg
           height="50"

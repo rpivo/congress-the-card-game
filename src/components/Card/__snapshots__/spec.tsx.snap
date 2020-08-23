@@ -60,31 +60,31 @@ exports[`Card should render correctly 1`] = `
   background: #9FFFB0;
 }
 
-.c0.stackedCard.canDrawCard:hover .takeIcon circle {
+.c0.stackedCard.canDrawCard:hover .drawCardIcon circle {
   fill: #353;
 }
 
-.c0.stackedCard.canDrawCard:hover .takeIcon p {
+.c0.stackedCard.canDrawCard:hover .drawCardIcon p {
   margin-top: 7px;
 }
 
-.c0.stackedCard.canDrawCard:hover .takeIcon path,
-.c0.stackedCard.canDrawCard:hover .takeIcon line {
+.c0.stackedCard.canDrawCard:hover .drawCardIcon path,
+.c0.stackedCard.canDrawCard:hover .drawCardIcon line {
   stroke: #9FFFB0;
 }
 
-.c0.stackedCard.canDrawCard:hover .takeIcon svg {
+.c0.stackedCard.canDrawCard:hover .drawCardIcon svg {
   width: 56;
   height: 56;
   margin-top: -3px;
 }
 
-.c0.stackedCard .takeIcon {
+.c0.stackedCard .drawCardIcon {
   margin-top: 60px;
   text-align: center;
 }
 
-.c0.stackedCard .takeIcon p {
+.c0.stackedCard .drawCardIcon p {
   margin-top: 10px;
 }
 
