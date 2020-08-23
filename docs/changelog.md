@@ -14,6 +14,8 @@ Ends August 31, 2020
 - move clean script to its own file.
 - add End Turn button and ArrowIcon component (eventually will refactor TakeIcon into ArrowIcon).
 - update ArrowIcon styles.
+- add buildspec command to delete everything from the bucket before uploading new items.
+- update buildspec cp command to copy html and ico files together.
 
 ## Sprint 2
 Ended August 17, 2020

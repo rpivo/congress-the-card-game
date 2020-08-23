@@ -23,7 +23,12 @@ phases:
       - aws lambda update-function-code
         --function-name  brotli-request
         --zip-file fileb://brotli-request.zip
-      - aws s3 cp dist/index.html $BUCKET
+      - aws s3 rm $BUCKET --recursive
+      - aws s3 cp dist $BUCKET
+        --recursive
+        --exclude "*"
+        --include "*.html"
+        --include "*.ico"
       - aws s3 cp dist $BUCKET
         --recursive
         --content-encoding "br"
