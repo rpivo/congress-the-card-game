@@ -14,42 +14,28 @@ type ArrowIconProps = {
   iconType: IconType;
 };
 
+const circleElement =
+ <circle cx='351.5' cy='351.5' r='351.5' transform='translate(398 203)' fill='#707070' />;
+
 type IconTypeProps = [
   className: string,
-  circle: JSX.Element | null,
+  circle: typeof circleElement | null,
   height: string,
   paragraph: JSX.Element | null,
   stroke: string,
   width: string,
 ];
 
-const drawCardIconProps: IconTypeProps = [
-  'drawCardIcon',
-  <circle cx='351.5' cy='351.5' r='351.5' transform='translate(398 203)' fill='#707070' />,
-  '50',
-  <p>Take a Card</p>,
-  '#EAEAEA',
-  '50',
-];
+const drawCardIconProps: IconTypeProps =
+  ['drawCardIcon', circleElement, '50', <p>Take a Card</p>, '#EAEAEA', '50'];
 
-const endCardIconProps: IconTypeProps = [
-  'endTurnIcon',
-  null,
-  '75',
-  null,
-  '#D0D0D0',
-  '75',
-];
+const endCardIconProps: IconTypeProps =
+  ['endTurnIcon', null, '75', null, '#D0D0D0', '75'];
 
 const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
-  const [
-    className,
-    circle,
-    height,
-    paragraph,
-    stroke,
-    width,
-  ] = iconType === 'DRAW_CARD' ? drawCardIconProps : endCardIconProps;
+
+  const [className, circle, height, paragraph, stroke, width] =
+    iconType === 'DRAW_CARD' ? drawCardIconProps : endCardIconProps;
 
   return (
     <Style className={className}>
@@ -63,7 +49,8 @@ const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
             stroke={stroke}
             strokeLinecap='round'
             strokeLinejoin='round'
-            strokeWidth='100' />
+            strokeWidth='100'
+          />
           <line
             x2='385'
             transform='translate(556.5 554.5)'
@@ -71,7 +58,8 @@ const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
             stroke={stroke}
             strokeLinecap='round'
             strokeLinejoin='round'
-            strokeWidth='100' />
+            strokeWidth='100'
+          />
         </g>
       </svg>
       {paragraph}
