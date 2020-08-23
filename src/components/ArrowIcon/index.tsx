@@ -20,21 +20,21 @@ const circleElement =
 type IconTypeProps = [
   className: string,
   circle: typeof circleElement | null,
-  height: string,
   paragraph: JSX.Element | null,
-  stroke: string,
+  height: string,
   width: string,
+  stroke: string,
 ];
 
 const drawCardIconProps: IconTypeProps =
-  ['drawCardIcon', circleElement, '50', <p>Take a Card</p>, '#EAEAEA', '50'];
+  ['drawCardIcon', circleElement, <p>Take a Card</p>, '50', '50', '#EAEAEA'];
 
 const endCardIconProps: IconTypeProps =
-  ['endTurnIcon', null, '75', null, '#D0D0D0', '75'];
+  ['endTurnIcon', null, null, '75', '75', '#D0D0D0'];
 
 const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
 
-  const [className, circle, height, paragraph, stroke, width] =
+  const [className, circle, paragraph, height, width, stroke] =
     iconType === 'DRAW_CARD' ? drawCardIconProps : endCardIconProps;
 
   return (

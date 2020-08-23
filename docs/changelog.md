@@ -18,6 +18,7 @@ Ends August 31, 2020
 - update buildspec cp command to copy html and ico files together.
 - remove TakeIcon component in favor of ArrowIcon.
 - reformat ArrowIcon for readability.
+- reorder ArrowIcon IconTypeProps for readability.
 
 ## Sprint 2
 Ended August 17, 2020
