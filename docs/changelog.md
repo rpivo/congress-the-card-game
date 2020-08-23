@@ -13,6 +13,7 @@ Ends August 31, 2020
 - add favicon.
 - move clean script to its own file.
 - add End Turn button and ArrowIcon component (eventually will refactor TakeIcon into ArrowIcon).
+- update ArrowIcon styles.
 
 ## Sprint 2
 Ended August 17, 2020
