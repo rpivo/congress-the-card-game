@@ -19,6 +19,7 @@ Ends August 31, 2020
 - remove TakeIcon component in favor of ArrowIcon.
 - reformat ArrowIcon for readability.
 - reorder ArrowIcon IconTypeProps for readability.
+- implement cardOrder state.
 
 ## Sprint 2
 Ended August 17, 2020

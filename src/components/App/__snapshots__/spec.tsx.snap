@@ -128,6 +128,22 @@ exports[`App should render correctly 1`] = `
       <p
         className="title"
       >
+        Delaware
+      </p>
+      <p
+        className="subtext subtitle"
+      >
+        state
+      </p>
+    </div>
+    <div
+      className="sc-AxirZ dLSlov card"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <p
+        className="title"
+      >
         Sonny Perdue
       </p>
       <p

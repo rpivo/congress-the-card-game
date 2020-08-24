@@ -28,6 +28,7 @@ module.exports = {
     "function-call-argument-newline": 0,
     "function-paren-newline": 0,
     "global-require": 0,
+    "id-length": 0,
     "implicit-arrow-linebreak": 0,
     "indent": ["error", 2, { SwitchCase: 1 }],
     "init-declarations": 0,

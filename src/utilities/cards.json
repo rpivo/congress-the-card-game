@@ -1,40 +1,45 @@
 {
-  "0000": {
+  "0": {
     "name": "Alabama",
     "group": "state",
     "type": "place"
   },
-  "0001": {
+  "1": {
     "name": "Alaska",
     "group": "state",
     "type": "place"
   },
-  "0002": {
+  "2": {
     "name": "Arizona",
     "group": "state",
     "type": "place"
   },
-  "0003": {
+  "3": {
     "name": "Arkansas",
     "group": "state",
     "type": "place"
   },
-  "0004": {
+  "4": {
     "name": "California",
     "group": "state",
     "type": "place"
   },
-  "0005": {
+  "5": {
     "name": "Colorado",
     "group": "state",
     "type": "place"
   },
-  "0006": {
+  "6": {
     "name": "Connecticut",
     "group": "state",
     "type": "place"
   },
-  "0007": {
+  "7": {
+    "name": "Delaware",
+    "group": "state",
+    "type": "place"
+  },
+  "8": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -45,7 +50,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "0008": {
+  "9": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -56,12 +61,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "0009": {
+  "10": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "0010": {
+  "11": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

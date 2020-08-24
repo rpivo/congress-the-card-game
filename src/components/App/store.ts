@@ -1,4 +1,5 @@
 import React from 'react';
+import cardData from '@utilities/cards.json';
 import { createStringEnum } from '@utilities/types';
 
 const Actions = createStringEnum([
@@ -9,8 +10,19 @@ const Actions = createStringEnum([
 
 type Actions = keyof typeof Actions;
 
+const cardOrder = (() => {
+  const cardCount = Object.keys(cardData).length;
+  const cardIDs = Array.from([...Array(cardCount).keys()]);
+  for (let i = cardCount - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cardIDs[i], cardIDs[j]] = [cardIDs[j], cardIDs[i]];
+  }
+  return cardIDs;
+})();
+
 export const State = {
   canDrawCard: true,
+  cardOrder,
   shouldShowHand: false,
 };
 
@@ -19,6 +31,7 @@ export const Reducer = (state: typeof State, action: Actions): typeof State => {
     case 'DRAW_CARD':
       return {
         canDrawCard: false,
+        cardOrder: cardOrder.slice(1),
         shouldShowHand: true,
       };
     case 'SHOW_HAND':

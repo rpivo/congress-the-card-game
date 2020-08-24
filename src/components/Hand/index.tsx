@@ -5,7 +5,8 @@ import Style from './style';
 
 const Hand = (): JSX.Element => {
   const { state } = React.useContext(Context);
-  const { shouldShowHand } = state;
+  const { cardOrder, shouldShowHand } = state;
+  console.log('Hand / 9 / cardOrder', cardOrder);
   const handleMouseDown = () => null;
   return (
     <Style
