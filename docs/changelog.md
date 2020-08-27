@@ -20,6 +20,7 @@ Ends August 31, 2020
 - reformat ArrowIcon for readability.
 - reorder ArrowIcon IconTypeProps for readability.
 - implement cardOrder state.
+- move ArrowIcon component so that it's not a child of the App component's Context.
 
 ## Sprint 2
 Ended August 17, 2020

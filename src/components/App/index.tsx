@@ -20,10 +20,10 @@ const App = (): JSX.Element => {
     <Style className='app' onClick={handleClick}>
       <Context.Provider value={{ dispatch, state }}>
         <PlayArea activeCard={activeCard} setActiveCard={setActiveCard} />
-        <ArrowIcon iconType='END_TURN' />
         <HandIcon />
         <Hand />
       </Context.Provider>
+      <ArrowIcon iconType='END_TURN' />
     </Style>
   );
 };
