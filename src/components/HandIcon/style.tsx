@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import Breakpoints from '@utilities/breakpoints';
 
 const Style = styled.div`
-bottom: 25px;
+bottom: 16px;
 cursor: pointer;
 position: fixed;
-right: 25px;  
+right: 16px;  
 
   svg {
     height: 75px;
@@ -14,6 +15,11 @@ right: 25px;
       fill: rgb(255, 255, 255);
       stroke: rgb(112, 112, 112);
     }
+  }
+
+  ${Breakpoints.Medium} {
+    bottom: 25px;
+    right: 25px;  
   }
 `;
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Breakpoints from '@utilities/breakpoints';
 
 const Style = styled.div`
   cursor: pointer;
@@ -6,8 +7,15 @@ const Style = styled.div`
   &.endTurnIcon {
     display: inline-block;
     position: fixed;
-    right: 22px;
-    top: 22px;
+    right: 10px;
+    top: 10px;
+  }
+
+  ${Breakpoints.Medium} {
+    &.endTurnIcon {
+      right: 22px;
+      top: 22px;
+    }
   }
 `;
 

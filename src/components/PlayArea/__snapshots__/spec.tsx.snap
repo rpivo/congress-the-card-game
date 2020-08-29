@@ -95,8 +95,8 @@ exports[`PlayArea should render correctly 1`] = `
 .c2.endTurnIcon {
   display: inline-block;
   position: fixed;
-  right: 22px;
-  top: 22px;
+  right: 10px;
+  top: 10px;
 }
 
 .c0 {
@@ -105,6 +105,13 @@ exports[`PlayArea should render correctly 1`] = `
   grid-template-columns: repeat(10,175px [col-start]);
   margin: 0 auto;
   width: 1750px;
+}
+
+@media screen and (max-width:1750px) {
+  .c2.endTurnIcon {
+    right: 22px;
+    top: 22px;
+  }
 }
 
 @media screen and (max-width:1750px) {

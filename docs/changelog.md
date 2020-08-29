@@ -21,6 +21,7 @@ Ends August 31, 2020
 - reorder ArrowIcon IconTypeProps for readability.
 - implement cardOrder state.
 - move ArrowIcon component so that it's not a child of the App component's Context.
+- reposition ArrowIcon and HandIcon for 1500px - 2000px screen widths.
 
 ## Sprint 2
 Ended August 17, 2020

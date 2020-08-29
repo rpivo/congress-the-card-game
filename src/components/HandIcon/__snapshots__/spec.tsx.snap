@@ -2,10 +2,10 @@
 
 exports[`Deck should render correctly 1`] = `
 .c0 {
-  bottom: 25px;
+  bottom: 16px;
   cursor: pointer;
   position: fixed;
-  right: 25px;
+  right: 16px;
 }
 
 .c0 svg {
@@ -16,6 +16,13 @@ exports[`Deck should render correctly 1`] = `
 .c0 svg:hover .svgCard {
   fill: rgb(255,255,255);
   stroke: rgb(112,112,112);
+}
+
+@media screen and (max-width:1750px) {
+  .c0 {
+    bottom: 25px;
+    right: 25px;
+  }
 }
 
 <div

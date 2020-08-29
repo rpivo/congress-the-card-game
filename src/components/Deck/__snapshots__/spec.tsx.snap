@@ -8,8 +8,8 @@ exports[`Deck should render correctly 1`] = `
 .c1.endTurnIcon {
   display: inline-block;
   position: fixed;
-  right: 22px;
-  top: 22px;
+  right: 10px;
+  top: 10px;
 }
 
 .c0 {
@@ -97,6 +97,13 @@ exports[`Deck should render correctly 1`] = `
 
 .c0.stackedCard .drawCardIcon p {
   margin-top: 10px;
+}
+
+@media screen and (max-width:1750px) {
+  .c1.endTurnIcon {
+    right: 22px;
+    top: 22px;
+  }
 }
 
 <div

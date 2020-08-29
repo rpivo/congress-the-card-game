@@ -222,7 +222,7 @@ exports[`App should render correctly 1`] = `
         onClick={[Function]}
       >
         <div
-          className="sc-AxjAm lkoMCz drawCardIcon"
+          className="sc-AxjAm hoRmcU drawCardIcon"
         >
           <svg
             height="50"
@@ -267,7 +267,7 @@ exports[`App should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxhCb cFIxOX handIcon"
+    className="sc-AxhCb fvOIhH handIcon"
     onClick={[Function]}
   >
     <svg
@@ -389,7 +389,7 @@ exports[`App should render correctly 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxjAm lkoMCz endTurnIcon"
+    className="sc-AxjAm hoRmcU endTurnIcon"
   >
     <svg
       height="75"
