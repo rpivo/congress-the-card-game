@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
+import { Actions, Context } from '@components/App/store';
 import Style from './style';
 import { createStringEnum } from '@utilities/types';
 
@@ -17,28 +18,55 @@ type ArrowIconProps = {
 const circleElement =
  <circle cx='351.5' cy='351.5' r='351.5' transform='translate(398 203)' fill='#707070' />;
 
+const handleIconClick = (canDrawCard?: boolean, dispatch?: React.Dispatch<Actions>) =>
+  !canDrawCard && dispatch && dispatch('END_TURN');
+
 type IconTypeProps = [
   className: string,
   circle: typeof circleElement | null,
   paragraph: JSX.Element | null,
+  handleClick: (canDrawCard?: boolean, dispatch?: React.Dispatch<Actions>) => void,
   height: string,
   width: string,
   stroke: string,
 ];
 
-const drawCardIconProps: IconTypeProps =
-  ['drawCardIcon', circleElement, <p>Take a Card</p>, '50', '50', '#EAEAEA'];
+const drawCardIconProps: IconTypeProps = [
+  'drawCardIcon',
+  circleElement,
+  <p>Take a Card</p>,
+  () => null,
+  '50',
+  '50',
+  '#EAEAEA',
+];
 
-const endCardIconProps: IconTypeProps =
-  ['endTurnIcon', null, null, '75', '75', '#D0D0D0'];
+const endCardIconProps: IconTypeProps = [
+  'endTurnIcon',
+  null,
+  null,
+  handleIconClick,
+  '75',
+  '75',
+  '#D0D0D0',
+];
 
 const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
+  const { dispatch, state } = React.useContext(Context);
+  const { canDrawCard } = state;
 
-  const [className, circle, paragraph, height, width, stroke] =
-    iconType === 'DRAW_CARD' ? drawCardIconProps : endCardIconProps;
+  const [
+    className,
+    circle,
+    paragraph,
+    handleClick,
+    height,
+    width,
+    stroke,
+  ] = iconType === 'DRAW_CARD' ? drawCardIconProps : endCardIconProps;
 
   return (
-    <Style className={className}>
+    <Style className={className} onClick={() => handleClick(canDrawCard, dispatch)}>
       <svg width={width} height={height} viewBox='0 0 703 703'>
         <g transform='translate(-398 -203)'>
           {circle}

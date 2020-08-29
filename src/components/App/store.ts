@@ -4,11 +4,12 @@ import { createStringEnum } from '@utilities/types';
 
 const Actions = createStringEnum([
   'DRAW_CARD',
+  'END_TURN',
   'HIDE_HAND',
   'SHOW_HAND',
 ]);
 
-type Actions = keyof typeof Actions;
+export type Actions = keyof typeof Actions;
 
 const cardOrder = (() => {
   const cardCount = Object.keys(cardData).length;
@@ -31,8 +32,13 @@ export const Reducer = (state: typeof State, action: Actions): typeof State => {
     case 'DRAW_CARD':
       return {
         canDrawCard: false,
-        cardOrder: cardOrder.slice(1),
+        cardOrder: state.cardOrder.slice(1),
         shouldShowHand: true,
+      };
+    case 'END_TURN':
+      return {
+        ...state,
+        canDrawCard: true,
       };
     case 'SHOW_HAND':
       return {

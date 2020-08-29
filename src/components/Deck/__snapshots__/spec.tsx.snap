@@ -115,6 +115,7 @@ exports[`Deck should render correctly 1`] = `
   >
     <div
       className="c1 drawCardIcon"
+      onClick={[Function]}
     >
       <svg
         height="50"

@@ -38,6 +38,44 @@ describe('App', () => {
     });
   });
 
+  describe('canDrawCard state', () => {
+    it(`should show the "Take a Card" ArrowIcon after the Deck has already been clicked and the
+    "End Turn" ArrowIcon is subsequently clicked`, () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+      const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
+      const event = {} as React.MouseEvent;
+      if (selector) act(() => selector(event));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+      const endTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (endTurnSelector) act(() => endTurnSelector(event));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+    });
+
+    it(`should perform no action if the "End Turn" ArrowIcon while the "Take a Card" ArrowIcon is
+    already showing`, () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+      const event = {} as React.MouseEvent;
+      const endTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (endTurnSelector) act(() => endTurnSelector(event));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+    });
+
+    it('should perform no action if an ArrowIcon with class drawCardIcon is clicked', () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+      const event = {} as React.MouseEvent;
+      const drawCardSelector = wrapper.find('.drawCardIcon').at(0).prop('onClick');
+      if (drawCardSelector) act(() => drawCardSelector(event));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+    });
+  });
+
   describe('shouldShowHand state', () => {
     it('should not hide the Hand component if it\'s already displaying and it\'s clicked', () => {
       const wrapper = mount(<App />);

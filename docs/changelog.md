@@ -23,6 +23,7 @@ Ends August 31, 2020
 - move ArrowIcon component so that it's not a child of the App component's Context.
 - reposition ArrowIcon and HandIcon for 1500px - 2000px screen widths.
 - implement CSS grid for Hand component.
+- add END_TURN action.
 
 ## Sprint 2
 Ended August 17, 2020
