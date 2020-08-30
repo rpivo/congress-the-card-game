@@ -24,6 +24,7 @@ Ends August 31, 2020
 - reposition ArrowIcon and HandIcon for 1500px - 2000px screen widths.
 - implement CSS grid for Hand component.
 - add END_TURN action.
+- add new Card to Hand when Card is drawn from Deck.
 
 ## Sprint 2
 Ended August 17, 2020

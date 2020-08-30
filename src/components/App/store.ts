@@ -21,18 +21,30 @@ const cardOrder = (() => {
   return cardIDs;
 })();
 
-export const State = {
+type StateShape = {
+  canDrawCard: boolean;
+  cardOrder: number[];
+  handCards: (number | undefined)[];
+  shouldShowHand: boolean;
+};
+
+export const State: StateShape = {
   canDrawCard: true,
   cardOrder,
+  handCards: [],
   shouldShowHand: false,
 };
 
-export const Reducer = (state: typeof State, action: Actions): typeof State => {
+export const Reducer = (state: typeof State, action: Actions): StateShape => {
   switch (action) {
     case 'DRAW_CARD':
       return {
+        ...state,
         canDrawCard: false,
-        cardOrder: state.cardOrder.slice(1),
+        handCards: [
+          ...state.handCards,
+          state.cardOrder.shift(),
+        ],
         shouldShowHand: true,
       };
     case 'END_TURN':

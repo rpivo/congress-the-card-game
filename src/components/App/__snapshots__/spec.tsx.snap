@@ -384,43 +384,6 @@ exports[`App should render correctly 1`] = `
   <div
     className="sc-AxiKw coVLqo hand hidden"
     onClick={[Function]}
-  >
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      />
-      <p
-        className="subtext subtitle"
-      />
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      />
-      <p
-        className="subtext subtitle"
-      />
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      />
-      <p
-        className="subtext subtitle"
-      />
-    </div>
-  </div>
+  />
 </div>
 `;
