@@ -18,8 +18,10 @@ type ArrowIconProps = {
 const circleElement =
  <circle cx='351.5' cy='351.5' r='351.5' transform='translate(398 203)' fill='#707070' />;
 
-const handleIconClick = (canDrawCard?: boolean, dispatch?: React.Dispatch<Actions>) =>
-  !canDrawCard && dispatch && dispatch('END_TURN');
+const handleIconClick = (canDrawCard?: boolean, dispatch?: React.Dispatch<Actions>): void => {
+  if (canDrawCard || !dispatch) return;
+  dispatch('END_TURN');
+};
 
 type IconTypeProps = [
   className: string,
@@ -35,7 +37,7 @@ const drawCardIconProps: IconTypeProps = [
   'drawCardIcon',
   circleElement,
   <p>Take a Card</p>,
-  () => null,
+  () => {},
   '50',
   '50',
   '#EAEAEA',

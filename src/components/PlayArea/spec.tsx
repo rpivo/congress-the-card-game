@@ -23,7 +23,7 @@ describe('PlayArea', () => {
   describe('Cards', () => {
     it('should render the correct amount of Card components', () => {
       const wrapper = mount(PlayAreaMock);
-      expect(wrapper.find(Card)).toHaveLength(12);
+      expect(wrapper.find(Card)).toHaveLength(13);
     });
   });
 

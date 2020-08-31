@@ -40,6 +40,11 @@
     "type": "place"
   },
   "8": {
+    "name": "President Donald Trump",
+    "group": "president",
+    "type": "person"
+  },
+  "9": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -50,7 +55,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "9": {
+  "10": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -61,12 +66,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "10": {
+  "11": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "11": {
+  "12": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

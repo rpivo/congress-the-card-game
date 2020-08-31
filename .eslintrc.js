@@ -13,6 +13,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint", "react"],
   rules: {
+    "@typescript-eslint/no-empty-function": 0,
     "@typescript-eslint/no-non-null-assertion": 0,
     "array-bracket-newline": 0,
     "array-element-newline": 0,

@@ -144,6 +144,22 @@ exports[`App should render correctly 1`] = `
       <p
         className="title"
       >
+        President Donald Trump
+      </p>
+      <p
+        className="subtext subtitle"
+      >
+        president
+      </p>
+    </div>
+    <div
+      className="sc-AxirZ dLSlov card"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <p
+        className="title"
+      >
         Sonny Perdue
       </p>
       <p
