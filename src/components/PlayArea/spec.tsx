@@ -10,7 +10,7 @@ import { Context, State } from '@components/App/store';
 describe('PlayArea', () => {
   const PlayAreaMock =
     <Context.Provider value={{ dispatch: jest.fn(), state: State }}>
-      <PlayArea activeCard={''} setActiveCard={jest.fn()} />
+      <PlayArea activeCard={-1} setActiveCard={jest.fn()} />
     </Context.Provider>;
 
   it('should render correctly', () => {
@@ -23,7 +23,7 @@ describe('PlayArea', () => {
   describe('Cards', () => {
     it('should render the correct amount of Card components', () => {
       const wrapper = mount(PlayAreaMock);
-      expect(wrapper.find(Card)).toHaveLength(13);
+      expect(wrapper.find(Card)).toHaveLength(5);
     });
   });
 

@@ -24,7 +24,8 @@ const cardOrder = (() => {
 type StateShape = {
   canDrawCard: boolean;
   cardOrder: number[];
-  handCards: (number | undefined)[];
+  handCards: number[];
+  playAreaCards: number[];
   shouldShowHand: boolean;
 };
 
@@ -32,6 +33,7 @@ export const State: StateShape = {
   canDrawCard: true,
   cardOrder,
   handCards: [],
+  playAreaCards: cardOrder.splice(0, 5),
   shouldShowHand: false,
 };
 
@@ -44,7 +46,7 @@ export const Reducer = (state: typeof State, action: Actions): StateShape => {
         handCards: [
           ...state.handCards,
           state.cardOrder.shift(),
-        ],
+        ] as number[],
         shouldShowHand: true,
       };
     case 'END_TURN':

@@ -16,28 +16,19 @@ exports[`App should render correctly 1`] = `
       <p
         className="title"
       >
-        Alabama
+        Sonny Perdue
       </p>
       <p
         className="subtext subtitle"
       >
-        state
-      </p>
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      >
-        Alaska
+        cabinet
       </p>
       <p
-        className="subtext subtitle"
+        className="subtext ability1Title"
       >
-        state
+        Judo Chop
+         - 
+        Deal 20 damage to player.
       </p>
     </div>
     <div
@@ -49,86 +40,6 @@ exports[`App should render correctly 1`] = `
         className="title"
       >
         Arizona
-      </p>
-      <p
-        className="subtext subtitle"
-      >
-        state
-      </p>
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      >
-        Arkansas
-      </p>
-      <p
-        className="subtext subtitle"
-      >
-        state
-      </p>
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      >
-        California
-      </p>
-      <p
-        className="subtext subtitle"
-      >
-        state
-      </p>
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      >
-        Colorado
-      </p>
-      <p
-        className="subtext subtitle"
-      >
-        state
-      </p>
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      >
-        Connecticut
-      </p>
-      <p
-        className="subtext subtitle"
-      >
-        state
-      </p>
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      >
-        Delaware
       </p>
       <p
         className="subtext subtitle"
@@ -160,19 +71,12 @@ exports[`App should render correctly 1`] = `
       <p
         className="title"
       >
-        Sonny Perdue
+        Connecticut
       </p>
       <p
         className="subtext subtitle"
       >
-        cabinet
-      </p>
-      <p
-        className="subtext ability1Title"
-      >
-        Judo Chop
-         - 
-        Deal 20 damage to player.
+        state
       </p>
     </div>
     <div
@@ -183,51 +87,12 @@ exports[`App should render correctly 1`] = `
       <p
         className="title"
       >
-        William Barr
+        Alabama
       </p>
       <p
         className="subtext subtitle"
       >
-        cabinet
-      </p>
-      <p
-        className="subtext ability1Title"
-      >
-        Banshee Call
-         - 
-        Skip opponent's next turn.
-      </p>
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      >
-        Gina Haspel
-      </p>
-      <p
-        className="subtext subtitle"
-      >
-        cabinet
-      </p>
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      >
-        Lamar Alexander
-      </p>
-      <p
-        className="subtext subtitle"
-      >
-        congress
+        state
       </p>
     </div>
     <div

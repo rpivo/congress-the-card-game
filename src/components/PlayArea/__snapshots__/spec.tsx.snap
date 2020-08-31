@@ -150,118 +150,6 @@ exports[`PlayArea should render correctly 1`] = `
     <p
       className="title"
     >
-      Alabama
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      state
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
-      Alaska
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      state
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
-      Arizona
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      state
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
-      Arkansas
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      state
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
-      California
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      state
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
-      Colorado
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      state
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
-      Connecticut
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      state
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
       Delaware
     </p>
     <p
@@ -294,19 +182,12 @@ exports[`PlayArea should render correctly 1`] = `
     <p
       className="title"
     >
-      Sonny Perdue
+      Connecticut
     </p>
     <p
       className="subtext subtitle"
     >
-      cabinet
-    </p>
-    <p
-      className="subtext ability1Title"
-    >
-      Judo Chop
-       - 
-      Deal 20 damage to player.
+      state
     </p>
   </div>
   <div
@@ -317,19 +198,12 @@ exports[`PlayArea should render correctly 1`] = `
     <p
       className="title"
     >
-      William Barr
+      Alaska
     </p>
     <p
       className="subtext subtitle"
     >
-      cabinet
-    </p>
-    <p
-      className="subtext ability1Title"
-    >
-      Banshee Call
-       - 
-      Skip opponent's next turn.
+      state
     </p>
   </div>
   <div
@@ -340,28 +214,12 @@ exports[`PlayArea should render correctly 1`] = `
     <p
       className="title"
     >
-      Gina Haspel
+      Alabama
     </p>
     <p
       className="subtext subtitle"
     >
-      cabinet
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
-      Lamar Alexander
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      congress
+      state
     </p>
   </div>
   <div

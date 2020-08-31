@@ -7,12 +7,12 @@ import { Context, Reducer, State } from './store';
 import Style from './style';
 
 const App = (): JSX.Element => {
-  const [activeCard, setActiveCard] = React.useState('');
+  const [activeCard, setActiveCard] = React.useState(-1);
   const [state, dispatch] = React.useReducer(Reducer, State);
   const { shouldShowHand } = state;
 
   const handleClick = () => {
-    if (activeCard) setActiveCard('');
+    if (activeCard > -1) setActiveCard(-1);
     if (shouldShowHand) dispatch('HIDE_HAND');
   };
 

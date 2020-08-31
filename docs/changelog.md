@@ -27,6 +27,7 @@ Ends August 31, 2020
 - add new Card to Hand when Card is drawn from Deck.
 - animate End Turn ArrowIcon when turn is endable.
 - update handleIconClick in ArrowIcon component so that it's unable to return false.
+- update PlayArea to populate a fixed number of Cards based on the cardOrder prop.
 
 ## Sprint 2
 Ended August 17, 2020

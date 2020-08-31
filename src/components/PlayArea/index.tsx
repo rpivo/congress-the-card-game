@@ -6,45 +6,48 @@ import { Context } from '@components/App/store';
 import cardData from '@utilities/cards.json';
 
 type CardType = {
-  abilities?: {
-    ability1?: {
-      title: string;
-      description: string;
-    }
-  };
-  name: string;
-  group: string;
-  type: string;
+  [id: string]: {
+    abilities?: {
+      ability1?: {
+        title: string;
+        description: string;
+      }
+    };
+    name: string;
+    group: string;
+    type: string;
+  }
 };
 
 type PlayAreaProps = {
-  activeCard: string;
-  setActiveCard: React.Dispatch<React.SetStateAction<string>>;
+  activeCard: number;
+  setActiveCard: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.Element => {
   const { dispatch, state } = React.useContext(Context);
-  const { shouldShowHand } = state;
+  const { playAreaCards, shouldShowHand } = state;
 
-  const handleCardMouseDown = (id: string) => {
-    if (id === activeCard) id = '';
+  const handleCardMouseDown = (id: number) => {
+    if (id === activeCard) id = -1;
     setActiveCard(id);
     if (shouldShowHand) dispatch('HIDE_HAND');
   };
 
   const getCards = () => {
     const cards = [];
-    for (const [id, card] of Object.entries(cardData)) {
+    for (const id of playAreaCards) {
+      const { abilities, group, name } = (cardData as CardType)[`${id}`];
       cards.push(
         <Card
-          ability1Title={(card as CardType).abilities?.ability1?.title}
-          ability1Description={(card as CardType).abilities?.ability1?.description}
+          ability1Title={abilities?.ability1?.title}
+          ability1Description={abilities?.ability1?.description}
           active={activeCard === id}
           handleCardMouseDown={handleCardMouseDown}
           id={id}
           key={id}
-          title={card.name}
-          subtitle={card.group}
+          title={name}
+          subtitle={group}
         />
       );
     }

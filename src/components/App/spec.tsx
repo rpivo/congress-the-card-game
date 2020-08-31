@@ -29,11 +29,14 @@ describe('App', () => {
       expect(wrapper.find('.card').at(0).hasClass('active')).toBe(false);
     });
 
-    it('should remove the .active class from Card components when PlayArea is clicked', () => {
+    it('should remove the .active class from Card components when App is clicked', () => {
       const wrapper = mount(<App />);
       wrapper.find('.card').at(0).simulate('mousedown');
       expect(wrapper.find('.card').at(0).hasClass('active')).toBe(true);
-      wrapper.find('.playArea').at(0).simulate('click');
+      const selector = wrapper.find('.app').at(0).prop('onClick');
+      const event = {} as React.MouseEvent;
+      if (selector) act(() => selector(event));
+      wrapper.update();
       expect(wrapper.find('.card').at(0).hasClass('active')).toBe(false);
     });
   });

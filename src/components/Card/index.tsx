@@ -5,8 +5,8 @@ type CardProps = {
   ability1Description?: string;
   ability1Title?: string;
   active?: boolean;
-  id: string;
-  handleCardMouseDown: (id: string) => void;
+  id: number;
+  handleCardMouseDown: (id: number) => void;
   subtitle?: string;
   title?: string;
 };

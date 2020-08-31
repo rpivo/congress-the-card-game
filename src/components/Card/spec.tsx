@@ -6,7 +6,7 @@ import Card from '@components/Card';
 
 describe('Card', () => {
   const CardMock =
-    <Card active={false} handleCardMouseDown={() => null} id={''} subtitle={''} title={''} />;
+    <Card active={false} handleCardMouseDown={() => null} id={-1} subtitle={''} title={''} />;
 
   it('should render correctly', () => {
     const tree = renderer

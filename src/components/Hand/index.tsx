@@ -5,15 +5,14 @@ import Style from './style';
 
 const Hand = (): JSX.Element => {
   const { state } = React.useContext(Context);
-  const { cardOrder, handCards, shouldShowHand } = state;
-  console.log('Hand / 9 / cardOrder', { cardOrder, handCards });
+  const { handCards, shouldShowHand } = state;
   const handleMouseDown = () => null;
   return (
     <Style
       className={`hand${shouldShowHand ? '' : ' hidden'}`}
       onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}>
-      {handCards.map(cardID =>
-        <Card id={`${cardID}`} key={cardID} handleCardMouseDown={handleMouseDown} />
+      {handCards && handCards.map(cardID =>
+        <Card id={cardID} key={cardID} handleCardMouseDown={handleMouseDown} />
       )}
     </Style>
   );
