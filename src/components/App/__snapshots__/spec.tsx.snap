@@ -16,19 +16,12 @@ exports[`App should render correctly 1`] = `
       <p
         className="title"
       >
-        Sonny Perdue
+        Colorado
       </p>
       <p
         className="subtext subtitle"
       >
-        cabinet
-      </p>
-      <p
-        className="subtext ability1Title"
-      >
-        Judo Chop
-         - 
-        Deal 20 damage to player.
+        state
       </p>
     </div>
     <div
@@ -55,44 +48,51 @@ exports[`App should render correctly 1`] = `
       <p
         className="title"
       >
-        President Donald Trump
-      </p>
-      <p
-        className="subtext subtitle"
-      >
-        president
-      </p>
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      >
-        Connecticut
-      </p>
-      <p
-        className="subtext subtitle"
-      >
-        state
-      </p>
-    </div>
-    <div
-      className="sc-AxirZ dLSlov card"
-      onClick={[Function]}
-      onMouseDown={[Function]}
-    >
-      <p
-        className="title"
-      >
         Alabama
       </p>
       <p
         className="subtext subtitle"
       >
         state
+      </p>
+    </div>
+    <div
+      className="sc-AxirZ dLSlov card"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <p
+        className="title"
+      >
+        California
+      </p>
+      <p
+        className="subtext subtitle"
+      >
+        state
+      </p>
+    </div>
+    <div
+      className="sc-AxirZ dLSlov card"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <p
+        className="title"
+      >
+        William Barr
+      </p>
+      <p
+        className="subtext subtitle"
+      >
+        cabinet
+      </p>
+      <p
+        className="subtext ability1Title"
+      >
+        Banshee Call
+         - 
+        Skip opponent's next turn.
       </p>
     </div>
     <div

@@ -150,6 +150,45 @@ exports[`PlayArea should render correctly 1`] = `
     <p
       className="title"
     >
+      Sonny Perdue
+    </p>
+    <p
+      className="subtext subtitle"
+    >
+      cabinet
+    </p>
+    <p
+      className="subtext ability1Title"
+    >
+      Judo Chop
+       - 
+      Deal 20 damage to player.
+    </p>
+  </div>
+  <div
+    className="c1 card"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+  >
+    <p
+      className="title"
+    >
+      Arizona
+    </p>
+    <p
+      className="subtext subtitle"
+    >
+      state
+    </p>
+  </div>
+  <div
+    className="c1 card"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+  >
+    <p
+      className="title"
+    >
       Delaware
     </p>
     <p
@@ -166,39 +205,7 @@ exports[`PlayArea should render correctly 1`] = `
     <p
       className="title"
     >
-      President Donald Trump
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      president
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
       Connecticut
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      state
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
-      Alaska
     </p>
     <p
       className="subtext subtitle"
