@@ -5,11 +5,19 @@ import 'jest-styled-components';
 import Card from '@components/Card';
 import Deck from '@components/Deck';
 import PlayArea from '@components/PlayArea';
-import { Context, State } from '@components/App/store';
+import { Context } from '@components/App/store';
+
+const StateMock = {
+  canDrawCard: true,
+  cardOrder: [5, 6, 7, 8, 9],
+  handCards: [],
+  playAreaCards: [0, 1, 2, 3, 4],
+  shouldShowHand: false,
+};
 
 describe('PlayArea', () => {
   const PlayAreaMock =
-    <Context.Provider value={{ dispatch: jest.fn(), state: State }}>
+    <Context.Provider value={{ dispatch: jest.fn(), state: StateMock }}>
       <PlayArea activeCard={-1} setActiveCard={jest.fn()} />
     </Context.Provider>;
 

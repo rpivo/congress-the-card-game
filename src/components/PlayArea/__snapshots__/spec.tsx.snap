@@ -150,19 +150,28 @@ exports[`PlayArea should render correctly 1`] = `
     <p
       className="title"
     >
-      Sonny Perdue
+      Alabama
     </p>
     <p
       className="subtext subtitle"
     >
-      cabinet
+      state
+    </p>
+  </div>
+  <div
+    className="c1 card"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+  >
+    <p
+      className="title"
+    >
+      Alaska
     </p>
     <p
-      className="subtext ability1Title"
+      className="subtext subtitle"
     >
-      Judo Chop
-       - 
-      Deal 20 damage to player.
+      state
     </p>
   </div>
   <div
@@ -189,7 +198,7 @@ exports[`PlayArea should render correctly 1`] = `
     <p
       className="title"
     >
-      Delaware
+      Arkansas
     </p>
     <p
       className="subtext subtitle"
@@ -205,23 +214,7 @@ exports[`PlayArea should render correctly 1`] = `
     <p
       className="title"
     >
-      Connecticut
-    </p>
-    <p
-      className="subtext subtitle"
-    >
-      state
-    </p>
-  </div>
-  <div
-    className="c1 card"
-    onClick={[Function]}
-    onMouseDown={[Function]}
-  >
-    <p
-      className="title"
-    >
-      Alabama
+      California
     </p>
     <p
       className="subtext subtitle"
