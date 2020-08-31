@@ -25,6 +25,7 @@ Ends August 31, 2020
 - implement CSS grid for Hand component.
 - add END_TURN action.
 - add new Card to Hand when Card is drawn from Deck.
+- animate End Turn ArrowIcon when turn is endable.
 
 ## Sprint 2
 Ended August 17, 2020

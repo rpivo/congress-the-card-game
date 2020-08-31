@@ -96,7 +96,18 @@ exports[`PlayArea should render correctly 1`] = `
   display: inline-block;
   position: fixed;
   right: 10px;
+  text-align: center;
   top: 10px;
+}
+
+.c2.endTurnIcon p {
+  margin-top: -10px;
+}
+
+.c2.endTurnIcon.endable line,
+.c2.endTurnIcon.endable path {
+  -webkit-animation: pulse 3s infinite;
+  animation: pulse 3s infinite;
 }
 
 .c0 {

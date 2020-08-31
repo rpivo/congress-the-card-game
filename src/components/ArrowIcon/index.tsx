@@ -24,7 +24,7 @@ const handleIconClick = (canDrawCard?: boolean, dispatch?: React.Dispatch<Action
 type IconTypeProps = [
   className: string,
   circle: typeof circleElement | null,
-  paragraph: JSX.Element | null,
+  paragraph: JSX.Element,
   handleClick: (canDrawCard?: boolean, dispatch?: React.Dispatch<Actions>) => void,
   height: string,
   width: string,
@@ -44,7 +44,7 @@ const drawCardIconProps: IconTypeProps = [
 const endCardIconProps: IconTypeProps = [
   'endTurnIcon',
   null,
-  null,
+  <p>End Turn</p>,
   handleIconClick,
   '75',
   '75',
@@ -66,7 +66,10 @@ const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
   ] = iconType === 'DRAW_CARD' ? drawCardIconProps : endCardIconProps;
 
   return (
-    <Style className={className} onClick={() => handleClick(canDrawCard, dispatch)}>
+    <Style
+      className={`${className}${iconType === 'END_TURN' && !canDrawCard ? ' endable' : ''}`}
+      onClick={() => handleClick(canDrawCard, dispatch)}
+    >
       <svg width={width} height={height} viewBox='0 0 703 703'>
         <g transform='translate(-398 -203)'>
           {circle}
@@ -90,7 +93,7 @@ const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
           />
         </g>
       </svg>
-      {paragraph}
+      {(iconType === 'DRAW_CARD' || !canDrawCard) && paragraph}
     </Style>
   );
 };
