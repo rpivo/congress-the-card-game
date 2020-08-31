@@ -1,20 +1,12 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import renderer from 'react-test-renderer';
 import { StopPropagationMouseEvent } from '@utilities/types';
 import App from '@components/App';
 import Hand from '@components/Hand';
 import PlayArea from '@components/PlayArea';
 
 describe('App', () => {
-  it('should render correctly', () => {
-    const tree = renderer
-      .create(<App />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   describe('activeCard state', () => {
     it('should render the PlayArea', () => {
       const wrapper = mount(<App />);

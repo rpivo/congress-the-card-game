@@ -28,6 +28,7 @@ Ends August 31, 2020
 - animate End Turn ArrowIcon when turn is endable.
 - update handleIconClick in ArrowIcon component so that it's unable to return false.
 - update PlayArea to populate a fixed number of Cards based on the cardOrder prop.
+- remove snapshot testing for App component.
 
 ## Sprint 2
 Ended August 17, 2020
