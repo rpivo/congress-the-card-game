@@ -1,23 +1,8 @@
 import React from 'react';
-import Style from './style';
-import Card from '@components/Card';
 import Deck from '@components/Deck';
 import { Context } from '@components/App/store';
-import cardData from '@utilities/cards.json';
-
-type CardType = {
-  [id: string]: {
-    abilities?: {
-      ability1?: {
-        title: string;
-        description: string;
-      }
-    };
-    name: string;
-    group: string;
-    type: string;
-  }
-};
+import { getCards } from '@components/Card/util';
+import Style from './style';
 
 type PlayAreaProps = {
   activeCard: number;
@@ -34,29 +19,9 @@ const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.E
     if (shouldShowHand) dispatch('HIDE_HAND');
   };
 
-  const getCards = () => {
-    const cards = [];
-    for (const id of playAreaCards) {
-      const { abilities, group, name } = (cardData as CardType)[`${id}`];
-      cards.push(
-        <Card
-          ability1Title={abilities?.ability1?.title}
-          ability1Description={abilities?.ability1?.description}
-          active={activeCard === id}
-          handleCardMouseDown={handleCardMouseDown}
-          id={id}
-          key={id}
-          title={name}
-          subtitle={group}
-        />
-      );
-    }
-    return cards;
-  };
-
   return (
     <Style className='playArea'>
-      {getCards()}
+      {getCards(playAreaCards, handleCardMouseDown, activeCard)}
       <Deck />
     </Style>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Context } from '@components/App/store';
-import Card from '@components/Card';
+import { getCards } from '@components/Card/util.tsx';
 import Style from './style';
 
 const Hand = (): JSX.Element => {
@@ -11,9 +11,7 @@ const Hand = (): JSX.Element => {
     <Style
       className={`hand${shouldShowHand ? '' : ' hidden'}`}
       onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}>
-      {handCards && handCards.map(cardID =>
-        <Card id={cardID} key={cardID} handleCardMouseDown={handleMouseDown} />
-      )}
+      {getCards(handCards, handleMouseDown)}
     </Style>
   );
 };

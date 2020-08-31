@@ -30,6 +30,7 @@ Ends August 31, 2020
 - update PlayArea to populate a fixed number of Cards based on the cardOrder prop.
 - remove snapshot testing for App component.
 - add StateMock for PlayArea component testing.
+- add text data to Cards in Hand.
 
 ## Sprint 2
 Ended August 17, 2020
