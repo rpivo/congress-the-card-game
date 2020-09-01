@@ -7,11 +7,16 @@ const Deck = (): JSX.Element => {
   const { dispatch, state } = React.useContext(Context);
   const { canDrawCard } = state;
 
+  const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
+    event.stopPropagation();
+    if (canDrawCard) dispatch('DRAW_CARD');
+  };
+
   return (
     <Style className='deck'>
       <Style
         className={`stackedCard${canDrawCard ? ' canDrawCard' : ''}`}
-        onClick={() => canDrawCard && dispatch('DRAW_CARD')}>
+        onClick={(event: React.MouseEvent<HTMLInputElement>) => handleClick(event)}>
         {canDrawCard && <ArrowIcon iconType='DRAW_CARD' />}
       </Style>
     </Style>

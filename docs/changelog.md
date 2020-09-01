@@ -31,6 +31,7 @@ Ends August 31, 2020
 - remove snapshot testing for App component.
 - add StateMock for PlayArea component testing.
 - add text data to Cards in Hand.
+- prevent Hand from closing if it's already open and a Card is drawn.
 
 ## Sprint 2
 Ended August 17, 2020

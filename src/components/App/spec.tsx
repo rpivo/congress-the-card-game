@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { StopPropagationMouseEvent } from '@utilities/types';
+import { stopPropagationMouseEvent } from '@utilities/mocks';
 import App from '@components/App';
 import Hand from '@components/Hand';
 import PlayArea from '@components/PlayArea';
@@ -39,18 +39,17 @@ describe('App', () => {
       const wrapper = mount(<App />);
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
       const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
-      const event = {} as React.MouseEvent;
-      if (selector) act(() => selector(event));
+      if (selector) act(() => selector(stopPropagationMouseEvent));
       wrapper.update();
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
       const endTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
-      if (endTurnSelector) act(() => endTurnSelector(event));
+      if (endTurnSelector) act(() => endTurnSelector(stopPropagationMouseEvent));
       wrapper.update();
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
     });
 
-    it(`should perform no action if the "End Turn" ArrowIcon while the "Take a Card" ArrowIcon is
-    already showing`, () => {
+    it(`should perform no action if the "End Turn" ArrowIcon is clicked while the "Take a Card"
+    ArrowIcon is already showing`, () => {
       const wrapper = mount(<App />);
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
       const event = {} as React.MouseEvent;
@@ -68,6 +67,19 @@ describe('App', () => {
       if (drawCardSelector) act(() => drawCardSelector(event));
       wrapper.update();
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+    });
+
+    it(`should perform no action if the Deck is clicked when the ArrowIcon with class drawCardIcon
+    is not showing`, () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+      const deckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (deckSelector) act(() => deckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+      if (deckSelector) act(() => deckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
     });
   });
 
@@ -95,8 +107,7 @@ describe('App', () => {
       const wrapper = mount(<App />);
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
       const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
-      const event = {} as React.MouseEvent;
-      if (selector) act(() => selector(event));
+      if (selector) act(() => selector(stopPropagationMouseEvent));
       wrapper.update();
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
     });
@@ -106,8 +117,7 @@ describe('App', () => {
       expect(wrapper.find('.hand').find('.hidden').at(0)).toHaveLength(1);
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
       const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
-      const event = {} as React.MouseEvent;
-      if (selector) act(() => selector(event));
+      if (selector) act(() => selector(stopPropagationMouseEvent));
       wrapper.update();
       expect(wrapper.find('.hand').find('.hidden').at(0)).toHaveLength(0);
     });
@@ -116,13 +126,12 @@ describe('App', () => {
     showing`, () => {
       const wrapper = mount(<App />);
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
-      const event = {} as React.MouseEvent;
       const deckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
-      if (deckSelector) act(() => deckSelector(event));
+      if (deckSelector) act(() => deckSelector(stopPropagationMouseEvent));
       wrapper.update();
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
       const appSelector = wrapper.find('div').at(0).prop('onClick');
-      if (appSelector) act(() => appSelector(event));
+      if (appSelector) act(() => appSelector(stopPropagationMouseEvent));
       wrapper.update();
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
     });
@@ -130,30 +139,12 @@ describe('App', () => {
     it('should show the hand when the HandIcon is clicked', () => {
       const wrapper = mount(<App />);
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
-      const event = {
-        altKey: false,
-        button: 0,
-        buttons: 0,
-        clientX: 0,
-        clientY: 0,
-        ctrlKey: false,
-        metaKey: false,
-        movementX: 0,
-        movementY: 0,
-        pageX: 0,
-        pageY: 0,
-        relatedTarget: null,
-        screenX: 0,
-        screenY: 0,
-        shiftKey: false,
-        stopPropagation: jest.fn(),
-      } as unknown as StopPropagationMouseEvent;
       const selector = wrapper.find('.handIcon').find('div').at(0).prop('onClick');
-      if (selector) act(() => selector(event));
+      if (selector) act(() => selector(stopPropagationMouseEvent));
       wrapper.update();
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
       const updatedSelector = wrapper.find('.handIcon').find('div').at(0).prop('onClick');
-      if (updatedSelector) act(() => updatedSelector(event));
+      if (updatedSelector) act(() => updatedSelector(stopPropagationMouseEvent));
       wrapper.update();
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
     });
