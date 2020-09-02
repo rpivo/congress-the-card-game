@@ -3,12 +3,12 @@ import ArrowIcon from '@components/ArrowIcon';
 import Hand from '@components/Hand';
 import HandIcon from '@components/HandIcon';
 import PlayArea from '@components/PlayArea';
-import { Context, Reducer, State } from './store';
+import { Context, getDefaultState, Reducer } from './store';
 import Style from './style';
 
 const App = (): JSX.Element => {
   const [activeCard, setActiveCard] = React.useState(-1);
-  const [state, dispatch] = React.useReducer(Reducer, State);
+  const [state, dispatch] = React.useReducer(Reducer, getDefaultState());
   const { shouldShowHand } = state;
 
   const handleClick = () => {

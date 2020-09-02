@@ -5,11 +5,14 @@ import Style from '@components/Card/style';
 
 const Deck = (): JSX.Element => {
   const { dispatch, state } = React.useContext(Context);
-  const { canDrawCard } = state;
+  const { canDrawCard, cardOrder, handCards } = state;
 
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
     event.stopPropagation();
-    if (canDrawCard) dispatch('DRAW_CARD');
+    if (canDrawCard) {
+      if (handCards.length > 4) console.log('cannot draw a new card');
+      else if (cardOrder.length) dispatch('DRAW_CARD');
+    }
   };
 
   return (

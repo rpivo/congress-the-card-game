@@ -11,7 +11,7 @@ const Actions = createStringEnum([
 
 export type Actions = keyof typeof Actions;
 
-const cardOrder = (() => {
+const getCardOrder = (): number[] => {
   const cardCount = Object.keys(cardData).length;
   const cardIDs = Array.from([...Array(cardCount).keys()]);
   for (let i = cardCount - 1; i > 0; i--) {
@@ -19,9 +19,9 @@ const cardOrder = (() => {
     [cardIDs[i], cardIDs[j]] = [cardIDs[j], cardIDs[i]];
   }
   return cardIDs;
-})();
+};
 
-type StateShape = {
+export type StateShape = {
   canDrawCard: boolean;
   cardOrder: number[];
   handCards: number[];
@@ -29,15 +29,18 @@ type StateShape = {
   shouldShowHand: boolean;
 };
 
-export const State: StateShape = {
-  canDrawCard: true,
-  cardOrder,
-  handCards: [],
-  playAreaCards: cardOrder.splice(0, 5),
-  shouldShowHand: false,
+export const getDefaultState = (): StateShape => {
+  const cardOrder = getCardOrder();
+  return {
+    canDrawCard: true,
+    cardOrder,
+    handCards: [],
+    playAreaCards: cardOrder.splice(0, 5),
+    shouldShowHand: false,
+  };
 };
 
-export const Reducer = (state: typeof State, action: Actions): StateShape => {
+export const Reducer = (state: StateShape, action: Actions): StateShape => {
   switch (action) {
     case 'DRAW_CARD':
       return {
@@ -70,7 +73,7 @@ export const Reducer = (state: typeof State, action: Actions): StateShape => {
 
 type Context = {
   dispatch: React.Dispatch<Actions>;
-  state: typeof State;
+  state: StateShape;
 };
 
 export const Context = React.createContext({} as Context);

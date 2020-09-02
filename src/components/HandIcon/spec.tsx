@@ -3,11 +3,11 @@ import 'jest-styled-components';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import HandIcon from '@components/HandIcon';
-import { Context, State } from '@components/App/store';
+import { Context, getDefaultState } from '@components/App/store';
 
 describe('Deck', () => {
   const HandIconMock =
-    <Context.Provider value={{ dispatch: jest.fn(), state: State }}>
+    <Context.Provider value={{ dispatch: jest.fn(), state: getDefaultState() }}>
       <HandIcon />
     </Context.Provider>;
 
