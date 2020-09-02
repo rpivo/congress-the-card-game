@@ -36,6 +36,7 @@ module.exports = {
     "jsx-quotes": 0,
     "lines-between-class-members": 0,
     "max-len": ["error", { code: 100 }],
+    "max-lines": 0,
     "max-lines-per-function": 0,
     "max-params": 0,
     "max-statements": 0,
