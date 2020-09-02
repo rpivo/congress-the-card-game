@@ -1,3 +1,6 @@
+## Sprint 4
+- update jest config.
+
 ## Sprint 3
 Ends August 31, 2020
 
