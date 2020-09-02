@@ -6,14 +6,22 @@ import Style from './style';
 const NotificationQueue = (): JSX.Element => {
   const { state } = React.useContext(Context);
   const didMount = React.useRef(false);
+  const [queue, setQueue] = React.useState([] as string[]);
   const { canDrawCard } = state;
 
   React.useEffect(() => {
-    if (canDrawCard && didMount.current) console.log('NotificationQueue / 10 / useEffect');
-    else didMount.current = true;
+    if (canDrawCard && didMount.current) {
+      setQueue([...queue, 'New Turn']);
+    } else {
+      didMount.current = true;
+    }
   }, [canDrawCard]);
 
-  return <Style className='notificationQueue'><Notification /></Style>;
+  return (
+    <Style className='notificationQueue'>
+      {queue && queue.map((message, id) => <Notification key={id} message={message} />)}
+    </Style>
+  );
 };
 
 export default NotificationQueue;

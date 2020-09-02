@@ -8,6 +8,7 @@ Ends September 16, 2020
 - add NotificationQueue component.
 - get NotificationQueue to respond to the turn ending.
 - add Notification component.
+- add New Turn Notification each time turn is ended.
 
 ## Sprint 3
 Ends August 31, 2020

@@ -1,5 +1,9 @@
 import React from 'react';
 
-const Notification = (): JSX.Element => <p>Notification</p>;
+type NotificationProps = {
+  message: string;
+}
+
+const Notification = ({ message }: Readonly<NotificationProps>): JSX.Element => <p>{message}</p>;
 
 export default Notification;
