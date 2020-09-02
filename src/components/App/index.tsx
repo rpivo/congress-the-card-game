@@ -2,6 +2,7 @@ import React from 'react';
 import ArrowIcon from '@components/ArrowIcon';
 import Hand from '@components/Hand';
 import HandIcon from '@components/HandIcon';
+import NotificationQueue from '@components/NotificationQueue';
 import PlayArea from '@components/PlayArea';
 import { Context, getDefaultState, Reducer } from './store';
 import Style from './style';
@@ -23,6 +24,7 @@ const App = (): JSX.Element => {
         <ArrowIcon iconType='END_TURN' />
         <HandIcon />
         <Hand />
+        <NotificationQueue />
       </Context.Provider>
     </Style>
   );

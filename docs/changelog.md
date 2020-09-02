@@ -1,8 +1,11 @@
 ## Sprint 4
+Ends September 16, 2020
+
 - update jest config.
 - turn off max-lines rule in eslint config.
 - add limit on number of Cards that can be in Hand.
 - center Cards in Hand.
+- add NotificationQueue component.
 
 ## Sprint 3
 Ends August 31, 2020
