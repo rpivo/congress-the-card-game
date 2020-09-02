@@ -6,6 +6,7 @@ Ends September 16, 2020
 - add limit on number of Cards that can be in Hand.
 - center Cards in Hand.
 - add NotificationQueue component.
+- get NotificationQueue to respond to the turn ending.
 
 ## Sprint 3
 Ends August 31, 2020
