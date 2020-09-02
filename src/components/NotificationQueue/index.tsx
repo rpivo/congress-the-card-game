@@ -1,4 +1,5 @@
 import React from 'react';
+import Notification from '@components/Notification';
 import { Context } from '@components/App/store';
 import Style from './style';
 
@@ -12,9 +13,7 @@ const NotificationQueue = (): JSX.Element => {
     else didMount.current = true;
   }, [canDrawCard]);
 
-  return (
-    <Style className='notificationQueue'></Style>
-  );
+  return <Style className='notificationQueue'><Notification /></Style>;
 };
 
 export default NotificationQueue;
