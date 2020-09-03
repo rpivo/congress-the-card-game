@@ -4,6 +4,7 @@ import { act } from 'react-dom/test-utils';
 import { stopPropagationMouseEvent } from '@utilities/mocks';
 import App from '@components/App';
 import Hand from '@components/Hand';
+import Notification from '@components/Notification';
 import PlayArea from '@components/PlayArea';
 
 describe('App', () => {
@@ -90,6 +91,26 @@ describe('App', () => {
       if (deckSelector) act(() => deckSelector(stopPropagationMouseEvent));
       wrapper.update();
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+    });
+
+    it('should remove a Notification after 1.5 seconds', () => {
+      const wrapper = mount(<App />);
+      const event = {} as React.MouseEvent;
+      expect(wrapper.find(Notification)).toHaveLength(0);
+
+      // draw card, end turn
+      const deckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (deckSelector) act(() => deckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      const endTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (endTurnSelector) act(() => endTurnSelector(event));
+      wrapper.update();
+      expect(wrapper.find(Notification)).toHaveLength(1);
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      expect(wrapper.find(Notification)).toHaveLength(1);
     });
   });
 
