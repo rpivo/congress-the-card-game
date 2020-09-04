@@ -5,7 +5,7 @@ import Style from './style';
 
 const NotificationQueue = (): JSX.Element => {
   const { state } = React.useContext(Context);
-  const { canDrawCard } = state;
+  const { canDrawCard, notifyHandIsFull } = state;
 
   const didMount = React.useRef(false);
   const timerRef = React.useRef(0);
@@ -20,12 +20,13 @@ const NotificationQueue = (): JSX.Element => {
   };
 
   React.useEffect(() => {
-    if (canDrawCard && didMount.current) {
-      setQueue([...queue, 'New Turn']);
-    } else {
-      didMount.current = true;
-    }
+    if (canDrawCard && didMount.current) setQueue([...queue, 'New Turn']);
+    else didMount.current = true;
   }, [canDrawCard]);
+
+  React.useEffect(() => {
+    setQueue([...queue, 'Your hand is full! Discard a card.']);
+  }, [notifyHandIsFull]);
 
   React.useEffect(() => {
     if (timerRef.current === 0 && queue.length !== 0) startTimer();

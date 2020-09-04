@@ -11,6 +11,7 @@ const StateMock = {
   canDrawCard: true,
   cardOrder: [5, 6, 7, 8, 9],
   handCards: [],
+  notifyHandIsFull: false,
   playAreaCards: [0, 1, 2, 3, 4],
   shouldShowHand: false,
 };

@@ -58,8 +58,7 @@ describe('Deck', () => {
       const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
       if (selector) act(() => selector(stopPropagationMouseEvent));
       wrapper.update();
-      expect(dispatch).toBeCalledTimes(0);
-      expect(console.log).toHaveBeenCalledWith('cannot draw a new card');
+      expect(dispatch).toBeCalledWith('HAND_FULL');
     });
 
     it('should not call dispatch if there are no more Card IDs to pull from cardOrder', () => {

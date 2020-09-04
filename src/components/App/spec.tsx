@@ -93,7 +93,7 @@ describe('App', () => {
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
     });
 
-    it('should remove a Notification after 1.5 seconds', () => {
+    it('should remove a "New Turn" Notification after 1.5 seconds', () => {
       const wrapper = mount(<App />);
       const event = {} as React.MouseEvent;
       expect(wrapper.find(Notification)).toHaveLength(0);
@@ -110,7 +110,102 @@ describe('App', () => {
       act(() => {
         jest.advanceTimersByTime(2000);
       });
-      expect(wrapper.find(Notification)).toHaveLength(1);
+      wrapper.update();
+
+      expect(wrapper.find(Notification)).toHaveLength(0);
+    });
+
+    it('should remove a "Your hand is full" and "New Turn" Notifications after time passes', () => {
+      const wrapper = mount(<App />);
+      const event = {} as React.MouseEvent;
+      expect(wrapper.find(Notification)).toHaveLength(0);
+
+      // draw first card, end turn
+      const deckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (deckSelector) act(() => deckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+      const endTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (endTurnSelector) act(() => endTurnSelector(event));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      // draw second card, end turn
+      const secondDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (secondDeckSelector) act(() => secondDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+      const secondEndTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (secondEndTurnSelector) act(() => secondEndTurnSelector(event));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      // draw third card, end turn
+      const thirdDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (thirdDeckSelector) act(() => thirdDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+      const thirdEndTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (thirdEndTurnSelector) act(() => thirdEndTurnSelector(event));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      // draw fourth card, end turn
+      const fourthDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (fourthDeckSelector) act(() => fourthDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+      const fourthEndTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (fourthEndTurnSelector) act(() => fourthEndTurnSelector(event));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      // draw fifth card, end turn
+      const fifthDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (fifthDeckSelector) act(() => fifthDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+      const fifthEndTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (fifthEndTurnSelector) act(() => fifthEndTurnSelector(event));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      const sixthDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (sixthDeckSelector) act(() => sixthDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      expect(wrapper.find(Notification)).toHaveLength(0);
     });
   });
 

@@ -5,6 +5,7 @@ import { createStringEnum } from '@utilities/types';
 const Actions = createStringEnum([
   'DRAW_CARD',
   'END_TURN',
+  'HAND_FULL',
   'HIDE_HAND',
   'SHOW_HAND',
 ]);
@@ -25,6 +26,7 @@ export type StateShape = {
   canDrawCard: boolean;
   cardOrder: number[];
   handCards: number[];
+  notifyHandIsFull: boolean;
   playAreaCards: number[];
   shouldShowHand: boolean;
 };
@@ -35,6 +37,7 @@ export const getDefaultState = (): StateShape => {
     canDrawCard: true,
     cardOrder,
     handCards: [],
+    notifyHandIsFull: false,
     playAreaCards: cardOrder.splice(0, 5),
     shouldShowHand: false,
   };
@@ -50,12 +53,18 @@ export const Reducer = (state: StateShape, action: Actions): StateShape => {
           ...state.handCards,
           state.cardOrder.shift(),
         ] as number[],
+        notifyHandIsFull: false,
         shouldShowHand: true,
       };
     case 'END_TURN':
       return {
         ...state,
         canDrawCard: true,
+      };
+    case 'HAND_FULL':
+      return {
+        ...state,
+        notifyHandIsFull: !state.notifyHandIsFull,
       };
     case 'SHOW_HAND':
       return {

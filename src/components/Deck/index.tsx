@@ -10,7 +10,7 @@ const Deck = (): JSX.Element => {
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
     event.stopPropagation();
     if (canDrawCard) {
-      if (handCards.length > 4) console.log('cannot draw a new card');
+      if (handCards.length > 4) dispatch('HAND_FULL');
       else if (cardOrder.length) dispatch('DRAW_CARD');
     }
   };

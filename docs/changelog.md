@@ -10,6 +10,7 @@ Ends September 16, 2020
 - add Notification component.
 - add New Turn Notification each time turn is ended.
 - add timeout for Notifications.
+- add 'Hand is full' notification.
 
 ## Sprint 3
 Ends August 31, 2020
