@@ -12,6 +12,7 @@ Ends September 16, 2020
 - add timeout for Notifications.
 - add 'Hand is full' notification.
 - add X icon to Hand Cards.
+- add min-height to Hand.
 
 ## Sprint 3
 Ends August 31, 2020

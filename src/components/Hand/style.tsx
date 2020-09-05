@@ -12,6 +12,7 @@ const Style = styled.div<HandStyle>`
   grid-template-columns: ${props => `repeat(${props.cardCount}, 175px [col-start]);`}
   justify-content: center;
   left: 0;
+  min-height: 226px;
   padding: 15px;
   position: fixed;
   right: 0;
