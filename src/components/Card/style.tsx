@@ -8,22 +8,9 @@ const Style = styled.div`
   height: 210px;
   padding: 8px;
   place-self: center;
+  position: relative;
   transition: box-shadow 0.2s ease-in-out;
   width: 150px;
-
-  p {
-    margin-bottom: 0;
-    margin-top: 0;
-
-    &.subtext {
-      font-size: 11px;
-      margin-top: 3px;
-    }
-
-    &.ability1Title {
-      margin-top: 15px;
-    }
-  }
 
   &.active {
     background: #9FFFB0;
@@ -82,6 +69,38 @@ const Style = styled.div`
         margin-top: 10px;
       }
     }
+  }
+
+  p {
+    margin-bottom: 0;
+    margin-top: 0;
+
+    &.subtext {
+      font-size: 11px;
+      margin-top: 3px;
+    }
+
+    &.ability1Title {
+      margin-top: 15px;
+    }
+  }
+
+  .xIcon {
+    align-itmes: center;
+    background: red;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    color: white;
+    display: flex;
+    font-size: 18px;
+    height: 20px;
+    width: 20px;
+    justify-content: center;
+    line-height: 18px;
+    position: absolute;
+    text-align: center;
+    top: -5px;
+    right: -5px;
   }
 `;
 

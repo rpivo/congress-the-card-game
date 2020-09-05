@@ -9,23 +9,10 @@ exports[`PlayArea should render correctly 1`] = `
   height: 210px;
   padding: 8px;
   place-self: center;
+  position: relative;
   -webkit-transition: box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
   width: 150px;
-}
-
-.c1 p {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-.c1 p.subtext {
-  font-size: 11px;
-  margin-top: 3px;
-}
-
-.c1 p.ability1Title {
-  margin-top: 15px;
 }
 
 .c1.active {
@@ -86,6 +73,47 @@ exports[`PlayArea should render correctly 1`] = `
 
 .c1.stackedCard .drawCardIcon p {
   margin-top: 10px;
+}
+
+.c1 p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.c1 p.subtext {
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+.c1 p.ability1Title {
+  margin-top: 15px;
+}
+
+.c1 .xIcon {
+  -webkit-align-itmes: center;
+  -webkit-box-align-itmes: center;
+  -ms-flex-align-itmes: center;
+  align-itmes: center;
+  background: red;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  height: 20px;
+  width: 20px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  top: -5px;
+  right: -5px;
 }
 
 .c2 {

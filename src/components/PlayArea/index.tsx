@@ -13,7 +13,7 @@ const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.E
   const { dispatch, state } = React.useContext(Context);
   const { playAreaCards, shouldShowHand } = state;
 
-  const handleCardMouseDown = (id: number) => {
+  const handleMouseDown = (id: number) => {
     if (id === activeCard) id = -1;
     setActiveCard(id);
     if (shouldShowHand) dispatch('HIDE_HAND');
@@ -21,7 +21,7 @@ const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.E
 
   return (
     <Style className='playArea'>
-      {getCards(playAreaCards, handleCardMouseDown, activeCard)}
+      {getCards({ activeCard, cardIDs: playAreaCards, handleMouseDown })}
       <Deck />
     </Style>
   );

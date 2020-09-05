@@ -12,7 +12,7 @@ const Hand = (): JSX.Element => {
       cardCount={handCards.length}
       className={`hand${shouldShowHand ? '' : ' hidden'}`}
       onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}>
-      {getCards(handCards, handleMouseDown)}
+      {getCards({ cardIDs: handCards, handleMouseDown, isHandCard: true })}
     </Style>
   );
 };
