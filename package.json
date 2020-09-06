@@ -42,6 +42,7 @@
     "react-dom": "^16.13.1"
   },
   "scripts": {
+    "audit": "npx lighthouse-multi --depth=100 --endpoints=https://www.congressthecardgame.com",
     "build": "npm run clean && rollup -c && rm dist/*.js",
     "build-js": "npm run clean && rollup -c",
     "clean": "bash clean.sh",
