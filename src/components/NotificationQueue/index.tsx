@@ -8,6 +8,7 @@ const NotificationQueue = (): JSX.Element => {
   const { canDrawCard, notifyHandIsFull } = state;
 
   const didMount = React.useRef(false);
+  const previousNotifyHandIsFull = React.useRef(false);
   const timerRef = React.useRef(0);
 
   const [queue, setQueue] = React.useState([] as string[]);
@@ -20,13 +21,23 @@ const NotificationQueue = (): JSX.Element => {
   };
 
   React.useEffect(() => {
-    if (canDrawCard && didMount.current) setQueue([...queue, 'New Turn']);
-    else didMount.current = true;
-  }, [canDrawCard]);
+    if (didMount.current) {
 
-  React.useEffect(() => {
-    setQueue([...queue, 'Your hand is full! Discard a card.']);
-  }, [notifyHandIsFull]);
+      let notification = '';
+
+      if (notifyHandIsFull !== previousNotifyHandIsFull.current) {
+        notification = 'Your hand is full! Discard a card.';
+        previousNotifyHandIsFull.current = notifyHandIsFull;
+      } else if (canDrawCard) {
+        notification = 'New Turn';
+      }
+
+      if (notification) setQueue([...queue, notification]);
+
+    } else {
+      didMount.current = true;
+    }
+  }, [canDrawCard, notifyHandIsFull]);
 
   React.useEffect(() => {
     if (timerRef.current === 0 && queue.length !== 0) startTimer();

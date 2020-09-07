@@ -18,6 +18,7 @@ Ends September 16, 2020
 - add sh directory.
 - improve audit scripts.
 - add crontab example for local lighthouse-multi cron job.
+- combine notification-generating useEffects into a single useEffect.
 
 ## Sprint 3
 Ends August 31, 2020
