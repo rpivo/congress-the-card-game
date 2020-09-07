@@ -132,10 +132,11 @@ exports[`Deck should render correctly 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 18px;
+  padding: 2px;
   position: absolute;
   text-align: center;
-  top: -5px;
-  right: -5px;
+  top: -6px;
+  right: -6px;
 }
 
 @media screen and (max-width:1750px) {

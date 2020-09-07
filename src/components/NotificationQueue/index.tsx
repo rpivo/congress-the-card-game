@@ -16,7 +16,7 @@ const NotificationQueue = (): JSX.Element => {
   const startTimer = () => {
     timerRef.current = setTimeout(() => {
       setTimer(Date.now);
-    }, 1500);
+    }, 1250);
   };
 
   React.useEffect(() => {

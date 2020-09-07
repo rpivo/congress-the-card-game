@@ -14,6 +14,7 @@ Ends September 16, 2020
 - add X icon to Hand Cards.
 - add min-height to Hand.
 - add audit script.
+- add styles to Notifications.
 
 ## Sprint 3
 Ends August 31, 2020

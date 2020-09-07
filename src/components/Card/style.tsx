@@ -97,10 +97,11 @@ const Style = styled.div`
     width: 20px;
     justify-content: center;
     line-height: 18px;
+    padding: 2px;
     position: absolute;
     text-align: center;
-    top: -5px;
-    right: -5px;
+    top: -6px;
+    right: -6px;
   }
 `;
 
