@@ -19,6 +19,7 @@ Ends September 16, 2020
 - improve audit scripts.
 - add crontab example for local lighthouse-multi cron job.
 - combine notification-generating useEffects into a single useEffect.
+- update audit.performance.sh script to include custom './reports' output directory.
 
 ## Sprint 3
 Ends August 31, 2020
