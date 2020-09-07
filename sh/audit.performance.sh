@@ -1,0 +1,1 @@
+npx lighthouse-multi --depth=100 --endpoints=https://www.congressthecardgame.com
