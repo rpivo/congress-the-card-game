@@ -5,17 +5,11 @@ const Style = styled.span`
     0% {
       opacity: 0;
     }
-    25% {
-      opacity: 1;
-    }
-    75% {
-      opacity: 1;
-    }
     100% {
-      opacity: 0;
+      opacity: 1;
     }
   }
-  animation: fade 1.25s 1;
+  animation: fade 0.25s 1;
   background: #2FAB40;
   border-radius: 28px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
