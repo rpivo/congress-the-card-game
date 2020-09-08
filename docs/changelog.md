@@ -23,6 +23,7 @@ Ends September 16, 2020
 - remove fade-outs from Notifications.
 - update cron documentation.
 - add 'Your hand is empty' indicator for when Hand has no Cards.
+- increase Notification font-size.
 
 ## Sprint 3
 Ends August 31, 2020
