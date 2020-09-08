@@ -22,6 +22,7 @@ Ends September 16, 2020
 - update audit.performance.sh script to include custom './reports' output directory.
 - remove fade-outs from Notifications.
 - update cron documentation.
+- add 'Your hand is empty' indicator for when Hand has no Cards.
 
 ## Sprint 3
 Ends August 31, 2020

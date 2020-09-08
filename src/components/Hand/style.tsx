@@ -5,6 +5,7 @@ type HandStyle = {
 };
 
 const Style = styled.div<HandStyle>`
+  align-items: center;
   background: rgba(0, 0, 0, 0.8);
   bottom: 0;
   display: grid;
@@ -20,6 +21,10 @@ const Style = styled.div<HandStyle>`
 
   &.hidden {
     bottom: -260px;
+  }
+
+  p.empty {
+    color: white;
   }
 `;
 
