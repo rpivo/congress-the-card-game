@@ -1,2 +1,0 @@
-# create local cron job from line below (written for crontab)
-0 8 * * 1 cd ~/path/to/repo && npx lighthouse-multi --depth=100 --endpoints=https://www.congressthecardgame.com

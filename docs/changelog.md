@@ -21,6 +21,7 @@ Ends September 16, 2020
 - combine notification-generating useEffects into a single useEffect.
 - update audit.performance.sh script to include custom './reports' output directory.
 - remove fade-outs from Notifications.
+- update cron documentation.
 
 ## Sprint 3
 Ends August 31, 2020
