@@ -24,6 +24,8 @@ Ends September 16, 2020
 - update cron documentation.
 - add 'Your hand is empty' indicator for when Hand has no Cards.
 - increase Notification font-size.
+- update audit scripts.
+- rename cron.md to README.md.
 
 ## Sprint 3
 Ends August 31, 2020
