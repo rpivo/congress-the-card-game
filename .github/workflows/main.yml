@@ -8,4 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: pushes to codecommit
-        run: git push ${{ secrets.CODECOMMIT_URL }} master:master
+        run: |
+          git remote add origin ${{ secrets.CODECOMMIT_URL }}
+          git push origin master
