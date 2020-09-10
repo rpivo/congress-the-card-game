@@ -1,0 +1,11 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+jobs:
+  codecommit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: pushes to codecommit
+        run: git push ${{ secrets.CODECOMMIT_URL }} master:master
