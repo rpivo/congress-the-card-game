@@ -1,4 +1,7 @@
 DIRECTORY=$(date +"%Y-%m-%d")
+if [ ! -d reports ]; then
+  mkdir ./reports
+fi
 if [ ! -d "$DIRECTORY" ]; then
   mkdir ./reports/"$DIRECTORY"
 fi

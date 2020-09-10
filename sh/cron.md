@@ -1,10 +1,16 @@
-To create a local cron job (this example uses crontab) using the audit.sh and audit.performance.sh scripts once a week on OSX, first get your path variable so that your crontab job will have access to your copy of Node:
+To create a local cron job (this example uses crontab) that runs audit.sh and audit.performance.sh, you will need to globally install Lighthouse:
+
+```sh
+npm install -g lighthouse
+```
+
+For the crontab script, first get your path variable so that your crontab job will have access to your copy of Node:
 
 ```sh
 echo $PATH
 ```
 
-Then set this path variable locally in the crontab file. The below example runs `audit.sh` every Sunday at 10am and `audit.performance.sh` every Sundat at 10:05am.
+Then set this path variable locally in the crontab file. The below example runs `audit.sh` every Sunday at 10am and `audit.performance.sh` every Sunday at 10:05am.
 
 ```sh
 #!/bin/bash
