@@ -12,6 +12,7 @@ jobs:
           echo 'hello world'
           echo 'second echo'
           echo "hello" > test.md
+          echo "hello" > .git-credentials
           echo "$(ls)"
         # run: |
         #   'echo "$GIT_CREDENTIALS" > .git-credentials'
