@@ -14,6 +14,7 @@ jobs:
           echo "hello" > test.md
           echo "hello" > .git-credentials
           echo ${{ secrets.GIT_CREDENTIALS }} > git-credentials.txt
+          git config --global credential.helper 'store --file git-credentials.txt'
           echo "$(ls)"
         # run: |
         #   'echo "$GIT_CREDENTIALS" > .git-credentials'
