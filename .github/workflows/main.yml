@@ -12,6 +12,7 @@ jobs:
           echo 'hello world'
           echo 'second echo'
           echo ${{ secrets.GIT_CREDENTIALS }}
+          echo "$(ls)"
         # run: |
         #   'echo "$GIT_CREDENTIALS" > .git-credentials'
         #   cat .git-credentials
