@@ -26,7 +26,7 @@ Ends September 16, 2020
 - increase Notification font-size.
 - update audit scripts.
 - rename cron.md to README.md.
-- add GitHub action to push code to CodeCommit.
+- add GitHub action to push code to CodeCommit. 
 
 ## Sprint 3
 Ends August 31, 2020
