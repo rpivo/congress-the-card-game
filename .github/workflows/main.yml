@@ -10,6 +10,7 @@ jobs:
       - name: pushes to codecommit
         run: |
           'echo "$secrets.GIT_CREDENTIALS" > .git-credentials'
+          cat .git-credentials
           git config --global credential.helper 'store --file .git-credentials'
           git remote add codecommit ${{ secrets.CODECOMMIT_URL }}
           git push codecommit master
