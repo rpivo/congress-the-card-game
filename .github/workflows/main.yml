@@ -9,8 +9,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: pushes to codecommit
         run: |
-          'echo "$secrets.GIT_CREDENTIALS" > .git-credentials'
+          'echo "$GIT_CREDENTIALS" > .git-credentials'
           cat .git-credentials
           git config --global credential.helper 'store --file .git-credentials'
-          git remote add codecommit ${{ secrets.CODECOMMIT_URL }}
+          git remote add codecommit "$CODECOMMIT_URL"
           git push codecommit master
+        shell: bash
+        env:
+          GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
+          CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
