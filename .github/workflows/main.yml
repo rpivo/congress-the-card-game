@@ -9,5 +9,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: pushes to codecommit
         run: |
-          git remote add codecommit ${{ secrets.CODECOMMIT_URL }}
+          git remote add codecommit '${{ secrets.CODECOMMIT_URL }}'
           git push codecommit master
