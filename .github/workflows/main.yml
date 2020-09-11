@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: pushes to codecommit
-      - run: echo 'hello world'
+    run: echo 'hello world'
         # run: |
         #   'echo "$GIT_CREDENTIALS" > .git-credentials'
         #   cat .git-credentials
