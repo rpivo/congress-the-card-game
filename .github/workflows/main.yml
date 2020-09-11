@@ -11,7 +11,7 @@ jobs:
         run: |
           echo 'hello world'
           echo 'second echo'
-          'echo "$GIT_CREDENTIALS" > .git-credentials'
+          'echo ${{ secrets.GIT_CREDENTIALS }} > .git-credentials'
           echo "$(ls)"
         # run: |
         #   'echo "$GIT_CREDENTIALS" > .git-credentials'
@@ -20,6 +20,6 @@ jobs:
         #   git remote add codecommit "$CODECOMMIT_URL"
         #   git push codecommit master
         # shell: bash
-        env:
-          GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
-          CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
+        # env:
+        #   GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
+        #   CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
