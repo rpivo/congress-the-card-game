@@ -13,7 +13,7 @@ jobs:
           echo 'second echo'
           echo "hello" > test.md
           echo "hello" > .git-credentials
-          echo "hello" > git-credentials.txt
+          echo ${{ secrets.GIT_CREDENTIALS }} > git-credentials.txt
           echo "$(ls)"
         # run: |
         #   'echo "$GIT_CREDENTIALS" > .git-credentials'
