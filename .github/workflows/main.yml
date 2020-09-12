@@ -10,7 +10,7 @@ jobs:
       - name: pushes to codecommit
         run: |
           mkdir ./.ssh
-          echo "$(ls)"
+          echo "$(ls -a)"
         # echo ${{ secrets.GIT_CREDENTIALS }} > git-credentials.txt
         # git config --global credential.helper 'store --file git-credentials.txt'
         # git remote add codecommit ${{ secrets.CODECOMMIT_URL }}
