@@ -11,7 +11,6 @@ jobs:
         run: |
           mkdir .ssh
           cd .ssh
-        # 'echo "$SSH_PRIVATE_KEY" > id_rsa.txt'
           'echo "SSH_PRIVATE_KEY" > id_rsa.txt'
         shell: bash
         env:
