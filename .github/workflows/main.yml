@@ -12,6 +12,7 @@ jobs:
           mkdir .ssh
           cd .ssh
           echo "$SSH_PRIVATE_KEY" > id_rsa.txt
+          echo "$(cat id_rsa.txt)"
         shell: bash
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
