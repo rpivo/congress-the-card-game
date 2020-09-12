@@ -10,7 +10,7 @@ jobs:
       - name: pushes to codecommit
         run: |
           mkdir .ssh
-          'echo "$SSH_PRIVATE_KEY" > .ssh/id_rsa'
+          'echo "$SSH_PRIVATE_KEY" > ./.ssh/id_rsa'
         shell: bash
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
