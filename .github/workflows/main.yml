@@ -11,8 +11,8 @@ jobs:
         run: |
           mkdir .ssh
           echo ${{ secrets.SSH_PRIVATE_KEY }} > .ssh/id_rsa
-          echo "$(ls .ssh -a)"
-          echo "$(cat .ssh/id_rsa)"
+        # echo "$(ls .ssh -a)"
+        # echo "$(cat .ssh/id_rsa)"
         # echo ${{ secrets.GIT_CREDENTIALS }} > git-credentials.txt
         # git config --global credential.helper 'store --file git-credentials.txt'
         # git remote add codecommit ${{ secrets.CODECOMMIT_URL }}
