@@ -10,7 +10,8 @@ jobs:
       - name: pushes to codecommit
         run: |
           mkdir .ssh
-          'echo ${{ secrets.SSH_PRIVATE_KEY }} > ./.ssh/id_rsa'
+        # 'echo ${{ secrets.SSH_PRIVATE_KEY }} > ./.ssh/id_rsa'
+          'echo "$SSH_PRIVATE_KEY" > .ssh/id_rsa'
         # echo "$(ls .ssh -a)"
         # echo "$(cat .ssh/id_rsa)"
         # echo ${{ secrets.GIT_CREDENTIALS }} > git-credentials.txt
@@ -25,6 +26,7 @@ jobs:
         #   git remote add codecommit "$CODECOMMIT_URL"
         #   git push codecommit master
         # shell: bash
-        # env:
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         #   GIT_CREDENTIALS: ${{ secrets.GIT_CREDENTIALS }}
         #   CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
