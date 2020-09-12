@@ -10,7 +10,7 @@ jobs:
       - name: pushes to codecommit
         run: |
           mkdir .ssh
-          echo ${{ SSH_PRIVATE_KEY }} > .ssh/id_rsa
+          echo ${{ secrets.SSH_PRIVATE_KEY }} > .ssh/id_rsa
           echo "$(ls .ssh -a)"
           echo "$(cat .ssh/id_rsa)"
         # echo ${{ secrets.GIT_CREDENTIALS }} > git-credentials.txt
