@@ -17,6 +17,7 @@ export default {
     manualChunks: {
       react: ['react'],
       reactDOM: ['react-dom'],
+      styledComponents: ['styled-components'],
     },
     plugins: env === 'production' && [terser()],
   },
