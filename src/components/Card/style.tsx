@@ -87,7 +87,7 @@ const Style = styled.div`
 
   .xIcon {
     align-itmes: center;
-    background: red;
+    background: #FF0000;
     border-radius: 100%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     color: white;
