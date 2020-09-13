@@ -28,6 +28,8 @@ Ends September 16, 2020
 - rename cron.md to README.md.
 - add GitHub action to push code to CodeCommit.
 - add config updates  CodeCommit action.
+- add styled-components to exported manual chunks in Rollup.
+- roll back styled-components to 5.1.1.
 
 ## Sprint 3
 Ends August 31, 2020
