@@ -10,7 +10,7 @@ jobs:
       - name: pushes to codecommit
         run: |
           mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
-          echo "$(ssh -v -i id_rsa -o StrictHostKeyChecking=no -l $SSH_USERNAME)"
+          echo "$(ssh -i id_rsa -o StrictHostKeyChecking=no -l $SSH_USERNAME)"
           git remote add codecommit "$CODECOMMIT_URL"
           echo "$(ls -a)"
         shell: bash
