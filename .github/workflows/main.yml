@@ -11,6 +11,7 @@ jobs:
         run: |
           mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa && cd ..
           git remote add codecommit "$CODECOMMIT_URL"
+          git push codecommit master
           echo "$(ls -a)"
         shell: bash
         env:
