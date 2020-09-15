@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: pushes to codecommit
         run: |
-          mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && cd ..
+          mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && && chmod 600 id_rsa && cd ..
           echo "$(ls -a)"
         shell: bash
         env:
