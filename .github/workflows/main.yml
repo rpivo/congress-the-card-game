@@ -21,6 +21,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
 
+
         # echo "$(ssh -i id_rsa -o StrictHostKeyChecking=no -l $SSH_USERNAME)"
         # echo "$SSH_CONFIG" > config && chmod 600 config && cd ..
         # echo "$(ls .ssh -a)"
