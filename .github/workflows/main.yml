@@ -12,7 +12,7 @@ jobs:
           mkdir .ssh
           cd .ssh
           echo "$SSH_PRIVATE_KEY" > id_rsa
-          echo "$(ls)"
+          echo "$(ls -a)"
         shell: bash
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
