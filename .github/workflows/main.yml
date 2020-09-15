@@ -10,9 +10,11 @@ jobs:
       - name: pushes to codecommit
         run: |
           mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa && cd ..
+          git remote add codecommit "$CODECOMMIT_URL"
           echo "$(ls -a)"
         shell: bash
         env:
+          CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         # echo "$(ls .ssh -a)"
         # echo "$(cat .ssh/id_rsa)"
