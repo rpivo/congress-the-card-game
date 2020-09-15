@@ -10,15 +10,16 @@ jobs:
       - name: pushes to codecommit
         run: |
           mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
-          echo "$SSH_CONFIG" > config && chmod 600 config && cd ..
+          echo "$(ssh -v -i id_rsa -o StrictHostKeyChecking=no -l $SSH_USERNAME)"
           git remote add codecommit "$CODECOMMIT_URL"
-          git push codecommit master
           echo "$(ls -a)"
         shell: bash
         env:
           CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
           SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+        # echo "$SSH_CONFIG" > config && chmod 600 config && cd ..
         # echo "$(ls .ssh -a)"
         # echo "$(cat .ssh/id_rsa)"
         # echo ${{ secrets.GIT_CREDENTIALS }} > git-credentials.txt
