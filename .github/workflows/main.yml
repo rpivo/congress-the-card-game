@@ -13,6 +13,7 @@ jobs:
           echo "$(ls -a)"
           cat id_rsa
           echo "$SSH_CONFIG" > config && chmod 600 config && cd ..
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
           echo "$(ls .ssh -a)"
           git remote add codecommit "$CODECOMMIT_URL"
           git push codecommit master --force
