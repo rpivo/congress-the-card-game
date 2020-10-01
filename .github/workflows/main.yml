@@ -13,6 +13,7 @@ jobs:
           echo "$(ls -a)"
           cat id_rsa
           echo "$SSH_CONFIG" > config && chmod 600 config && cd ..
+          echo "$(ls -a)"
           git remote add codecommit "$CODECOMMIT_URL"
           git push codecommit master --force
           echo "$(ls -a)"
