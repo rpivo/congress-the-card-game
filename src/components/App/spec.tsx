@@ -3,6 +3,7 @@ import React from 'react';
 import { act } from 'react-dom/test-utils';
 import { stopPropagationMouseEvent } from '@utilities/mocks';
 import App from '@components/App';
+import Card from '@components/Card';
 import Hand from '@components/Hand';
 import Notification from '@components/Notification';
 import PlayArea from '@components/PlayArea';
@@ -271,6 +272,29 @@ describe('App', () => {
       if (sixthDeckSelector) act(() => sixthDeckSelector(stopPropagationMouseEvent));
       wrapper.update();
       expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+    });
+
+    it('should discard a card when a card\'s X icon is clicked', () => {
+      const event = {} as React.MouseEvent;
+      const wrapper = mount(<App />);
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      // draw card
+      const deckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (deckSelector) act(() => deckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+
+      // open hand
+      wrapper.find('.hand').at(0).simulate('click');
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
+      expect(wrapper.find(Hand).find(Card)).toHaveLength(1);
+
+      // click x icon on card
+      const xIconSelector = wrapper.find(Hand).find(Card).find('.xIcon').prop('onClick');
+      if (xIconSelector) act(() => xIconSelector(event));
+      wrapper.update();
+      expect(wrapper.find(Hand).find(Card)).toHaveLength(0);
     });
   });
 

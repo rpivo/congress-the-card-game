@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
-import { Actions, Context } from '@components/App/store';
+import { Context } from '@components/App/store';
+import { Actions } from '@utilities/types';
 import Style from './style';
-import { createStringEnum } from '@utilities/types';
 
-const Icons = createStringEnum([
-  'DRAW_CARD',
-  'END_TURN',
-]);
+enum Icons {
+  DRAW_CARD = 'DRAW_CARD',
+  END_TURN = 'END_TURN',
+}
 
 type IconType = keyof typeof Icons;
 
@@ -18,16 +18,16 @@ type ArrowIconProps = {
 const circleElement =
  <circle cx='351.5' cy='351.5' r='351.5' transform='translate(398 203)' fill='#707070' />;
 
-const handleIconClick = (canDrawCard?: boolean, dispatch?: React.Dispatch<Actions>): void => {
+const handleIconClick = (canDrawCard?: boolean, dispatch?: React.Dispatch<ActionType>): void => {
   if (canDrawCard || !dispatch) return;
-  dispatch('END_TURN');
+  dispatch({ type: Actions.END_TURN });
 };
 
 type IconTypeProps = [
   className: string,
   circle: typeof circleElement | null,
   paragraph: JSX.Element,
-  handleClick: (canDrawCard?: boolean, dispatch?: React.Dispatch<Actions>) => void,
+  handleClick: (canDrawCard?: boolean, dispatch?: React.Dispatch<ActionType>) => void,
   height: string,
   width: string,
   stroke: string,

@@ -1,12 +1,13 @@
 import { ShallowWrapper } from 'enzyme';
 
-// Basarat helper function for generating a string enum that can be used as a type.
-export const createStringEnum = <T extends string>(arr: Array<T>): { [K in T]: K } => {
-  return arr.reduce((res, key) => {
-    res[key] = key;
-    return res;
-  }, Object.create(null));
-};
+export enum Actions {
+  DRAW_CARD = 'DRAW_CARD',
+  DISCARD_CARD = 'DISCARD_CARD',
+  END_TURN = 'END_TURN',
+  HAND_FULL = 'HAND_FULL',
+  HIDE_HAND = 'HIDE_HAND',
+  SHOW_HAND = 'SHOW_HAND',
+}
 
 // extends React's MouseEvent interface with stopPropagation()
 export interface StopPropagationMouseEvent extends React.MouseEvent {

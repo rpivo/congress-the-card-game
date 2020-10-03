@@ -40,11 +40,16 @@
     "type": "place"
   },
   "8": {
+    "name": "Florida",
+    "group": "state",
+    "type": "place"
+  },
+  "9": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "9": {
+  "10": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -55,7 +60,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "10": {
+  "11": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -66,12 +71,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "11": {
+  "12": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "12": {
+  "13": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

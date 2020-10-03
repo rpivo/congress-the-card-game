@@ -2,6 +2,8 @@
 Ends October 14, 2020
 - add declarations.d.ts for global types.
 - refactor the way Actions enums are written.
+- add DISCARD_CARD logic to Hand and Card.
+- refactor dispatches to use new shape.
 
 ## Sprint 4
 Ends September 16, 2020

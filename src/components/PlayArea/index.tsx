@@ -2,6 +2,7 @@ import React from 'react';
 import Deck from '@components/Deck';
 import { Context } from '@components/App/store';
 import { getCards } from '@components/Card/util';
+import { Actions } from '@utilities/types';
 import Style from './style';
 
 type PlayAreaProps = {
@@ -16,7 +17,7 @@ const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.E
   const handleMouseDown = (id: number) => {
     if (id === activeCard) id = -1;
     setActiveCard(id);
-    if (shouldShowHand) dispatch('HIDE_HAND');
+    if (shouldShowHand) dispatch({ type: Actions.HIDE_HAND });
   };
 
   return (

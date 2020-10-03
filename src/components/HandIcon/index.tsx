@@ -1,5 +1,6 @@
 import React from 'react';
 import { Context } from '@components/App/store';
+import { Actions } from '@utilities/types';
 import Style from './style';
 
 const HandIcon = (): JSX.Element => {
@@ -8,7 +9,7 @@ const HandIcon = (): JSX.Element => {
 
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
     event.stopPropagation();
-    if (!shouldShowHand) dispatch('SHOW_HAND');
+    if (!shouldShowHand) dispatch({ type: Actions.SHOW_HAND });
   };
 
   return (

@@ -2,6 +2,7 @@ import React from 'react';
 import ArrowIcon from '@components/ArrowIcon';
 import { Context } from '@components/App/store';
 import Style from '@components/Card/style';
+import { Actions } from '@utilities/types';
 
 const Deck = (): JSX.Element => {
   const { dispatch, state } = React.useContext(Context);
@@ -10,8 +11,8 @@ const Deck = (): JSX.Element => {
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
     event.stopPropagation();
     if (canDrawCard) {
-      if (handCards.length > 4) dispatch('HAND_FULL');
-      else if (cardOrder.length) dispatch('DRAW_CARD');
+      if (handCards.length > 4) dispatch({ type: Actions.HAND_FULL });
+      else if (cardOrder.length) dispatch({ type: Actions.DRAW_CARD });
     }
   };
 

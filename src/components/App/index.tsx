@@ -4,6 +4,7 @@ import Hand from '@components/Hand';
 import HandIcon from '@components/HandIcon';
 import NotificationQueue from '@components/NotificationQueue';
 import PlayArea from '@components/PlayArea';
+import { Actions } from '@utilities/types';
 import { Context, getDefaultState, Reducer } from './store';
 import Style from './style';
 
@@ -14,7 +15,7 @@ const App = (): JSX.Element => {
 
   const handleClick = () => {
     if (activeCard > -1) setActiveCard(-1);
-    if (shouldShowHand) dispatch('HIDE_HAND');
+    if (shouldShowHand) dispatch({ type: Actions.HIDE_HAND });
   };
 
   return (
