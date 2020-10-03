@@ -15,7 +15,7 @@ jobs:
           echo "$SSH_CONFIG" > config && chmod 600 config
           touch known_hosts && chmod 600 known_hosts
           ssh-keyscan -t rsa github.com >> known_hosts && cd ..
-          ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -l
+          ssh -v -i .ssh/id_rsa -o StrictHostKeyChecking=no -l
           echo "$(ls .ssh -a)"
           git remote add codecommit "$CODECOMMIT_URL"
           git push codecommit master --force
