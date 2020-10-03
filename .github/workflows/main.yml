@@ -14,9 +14,9 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
         run: |
-          mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > codecommit_id_rsa && chmod 600 codecommit_id_rsa
+          mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
           echo "$(ls -a)"
-          cat codecommit_id_rsa
+          cat id_rsa
           echo "$SSH_CONFIG" > config && chmod 600 config
           touch known_hosts && chmod 600 known_hosts
           ssh-keyscan -t rsa github.com >> known_hosts && cd ..
