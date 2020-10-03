@@ -14,13 +14,12 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
         run: |
-          mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
+          mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > codecommit_id_rsa && chmod 600 codecommit_id_rsa
           echo "$(ls -a)"
-          cat id_rsa
+          cat codecommit_id_rsa
           echo "$SSH_CONFIG" > config && chmod 600 config
           touch known_hosts && chmod 600 known_hosts
           ssh-keyscan -t rsa github.com >> known_hosts && cd ..
-          ssh -v -i .ssh/id_rsa -o StrictHostKeyChecking=no -l "$SSH_USERNAME"
           echo "$(ls .ssh -a)"
           git remote add codecommit "$CODECOMMIT_URL"
           git push codecommit master --force
