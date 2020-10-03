@@ -1,6 +1,6 @@
 import React from 'react';
 import cardData from '@utilities/cards.json';
-import { createStringEnum } from '@utilities/types';
+import { Actions } from '@utilities/types';
 
 const {
   DRAW_CARD,
@@ -11,11 +11,10 @@ const {
   HIDE_HAND,
 } = Actions;
 
-export type Actions = keyof typeof Actions;
-
 const getCardOrder = (): number[] => {
   const cardCount = Object.keys(cardData).length;
   const cardIDs = Array.from([...Array(cardCount).keys()]);
+
   for (let i = cardCount - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [cardIDs[i], cardIDs[j]] = [cardIDs[j], cardIDs[i]];
@@ -44,9 +43,9 @@ export const getDefaultState = (): StateShape => {
   };
 };
 
-export const Reducer = (state: StateShape, action: Actions): StateShape => {
-  switch (action) {
-    case 'DRAW_CARD':
+export const Reducer = (state: StateShape, action: ActionType): StateShape => {
+  switch (action.type) {
+    case DRAW_CARD:
       return {
         ...state,
         canDrawCard: false,
@@ -57,22 +56,27 @@ export const Reducer = (state: StateShape, action: Actions): StateShape => {
         notifyHandIsFull: false,
         shouldShowHand: true,
       };
-    case 'END_TURN':
+    case DISCARD_CARD:
+      return {
+        ...state,
+        handCards: state.handCards.filter(cardID => cardID !== action.data!.id),
+      };
+    case END_TURN:
       return {
         ...state,
         canDrawCard: true,
       };
-    case 'HAND_FULL':
+    case HAND_FULL:
       return {
         ...state,
         notifyHandIsFull: !state.notifyHandIsFull,
       };
-    case 'SHOW_HAND':
+    case SHOW_HAND:
       return {
         ...state,
         shouldShowHand: true,
       };
-    case 'HIDE_HAND':
+    case HIDE_HAND:
     default:
       return {
         ...state,
@@ -82,7 +86,7 @@ export const Reducer = (state: StateShape, action: Actions): StateShape => {
 };
 
 type Context = {
-  dispatch: React.Dispatch<Actions>;
+  dispatch: React.Dispatch<ActionType>;
   state: StateShape;
 };
 

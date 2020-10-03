@@ -8,6 +8,7 @@ type CardProps = {
   id: number;
   isHandCard?: boolean;
   handleCardMouseDown: (id: number) => void;
+  handleXIconClick?: (id: number) => void;
   subtitle?: string;
   title?: string;
 };
@@ -19,19 +20,23 @@ const Card = ({
   id,
   isHandCard,
   handleCardMouseDown,
+  handleXIconClick = () => {},
   subtitle,
   title,
-}: Readonly<CardProps>): JSX.Element =>
-  <Style
-    className={`card${active ? ' active' : ''}`}
-    onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}
-    onMouseDown={(): void => handleCardMouseDown(id)}>
-    {isHandCard && <span className='xIcon'>x</span>}
-    <p className='title'>{title}</p>
-    <p className={'subtext subtitle'}>{subtitle}</p>
-    {ability1Title &&
-      <p className='subtext ability1Title'>{ability1Title} - {ability1Description}</p>
-    }
-  </Style>;
+}: Readonly<CardProps>): JSX.Element => {
+  return (
+    <Style
+      className={`card${active ? ' active' : ''}`}
+      onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}
+      onMouseDown={(): void => handleCardMouseDown(id)}>
+      {isHandCard && <span className='xIcon' onClick={(): void => handleXIconClick(id)}>x</span>}
+      <p className='title'>{title}</p>
+      <p className={'subtext subtitle'}>{subtitle}</p>
+      {ability1Title &&
+        <p className='subtext ability1Title'>{ability1Title} - {ability1Description}</p>
+      }
+    </Style>
+  );
+};
 
 export default React.memo(Card);

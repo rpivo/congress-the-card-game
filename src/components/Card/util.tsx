@@ -17,16 +17,18 @@ type CardType = {
 };
 
 type GetCardsProps = {
-  activeCard?: number,
-  cardIDs: number[],
-  handleMouseDown: (id: number) => void,
-  isHandCard?: boolean,
+  activeCard?: number;
+  cardIDs: number[];
+  handleMouseDown: (id: number) => void;
+  handleXIconClick?: (id: number) => void;
+  isHandCard?: boolean;
 };
 
 export const getCards = ({
   activeCard,
   cardIDs,
   handleMouseDown,
+  handleXIconClick,
   isHandCard = false,
 }: Readonly<GetCardsProps>): JSX.Element[] => {
   const cards = [];
@@ -38,6 +40,7 @@ export const getCards = ({
         ability1Description={abilities?.ability1?.description}
         active={activeCard === id}
         handleCardMouseDown={handleMouseDown}
+        handleXIconClick={handleXIconClick}
         id={id}
         isHandCard={isHandCard}
         key={id}
