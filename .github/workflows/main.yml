@@ -1,26 +1,50 @@
-name: CI
-on:
-  push:
-    branches: [ master ]
+name: CodeCommit Mirror
+on: [push, delete]
 jobs:
-  codecommit:
-    runs-on: ubuntu-latest
+  to_codecommit:
+    runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
-      - name: pushes to codecommit
-        env:
-          CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
-          HOST_KEY: ${{ secrets.HOST_KEY }}
-          SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
-        shell: bash
-        run: |
-          mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
-          echo "$SSH_CONFIG" > config && chmod 600 config
-          echo "$HOST_KEY" > known_hosts && chmod 600 known_hosts && cd ..
-          git remote add codecommit "$CODECOMMIT_URL"
-          git push codecommit master --force
+    - uses: actions/checkout@v1
+    - uses: pixta-dev/repository-mirroring-action@v1
+      with:
+        target_repo_url:
+          ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/congress
+        ssh_private_key:
+          ${{ secrets.CODECOMMIT_SSH_PRIVATE_KEY }}
+        ssh_username:
+          ${{ secrets.CODECOMMIT_SSH_PRIVATE_KEY_ID }}
+
+
+
+
+
+
+
+
+
+# name: CI
+# on:
+#   push:
+#     branches: [ master ]
+# jobs:
+#   codecommit:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: pushes to codecommit
+#         env:
+#           CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
+#           HOST_KEY: ${{ secrets.HOST_KEY }}
+#           SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
+#           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+#           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+#         shell: bash
+#         run: |
+#           mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
+#           echo "$SSH_CONFIG" > config && chmod 600 config
+#           echo "$HOST_KEY" > known_hosts && chmod 600 known_hosts && cd ..
+#           git remote add codecommit "$CODECOMMIT_URL"
+#           git push codecommit master --force
 
 
         # echo "$(ssh -i id_rsa -o StrictHostKeyChecking=no -l $SSH_USERNAME)"
