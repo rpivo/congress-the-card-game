@@ -10,7 +10,7 @@ jobs:
       - name: setup ssh
         uses: webfactory/ssh-agent@v0.4.0
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-private-key: "$SSH_PRIVATE_KEY"
       - name: pushes to codecommit
         run: |
           git remote add codecommit "$CODECOMMIT_URL"
