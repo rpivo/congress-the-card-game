@@ -8,6 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: pushes to codecommit
+        env:
+          CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
+          SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
         run: |
           mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
           echo "$(ls -a)"
@@ -21,11 +26,6 @@ jobs:
           git push codecommit master --force
           echo "$(ls -a)"
         shell: bash
-        env:
-          CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
-          SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          # SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
 
 
         # echo "$(ssh -i id_rsa -o StrictHostKeyChecking=no -l $SSH_USERNAME)"
