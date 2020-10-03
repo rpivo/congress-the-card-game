@@ -7,12 +7,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: setup ssh
-        uses: webfactory/ssh-agent@v0.4.0
-        with:
-          ssh-private-key: "$SSH_PRIVATE_KEY"
       - name: pushes to codecommit
         run: |
+          mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
+          echo "$(ls -a)"
+          cat id_rsa
+          echo "$SSH_CONFIG" > config && chmod 600 config
+          touch known_hosts && chmod 600 known_hosts
+          ssh-keyscan -t rsa github.com >> known_hosts && cd ..
+          ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -l
+          echo "$(ls .ssh -a)"
           git remote add codecommit "$CODECOMMIT_URL"
           git push codecommit master --force
           echo "$(ls -a)"
@@ -21,18 +25,6 @@ jobs:
           CODECOMMIT_URL: ${{ secrets.CODECOMMIT_URL }}
           SSH_CONFIG: ${{ secrets.SSH_CONFIG }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-
-
-          # mkdir .ssh && cd .ssh && echo "$SSH_PRIVATE_KEY" > id_rsa && chmod 600 id_rsa
-          # echo "$(ls -a)"
-          # cat id_rsa
-          # echo "$SSH_CONFIG" > config && chmod 600 config
-          # touch known_hosts && chmod 600 known_hosts
-          # ssh-keyscan -t rsa github.com >> known_hosts && cd ..
-          # ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -l
-          # echo "$(ls .ssh -a)"
-
-
           # SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
 
 
