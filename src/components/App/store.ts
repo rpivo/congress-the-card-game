@@ -2,13 +2,14 @@ import React from 'react';
 import cardData from '@utilities/cards.json';
 import { createStringEnum } from '@utilities/types';
 
-const Actions = createStringEnum([
-  'DRAW_CARD',
-  'END_TURN',
-  'HAND_FULL',
-  'HIDE_HAND',
-  'SHOW_HAND',
-]);
+const {
+  DRAW_CARD,
+  DISCARD_CARD,
+  END_TURN,
+  HAND_FULL,
+  SHOW_HAND,
+  HIDE_HAND,
+} = Actions;
 
 export type Actions = keyof typeof Actions;
 

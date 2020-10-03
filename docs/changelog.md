@@ -1,6 +1,7 @@
 ## Sprint 5
 Ends October 14, 2020
 - add declarations.d.ts for global types.
+- refactor the way Actions enums are written.
 
 ## Sprint 4
 Ends September 16, 2020
