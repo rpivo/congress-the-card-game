@@ -31,7 +31,9 @@ export default {
       'process.env.NODE_ENV': JSON.stringify(env),
     }),
     typescript(),
-    resolve(),
+    resolve({
+      browser: true,
+    }),
     commonjs({
       include: 'node_modules/**',
     }),

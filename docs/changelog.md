@@ -5,6 +5,7 @@ Ends October 14, 2020
 - add DISCARD_CARD logic to Hand and Card.
 - refactor dispatches to use new shape.
 - add meta description to index.html.
+- update styled-components to 5.2.0.
 
 ## Sprint 4
 Ends September 16, 2020
