@@ -45,11 +45,46 @@
     "type": "place"
   },
   "9": {
+    "name": "Georgia",
+    "group": "state",
+    "type": "place"
+  },
+  "10": {
+    "name": "Hawaii",
+    "group": "state",
+    "type": "place"
+  },
+  "11": {
+    "name": "Idaho",
+    "group": "state",
+    "type": "place"
+  },
+  "12": {
+    "name": "Illinois",
+    "group": "state",
+    "type": "place"
+  },
+  "13": {
+    "name": "Indiana",
+    "group": "state",
+    "type": "place"
+  },
+  "14": {
+    "name": "Iowa",
+    "group": "state",
+    "type": "place"
+  },
+  "15": {
+    "name": "Kansas",
+    "group": "state",
+    "type": "place"
+  },
+  "16": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "10": {
+  "17": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -60,7 +95,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "11": {
+  "18": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -71,12 +106,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "12": {
+  "19": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "13": {
+  "20": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"
