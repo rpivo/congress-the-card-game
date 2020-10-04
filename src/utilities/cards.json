@@ -80,11 +80,26 @@
     "type": "place"
   },
   "16": {
+    "name": "Kentucky",
+    "group": "state",
+    "type": "place"
+  },
+  "17": {
+    "name": "Louisiana",
+    "group": "state",
+    "type": "place"
+  },
+  "18": {
+    "name": "Maine",
+    "group": "state",
+    "type": "place"
+  },
+  "19": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "17": {
+  "20": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -95,7 +110,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "18": {
+  "21": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -106,12 +121,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "19": {
+  "22": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "20": {
+  "23": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

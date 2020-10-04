@@ -6,6 +6,7 @@ Ends October 14, 2020
 - refactor dispatches to use new shape.
 - add meta description to index.html.
 - update styled-components to 5.2.0.
+- update packages.
 
 ## Sprint 4
 Ends September 16, 2020
