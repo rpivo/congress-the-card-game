@@ -4,6 +4,7 @@ Ends October 14, 2020
 - refactor the way Actions enums are written.
 - add DISCARD_CARD logic to Hand and Card.
 - refactor dispatches to use new shape.
+- add meta description to index.html.
 
 ## Sprint 4
 Ends September 16, 2020
