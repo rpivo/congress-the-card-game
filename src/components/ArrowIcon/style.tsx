@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Breakpoints from '@utilities/breakpoints';
+import { Breakpoints } from '@utilities/types';
 
 const Style = styled.div`
   cursor: pointer;
@@ -31,7 +31,7 @@ const Style = styled.div`
     }
   }
 
-  ${Breakpoints.Medium} {
+  ${Breakpoints.MEDIUM} {
     &.endTurnIcon {
       right: 22px;
       top: 22px;

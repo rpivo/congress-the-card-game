@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Breakpoints from '@utilities/breakpoints';
+import { Breakpoints } from '@utilities/types';
 
 const Style = styled.div`
   display: grid;
@@ -8,12 +8,12 @@ const Style = styled.div`
   margin: 0 auto;
   width: 1750px;
 
-  ${Breakpoints.Medium} {
+  ${Breakpoints.MEDIUM} {
     grid-template-columns: repeat(8, 175px [col-start]);
     width: 1400px;
   }
 
-  ${Breakpoints.Small} {
+  ${Breakpoints.SMALL} {
     grid-template-columns: repeat(6, 175px [col-start]);
     width: 1050px;
   }

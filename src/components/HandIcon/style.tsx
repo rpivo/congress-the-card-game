@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Breakpoints from '@utilities/breakpoints';
+import { Breakpoints } from '@utilities/types';
 
 const Style = styled.div`
 bottom: 16px;
@@ -17,7 +17,7 @@ right: 16px;
     }
   }
 
-  ${Breakpoints.Medium} {
+  ${Breakpoints.MEDIUM} {
     bottom: 25px;
     right: 25px;  
   }

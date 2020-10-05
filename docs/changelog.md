@@ -13,6 +13,8 @@ Ends October 14, 2020
 - add noImplicitAny to tsconfig.
 - give Hand Cards the abiliity to be active.
 - refactor Icons enum implementation.
+- only display Hand Card x icons on mouse enter of the Card.
+- move Breakpoints enum inside types util file.
 
 ## Sprint 4
 Ends September 16, 2020
@@ -93,7 +95,7 @@ Ended August 17, 2020
 - add mousedown logic to Card component to toggle the `.active` class.
 - create utlities folder.
 - add Breakpoints enums.
-- add small and medium breakpoints to PlayArea component.
+- add SMALL and MEDIUM breakpoints to PlayArea component.
 - rename `handleCardClick` to `handleCardMouseDown`.
 - memoize Deck component.
 - pass in title prop to Card components.
