@@ -7,16 +7,15 @@ import Style from './style';
 
 type PlayAreaProps = {
   activeCard: number;
-  setActiveCard: React.Dispatch<React.SetStateAction<number>>;
+  handleCardClick: (id: number) => void;
 };
 
-const PlayArea = ({ activeCard, setActiveCard }: Readonly<PlayAreaProps>): JSX.Element => {
+const PlayArea = ({ activeCard, handleCardClick }: Readonly<PlayAreaProps>): JSX.Element => {
   const { dispatch, state } = React.useContext(Context);
   const { playAreaCards, shouldShowHand } = state;
 
   const handleMouseDown = (id: number) => {
-    if (id === activeCard) id = -1;
-    setActiveCard(id);
+    handleCardClick(id);
     if (shouldShowHand) dispatch({ type: Actions.HIDE_HAND });
   };
 

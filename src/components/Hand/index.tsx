@@ -4,11 +4,15 @@ import { getCards } from '@components/Card/util.tsx';
 import { Actions } from '@utilities/types';
 import Style from './style';
 
-const Hand = (): JSX.Element => {
+type HandProps = {
+  activeCard: number;
+  handleCardClick: (id: number) => void;
+}
+
+const Hand = ({ activeCard, handleCardClick }: Readonly<HandProps>): JSX.Element => {
   const { dispatch, state } = React.useContext(Context);
   const { handCards, shouldShowHand } = state;
 
-  const handleMouseDown = () => null;
   const handleXIconClick = (id: number) =>
     dispatch({
       data: { id },
@@ -16,8 +20,9 @@ const Hand = (): JSX.Element => {
     });
 
   const cards = getCards({
+    activeCard,
     cardIDs: handCards,
-    handleMouseDown,
+    handleMouseDown: handleCardClick,
     handleXIconClick,
     isHandCard: true,
   });

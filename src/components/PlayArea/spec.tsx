@@ -19,7 +19,7 @@ const StateMock = {
 describe('PlayArea', () => {
   const PlayAreaMock =
     <Context.Provider value={{ dispatch: jest.fn(), state: StateMock }}>
-      <PlayArea activeCard={-1} setActiveCard={jest.fn()} />
+      <PlayArea activeCard={-1} handleCardClick={jest.fn()} />
     </Context.Provider>;
 
   it('should render correctly', () => {
