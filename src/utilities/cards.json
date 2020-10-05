@@ -185,11 +185,26 @@
     "type": "place"
   },
   "37": {
+    "name": "Pennsylvania",
+    "group": "state",
+    "type": "place"
+  },
+  "38": {
+    "name": "Rhode Island",
+    "group": "state",
+    "type": "place"
+  },
+  "39": {
+    "name": "South Carolina",
+    "group": "state",
+    "type": "place"
+  },
+  "40": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "38": {
+  "41": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -200,7 +215,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "39": {
+  "42": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -211,12 +226,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "40": {
+  "43": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "41": {
+  "44": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

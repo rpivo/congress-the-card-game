@@ -290,6 +290,10 @@ describe('App', () => {
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
       expect(wrapper.find(Hand).find(Card)).toHaveLength(1);
 
+      // enter mouse over card
+      wrapper.find('.hand').find('.card').at(0).simulate('mouseenter');
+      expect(wrapper.find(Hand).find(Card).find('.xIcon')).toHaveLength(1);
+
       // click x icon on card
       const xIconSelector = wrapper.find(Hand).find(Card).find('.xIcon').prop('onClick');
       if (xIconSelector) act(() => xIconSelector(event));

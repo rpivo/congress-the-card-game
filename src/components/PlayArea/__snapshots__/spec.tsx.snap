@@ -175,6 +175,8 @@ exports[`PlayArea should render correctly 1`] = `
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <p
       className="title"
@@ -191,6 +193,8 @@ exports[`PlayArea should render correctly 1`] = `
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <p
       className="title"
@@ -207,6 +211,8 @@ exports[`PlayArea should render correctly 1`] = `
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <p
       className="title"
@@ -223,6 +229,8 @@ exports[`PlayArea should render correctly 1`] = `
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <p
       className="title"
@@ -239,6 +247,8 @@ exports[`PlayArea should render correctly 1`] = `
     className="c1 card"
     onClick={[Function]}
     onMouseDown={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
     <p
       className="title"

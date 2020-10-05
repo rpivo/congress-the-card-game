@@ -121,6 +121,8 @@ exports[`Card should render correctly 1`] = `
   className="c0 card"
   onClick={[Function]}
   onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
   <p
     className="title"

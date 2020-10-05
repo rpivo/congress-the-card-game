@@ -24,12 +24,24 @@ const Card = ({
   subtitle,
   title,
 }: Readonly<CardProps>): JSX.Element => {
+  const [isMouseEnter, setIsMouseEnter] = React.useState(false);
+
+  const handleOnMouseEnter = () => {
+    if (!isHandCard) return;
+    setIsMouseEnter(true);
+  };
+
   return (
     <Style
       className={`card${active ? ' active' : ''}`}
       onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}
-      onMouseDown={(): void => handleCardMouseDown(id)}>
-      {isHandCard && <span className='xIcon' onClick={(): void => handleXIconClick(id)}>x</span>}
+      onMouseDown={(): void => handleCardMouseDown(id)}
+      onMouseLeave={() => setIsMouseEnter(false)}
+      onMouseEnter={handleOnMouseEnter}
+    >
+      {isHandCard && isMouseEnter &&
+        <span className='xIcon' onClick={(): void => handleXIconClick(id)}>x</span>
+      }
       <p className='title'>{title}</p>
       <p className={'subtext subtitle'}>{subtitle}</p>
       {ability1Title &&

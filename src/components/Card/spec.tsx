@@ -1,4 +1,4 @@
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
@@ -6,7 +6,14 @@ import Card from '@components/Card';
 
 describe('Card', () => {
   const CardMock =
-    <Card active={false} handleCardMouseDown={() => null} id={-1} subtitle={''} title={''} />;
+    <Card
+      active={false}
+      handleCardMouseDown={() => null}
+      id={-1}
+      isHandCard={true}
+      subtitle={''}
+      title={''}
+    />;
 
   it('should render correctly', () => {
     const tree = renderer
@@ -69,5 +76,44 @@ describe('Card', () => {
     const wrapper = shallow(CardMock);
     wrapper.simulate('click', event);
     expect(event.stopPropagation).toHaveBeenCalled();
+  });
+
+  describe('isMouseEnter state', () => {
+    it('initially should not have an X Icon', () => {
+      const wrapper = mount(CardMock);
+      expect(wrapper.find('.xIcon')).toHaveLength(0);
+    });
+
+    it('should have an X Icon on mouse enter', () => {
+      const wrapper = mount(CardMock);
+      expect(wrapper.find('.xIcon')).toHaveLength(0);
+      wrapper.find('.card').at(0).simulate('mouseenter');
+      expect(wrapper.find('.xIcon')).toHaveLength(1);
+    });
+
+    it('should not have an X Icon on mouse leave', () => {
+      const wrapper = mount(CardMock);
+      expect(wrapper.find('.xIcon')).toHaveLength(0);
+      wrapper.find('.card').at(0).simulate('mouseenter');
+      expect(wrapper.find('.xIcon')).toHaveLength(1);
+      wrapper.find('.card').at(0).simulate('mouseleave');
+      expect(wrapper.find('.xIcon')).toHaveLength(0);
+    });
+
+    it('should have no effect if the card is not a hand card', () => {
+      const wrapper = mount(
+        <Card
+          active={false}
+          handleCardMouseDown={() => null}
+          id={-1}
+          isHandCard={false}
+          subtitle={''}
+          title={''}
+        />
+      );
+      expect(wrapper.find('.xIcon')).toHaveLength(0);
+      wrapper.find('.card').at(0).simulate('mouseenter');
+      expect(wrapper.find('.xIcon')).toHaveLength(0);
+    });
   });
 });
