@@ -12,6 +12,7 @@ Ends October 14, 2020
 - add charset to index.html.
 - add noImplicitAny to tsconfig.
 - give Hand Cards the abiliity to be active.
+- refactor Icons enum implementation.
 
 ## Sprint 4
 Ends September 16, 2020

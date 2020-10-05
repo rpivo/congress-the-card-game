@@ -1,13 +1,8 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
 import { Context } from '@components/App/store';
-import { Actions } from '@utilities/types';
+import { Actions, Icons } from '@utilities/types';
 import Style from './style';
-
-enum Icons {
-  DRAW_CARD = 'DRAW_CARD',
-  END_TURN = 'END_TURN',
-}
 
 type IconType = keyof typeof Icons;
 
@@ -65,11 +60,11 @@ const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
     height,
     width,
     stroke,
-  ] = iconType === 'DRAW_CARD' ? drawCardIconProps : endCardIconProps;
+  ] = iconType === Icons.DRAW_CARD ? drawCardIconProps : endCardIconProps;
 
   return (
     <Style
-      className={`${className}${iconType === 'END_TURN' && !canDrawCard ? ' endable' : ''}`}
+      className={`${className}${iconType === Icons.END_TURN && !canDrawCard ? ' endable' : ''}`}
       onClick={() => handleClick(canDrawCard, dispatch)}
     >
       <svg width={width} height={height} viewBox='0 0 703 703'>
@@ -95,7 +90,7 @@ const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
           />
         </g>
       </svg>
-      {(iconType === 'DRAW_CARD' || !canDrawCard) && paragraph}
+      {(iconType === Icons.DRAW_CARD || !canDrawCard) && paragraph}
     </Style>
   );
 };

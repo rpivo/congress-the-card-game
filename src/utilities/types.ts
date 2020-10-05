@@ -9,6 +9,11 @@ export enum Actions {
   SHOW_HAND = 'SHOW_HAND',
 }
 
+export enum Icons {
+  DRAW_CARD = 'DRAW_CARD',
+  END_TURN = 'END_TURN',
+}
+
 export enum Notifications {
   GREEN = 'GREEN',
   RED = 'RED'

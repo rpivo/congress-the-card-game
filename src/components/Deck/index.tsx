@@ -2,7 +2,7 @@ import React from 'react';
 import ArrowIcon from '@components/ArrowIcon';
 import { Context } from '@components/App/store';
 import Style from '@components/Card/style';
-import { Actions } from '@utilities/types';
+import { Actions, Icons } from '@utilities/types';
 
 const Deck = (): JSX.Element => {
   const { dispatch, state } = React.useContext(Context);
@@ -21,7 +21,7 @@ const Deck = (): JSX.Element => {
       <Style
         className={`stackedCard${canDrawCard ? ' canDrawCard' : ''}`}
         onClick={(event: React.MouseEvent<HTMLInputElement>) => handleClick(event)}>
-        {canDrawCard && <ArrowIcon iconType='DRAW_CARD' />}
+        {canDrawCard && <ArrowIcon iconType={Icons.DRAW_CARD} />}
       </Style>
     </Style>
   );
