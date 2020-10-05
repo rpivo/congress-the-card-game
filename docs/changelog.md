@@ -8,6 +8,7 @@ Ends October 14, 2020
 - update styled-components to 5.2.0.
 - update packages.
 - update cron instructions in cron.md.
+- conditionally set notification type as either red or green.
 
 ## Sprint 4
 Ends September 16, 2020

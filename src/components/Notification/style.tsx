@@ -1,6 +1,11 @@
 import styled from 'styled-components';
+import { Notifications } from '@utilities/types';
 
-const Style = styled.span`
+type NotificationStyle = {
+  type: string;
+};
+
+const Style = styled.span<NotificationStyle>`
   @keyframes fade {
     0% {
       opacity: 0;
@@ -10,7 +15,7 @@ const Style = styled.span`
     }
   }
   animation: fade 0.25s 1;
-  background: #2FAB40;
+  background: ${props => props.type === Notifications.RED ? '#DD2222' : '#2FAB40'};
   border-radius: 28px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   color: white;

@@ -110,11 +110,26 @@
     "type": "place"
   },
   "22": {
+    "name": "Minnesota",
+    "group": "state",
+    "type": "place"
+  },
+  "23": {
+    "name": "Mississippi",
+    "group": "state",
+    "type": "place"
+  },
+  "24": {
+    "name": "Missouri",
+    "group": "state",
+    "type": "place"
+  },
+  "25": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "23": {
+  "26": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -125,7 +140,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "24": {
+  "27": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -136,12 +151,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "25": {
+  "28": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "26": {
+  "29": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

@@ -1,6 +1,7 @@
 import React from 'react';
 import Notification from '@components/Notification';
 import { Context } from '@components/App/store';
+import { Notifications } from '@utilities/types';
 import Style from './style';
 
 const NotificationQueue = (): JSX.Element => {
@@ -11,7 +12,7 @@ const NotificationQueue = (): JSX.Element => {
   const previousNotifyHandIsFull = React.useRef(false);
   const timerRef = React.useRef(0);
 
-  const [queue, setQueue] = React.useState([] as string[]);
+  const [queue, setQueue] = React.useState([] as NotificationType[]);
   const [timer, setTimer] = React.useState(Date.now);
 
   const startTimer = () => {
@@ -22,17 +23,18 @@ const NotificationQueue = (): JSX.Element => {
 
   React.useEffect(() => {
     if (didMount.current) {
-
-      let notification = '';
+      const notification: NotificationType = { message: '', type: '' };
 
       if (notifyHandIsFull !== previousNotifyHandIsFull.current) {
-        notification = 'Your hand is full! Discard a card.';
+        notification.message = 'Your hand is full! Discard a card.';
+        notification.type = Notifications.RED;
         previousNotifyHandIsFull.current = notifyHandIsFull;
       } else if (canDrawCard) {
-        notification = 'New Turn';
+        notification.message = 'New Turn';
+        notification.type = Notifications.GREEN;
       }
 
-      if (notification) setQueue([...queue, notification]);
+      if (notification.message) setQueue([...queue, notification]);
 
     } else {
       didMount.current = true;
@@ -50,7 +52,9 @@ const NotificationQueue = (): JSX.Element => {
 
   return (
     <Style className='notificationQueue'>
-      {queue && queue.map((message, id) => <Notification key={id} message={message} />)}
+      {queue && queue.map(({ message, type }, id) =>
+        <Notification key={id} message={message} type={type} />)
+      }
     </Style>
   );
 };

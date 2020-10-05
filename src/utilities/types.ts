@@ -9,6 +9,11 @@ export enum Actions {
   SHOW_HAND = 'SHOW_HAND',
 }
 
+export enum Notifications {
+  GREEN = 'GREEN',
+  RED = 'RED'
+}
+
 // extends React's MouseEvent interface with stopPropagation()
 export interface StopPropagationMouseEvent extends React.MouseEvent {
   stopPropagation: () => unknown;

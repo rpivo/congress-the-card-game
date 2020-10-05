@@ -5,6 +5,11 @@ declare global {
     data?: Record<string, unknown>;
     type: keyof typeof Actions;
   };
+
+  type NotificationType = {
+    message: string;
+    type: string;
+  }
 }
 
 export {};
