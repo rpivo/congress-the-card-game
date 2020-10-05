@@ -170,11 +170,26 @@
     "type": "place"
   },
   "34": {
+    "name": "Ohio",
+    "group": "state",
+    "type": "place"
+  },
+  "35": {
+    "name": "Oklahoma",
+    "group": "state",
+    "type": "place"
+  },
+  "36": {
+    "name": "Oregon",
+    "group": "state",
+    "type": "place"
+  },
+  "37": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "35": {
+  "38": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -185,7 +200,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "36": {
+  "39": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -196,12 +211,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "37": {
+  "40": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "38": {
+  "41": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"
