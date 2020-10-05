@@ -24,3 +24,5 @@ PATH=#add path value here
 Make sure there is a newline at the end of the crontab file.
 
 You may also need to run `chmod +x audit.sh` and `chmod +x audit.performance.sh` so that the scripts are executable.
+
+For recent Mac operating systems, you may also need to grant `cron` full disk access. See [these instructions](https://apple.stackexchange.com/a/378558/314170).

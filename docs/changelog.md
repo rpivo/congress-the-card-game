@@ -7,6 +7,7 @@ Ends October 14, 2020
 - add meta description to index.html.
 - update styled-components to 5.2.0.
 - update packages.
+- update cron instructions in cron.md.
 
 ## Sprint 4
 Ends September 16, 2020

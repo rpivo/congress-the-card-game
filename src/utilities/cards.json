@@ -95,11 +95,26 @@
     "type": "place"
   },
   "19": {
+    "name": "Maryland",
+    "group": "state",
+    "type": "place"
+  },
+  "20": {
+    "name": "Massachusetts",
+    "group": "state",
+    "type": "place"
+  },
+  "21": {
+    "name": "Michigan",
+    "group": "state",
+    "type": "place"
+  },
+  "22": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "20": {
+  "23": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -110,7 +125,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "21": {
+  "24": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -121,12 +136,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "22": {
+  "25": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "23": {
+  "26": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"
