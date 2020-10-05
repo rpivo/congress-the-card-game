@@ -9,6 +9,7 @@ Ends October 14, 2020
 - update packages.
 - update cron instructions in cron.md.
 - conditionally set notification type as either red or green.
+- add charset to index.html.
 
 ## Sprint 4
 Ends September 16, 2020

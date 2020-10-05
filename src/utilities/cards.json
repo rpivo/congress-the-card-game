@@ -125,11 +125,56 @@
     "type": "place"
   },
   "25": {
+    "name": "Montana",
+    "group": "state",
+    "type": "place"
+  },
+  "26": {
+    "name": "Nebraska",
+    "group": "state",
+    "type": "place"
+  },
+  "27": {
+    "name": "Nevada",
+    "group": "state",
+    "type": "place"
+  },
+  "28": {
+    "name": "New Hampshire",
+    "group": "state",
+    "type": "place"
+  },
+  "29": {
+    "name": "New Jersey",
+    "group": "state",
+    "type": "place"
+  },
+  "30": {
+    "name": "New Mexico",
+    "group": "state",
+    "type": "place"
+  },
+  "31": {
+    "name": "New York",
+    "group": "state",
+    "type": "place"
+  },
+  "32": {
+    "name": "North Carolina",
+    "group": "state",
+    "type": "place"
+  },
+  "33": {
+    "name": "New Dakota",
+    "group": "state",
+    "type": "place"
+  },
+  "34": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "26": {
+  "35": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -140,7 +185,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "27": {
+  "36": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -151,12 +196,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "28": {
+  "37": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "29": {
+  "38": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"
