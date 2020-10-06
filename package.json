@@ -52,6 +52,6 @@
     "serve": "express-compression-server --build=dist --port=1235",
     "test": "npx jest --watchAll --coverage --notify",
     "update": "npx npm-check-updates -u",
-    "watch": "npx nodemon --watch src --ext js,ts,jsx,tsx --exec \"npm run build\""
+    "watch": "npx nodemon --watch src --ext js,ts,jsx,tsx --exec \"./sh/dev.sh\""
   }
 }

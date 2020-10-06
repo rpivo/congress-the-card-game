@@ -15,6 +15,7 @@ Ends October 14, 2020
 - refactor Icons enum implementation.
 - only display Hand Card x icons on mouse enter of the Card.
 - move Breakpoints enum inside types util file.
+- update serve scripts to run all in one terminal.
 
 ## Sprint 4
 Ends September 16, 2020
