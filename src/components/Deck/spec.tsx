@@ -58,7 +58,7 @@ describe('Deck', () => {
       const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
       if (selector) act(() => selector(stopPropagationMouseEvent));
       wrapper.update();
-      expect(dispatch).toBeCalledWith({ type: 'HAND_FULL' });
+      expect(dispatch).toBeCalledWith({ type: 'NOTIFY_HAND_FULL' });
     });
 
     it('should not call dispatch if there are no more Card IDs to pull from cardOrder', () => {

@@ -6,7 +6,7 @@ const {
   DRAW_CARD,
   DISCARD_CARD,
   END_TURN,
-  HAND_FULL,
+  NOTIFY_HAND_FULL,
   SHOW_HAND,
   HIDE_HAND,
 } = Actions;
@@ -66,7 +66,7 @@ export const Reducer = (state: StateShape, action: ActionType): StateShape => {
         ...state,
         canDrawCard: true,
       };
-    case HAND_FULL:
+    case NOTIFY_HAND_FULL:
       return {
         ...state,
         notifyHandIsFull: !state.notifyHandIsFull,

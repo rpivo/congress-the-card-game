@@ -17,6 +17,7 @@ Ends October 14, 2020
 - move Breakpoints enum inside types util file.
 - update serve scripts to run all in one terminal.
 - add spacebar event listener.
+- update HAND_FULL enum to NOTIFY_HAND_FULL.
 
 ## Sprint 4
 Ends September 16, 2020
