@@ -21,6 +21,7 @@ Ends October 14, 2020
 - fix React used before it was defined issue.
 - add SettingsIcon.
 - add tooltips for icons.
+- add ability to end the turn by pressing the Enter key (when turn is endable).
 
 ## Sprint 4
 Ends September 16, 2020

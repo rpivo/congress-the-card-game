@@ -12,12 +12,21 @@ import Style from './style';
 const App = (): JSX.Element => {
   const [activeCard, setActiveCard] = React.useState(-1);
   const [state, dispatch] = React.useReducer(Reducer, getDefaultState());
-  const { shouldShowHand } = state;
+  const { canDrawCard, shouldShowHand } = state;
 
   const handleKeyboardEvent = React.useCallback(event => {
-    if (event.code === 'Space') {
-      if (shouldShowHand) dispatch({ type: Actions.HIDE_HAND });
-      else dispatch({ type: Actions.SHOW_HAND });
+    switch (event.code) {
+      case 'Enter': {
+        if (!canDrawCard) dispatch({ type: Actions.END_TURN });
+        break;
+      }
+      case 'Space': {
+        if (shouldShowHand) dispatch({ type: Actions.HIDE_HAND });
+        else dispatch({ type: Actions.SHOW_HAND });
+        break;
+      }
+      default:
+        break;
     }
   }, [shouldShowHand]);
 

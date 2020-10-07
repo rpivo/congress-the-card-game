@@ -430,6 +430,38 @@ describe('App', () => {
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
     });
 
+    it('should end the turn if the turn is endable when the Enter key is pressed', () => {
+      window.addEventListener = jest.fn().mockImplementation((event, cb) => {
+        eventMap[event] = cb;
+      });
+      const wrapper = mount(<App />);
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      // draw a card
+      const selector = wrapper.find('.stackedCard').at(0).prop('onClick');
+      if (selector) act(() => selector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+
+      // end turn with Enter key
+      act(() => eventMap.keydown({ code: 'Enter' }));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+    });
+
+    it('should not end the turn if the turn is not endable when the Enter key is pressed', () => {
+      window.addEventListener = jest.fn().mockImplementation((event, cb) => {
+        eventMap[event] = cb;
+      });
+      const wrapper = mount(<App />);
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      // attempt to end turn with Enter key
+      act(() => eventMap.keydown({ code: 'Enter' }));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+    });
+
     it('should do nothing if a non-spacebar key is pressed', () => {
       window.addEventListener = jest.fn().mockImplementation((event, cb) => {
         eventMap[event] = cb;
@@ -437,7 +469,7 @@ describe('App', () => {
       const wrapper = mount(<App />);
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
 
-      act(() => eventMap.keydown({ code: 'Enter' }));
+      act(() => eventMap.keydown({ code: 'KeyA' }));
       wrapper.update();
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
     });

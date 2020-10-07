@@ -230,11 +230,26 @@
     "type": "place"
   },
   "46": {
+    "name": "Washington",
+    "group": "state",
+    "type": "place"
+  },
+  "47": {
+    "name": "West Virginia",
+    "group": "state",
+    "type": "place"
+  },
+  "48": {
+    "name": "Wisconsin",
+    "group": "state",
+    "type": "place"
+  },
+  "49": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "47": {
+  "50": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -245,7 +260,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "48": {
+  "51": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -256,12 +271,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "49": {
+  "52": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "50": {
+  "53": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"
