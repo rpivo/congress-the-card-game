@@ -26,6 +26,7 @@ type IconTypeProps = [
   height: string,
   width: string,
   stroke: string,
+  title: string,
 ];
 
 const drawCardIconProps: IconTypeProps = [
@@ -36,6 +37,7 @@ const drawCardIconProps: IconTypeProps = [
   '50',
   '50',
   '#EAEAEA',
+  'Draw Card',
 ];
 
 const endCardIconProps: IconTypeProps = [
@@ -46,6 +48,7 @@ const endCardIconProps: IconTypeProps = [
   '75',
   '75',
   '#D0D0D0',
+  'End Turn',
 ];
 
 const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
@@ -60,12 +63,14 @@ const ArrowIcon = ({ iconType }: ArrowIconProps): JSX.Element => {
     height,
     width,
     stroke,
+    title,
   ] = iconType === Icons.DRAW_CARD ? drawCardIconProps : endCardIconProps;
 
   return (
     <Style
       className={`${className}${iconType === Icons.END_TURN && !canDrawCard ? ' endable' : ''}`}
       onClick={() => handleClick(canDrawCard, dispatch)}
+      title={title}
     >
       <svg width={width} height={height} viewBox='0 0 703 703'>
         <g transform='translate(-398 -203)'>

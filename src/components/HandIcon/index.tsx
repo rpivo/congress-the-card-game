@@ -15,7 +15,9 @@ const HandIcon = (): JSX.Element => {
   return (
     <Style
       className='handIcon'
-      onClick={(event: React.MouseEvent<HTMLInputElement>) => handleClick(event)}>
+      onClick={(event: React.MouseEvent<HTMLInputElement>) => handleClick(event)}
+      title='Hand'
+    >
       <svg width='445.805' height='421.425' viewBox='0 0 445.805 421.425'>
         <g transform='translate(-195.558 -456.564)'>
           <g

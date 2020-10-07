@@ -28,6 +28,7 @@ exports[`Deck should render correctly 1`] = `
 <div
   className="c0 handIcon"
   onClick={[Function]}
+  title="Hand"
 >
   <svg
     height="421.425"

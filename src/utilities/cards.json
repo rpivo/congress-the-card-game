@@ -215,11 +215,26 @@
     "type": "place"
   },
   "43": {
+    "name": "Utah",
+    "group": "state",
+    "type": "place"
+  },
+  "44": {
+    "name": "Vermont",
+    "group": "state",
+    "type": "place"
+  },
+  "45": {
+    "name": "Virginia",
+    "group": "state",
+    "type": "place"
+  },
+  "46": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "44": {
+  "47": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -230,7 +245,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "45": {
+  "48": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -241,12 +256,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "46": {
+  "49": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "47": {
+  "50": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

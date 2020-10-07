@@ -20,6 +20,7 @@ Ends October 14, 2020
 - update HAND_FULL enum to NOTIFY_HAND_FULL.
 - fix React used before it was defined issue.
 - add SettingsIcon.
+- add tooltips for icons.
 
 ## Sprint 4
 Ends September 16, 2020

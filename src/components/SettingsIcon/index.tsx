@@ -2,7 +2,7 @@ import React from 'react';
 import Style from './style';
 
 const SettingsIcon = (): JSX.Element =>
-  <Style>
+  <Style title='Settings'>
     <svg width='261' height='261' viewBox='0 0 261 261' fill='none'>
       <circle cx='130' cy='130' r='111' fill='#C4C4C4' />
       <path
