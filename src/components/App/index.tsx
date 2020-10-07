@@ -4,6 +4,7 @@ import Hand from '@components/Hand';
 import HandIcon from '@components/HandIcon';
 import NotificationQueue from '@components/NotificationQueue';
 import PlayArea from '@components/PlayArea';
+import SettingsIcon from '@components/SettingsIcon';
 import { Actions, Icons } from '@utilities/types';
 import { Context, getDefaultState, Reducer } from './store';
 import Style from './style';
@@ -39,6 +40,7 @@ const App = (): JSX.Element => {
     <Style className='app' onClick={handleAppClick}>
       <Context.Provider value={{ dispatch, state }}>
         <PlayArea activeCard={activeCard} handleCardClick={handleCardClick} />
+        <SettingsIcon />
         <ArrowIcon iconType={Icons.END_TURN} />
         <HandIcon />
         <Hand activeCard={activeCard} handleCardClick={handleCardClick} />

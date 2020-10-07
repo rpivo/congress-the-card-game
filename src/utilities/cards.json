@@ -200,11 +200,26 @@
     "type": "place"
   },
   "40": {
+    "name": "South Dakota",
+    "group": "state",
+    "type": "place"
+  },
+  "41": {
+    "name": "Tennessee",
+    "group": "state",
+    "type": "place"
+  },
+  "42": {
+    "name": "Texas",
+    "group": "state",
+    "type": "place"
+  },
+  "43": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "41": {
+  "44": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -215,7 +230,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "42": {
+  "45": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -226,12 +241,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "43": {
+  "46": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "44": {
+  "47": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"
