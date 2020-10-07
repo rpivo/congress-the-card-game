@@ -1,5 +1,7 @@
 import { StopPropagationMouseEvent } from '@utilities/types';
 
+export const eventMap: Record<string, ({ code }: { code: string }) => void> = {};
+
 export const stopPropagationMouseEvent = {
   altKey: false,
   button: 0,

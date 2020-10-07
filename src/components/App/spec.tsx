@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { stopPropagationMouseEvent } from '@utilities/mocks';
+import { eventMap, stopPropagationMouseEvent } from '@utilities/mocks';
 import App from '@components/App';
 import Card from '@components/Card';
 import Hand from '@components/Hand';
@@ -398,6 +398,47 @@ describe('App', () => {
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
 
       wrapper.find(App).simulate('click');
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
+    });
+  });
+
+  describe('handleKeyboardEvent', () => {
+    it('should show the hand if the hand was previously hidden when spacebar is pressed', () => {
+      window.addEventListener = jest.fn().mockImplementation((event, cb) => {
+        eventMap[event] = cb;
+      });
+      const wrapper = mount(<App />);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
+      act(() => eventMap.keydown({ code: 'Space' }));
+      wrapper.update();
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
+    });
+
+    it('should hide the hand if the hand was previously showing when spacebar is pressed', () => {
+      window.addEventListener = jest.fn().mockImplementation((event, cb) => {
+        eventMap[event] = cb;
+      });
+      const wrapper = mount(<App />);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
+
+      act(() => eventMap.keydown({ code: 'Space' }));
+      wrapper.update();
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
+
+      act(() => eventMap.keydown({ code: 'Space' }));
+      wrapper.update();
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
+    });
+
+    it('should do nothing if a non-spacebar key is pressed', () => {
+      window.addEventListener = jest.fn().mockImplementation((event, cb) => {
+        eventMap[event] = cb;
+      });
+      const wrapper = mount(<App />);
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
+
+      act(() => eventMap.keydown({ code: 'Enter' }));
+      wrapper.update();
       expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(true);
     });
   });

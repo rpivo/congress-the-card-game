@@ -13,6 +13,18 @@ const App = (): JSX.Element => {
   const [state, dispatch] = React.useReducer(Reducer, getDefaultState());
   const { shouldShowHand } = state;
 
+  const handleKeyboardEvent = React.useCallback(event => {
+    if (event.code === 'Space') {
+      if (shouldShowHand) dispatch({ type: Actions.HIDE_HAND });
+      else dispatch({ type: Actions.SHOW_HAND });
+    }
+  }, [shouldShowHand]);
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', handleKeyboardEvent);
+    return () => window.removeEventListener('keydown', handleKeyboardEvent);
+  }, [handleKeyboardEvent]);
+
   const handleAppClick = () => {
     if (activeCard > -1) setActiveCard(-1);
     if (shouldShowHand) dispatch({ type: Actions.HIDE_HAND });

@@ -16,6 +16,7 @@ Ends October 14, 2020
 - only display Hand Card x icons on mouse enter of the Card.
 - move Breakpoints enum inside types util file.
 - update serve scripts to run all in one terminal.
+- add spacebar event listener.
 
 ## Sprint 4
 Ends September 16, 2020
