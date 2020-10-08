@@ -41,17 +41,6 @@ describe('Card', () => {
       );
     });
 
-    it('should update background on active', () => {
-      const tree = renderer
-        .create(CardMock)
-        .toJSON();
-      expect(tree).toHaveStyleRule(
-        'background',
-        '#9FFFB0',
-        { modifier: '&.card:active' },
-      );
-    });
-
     it('should update box-shadow on hover', () => {
       const tree = renderer
         .create(CardMock)

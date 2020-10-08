@@ -37,6 +37,32 @@ describe('App', () => {
       wrapper.update();
       expect(wrapper.find('.card').at(0).hasClass('active')).toBe(false);
     });
+
+    it('should not add the .active class when the card\'s x icon is clicked', () => {
+      const wrapper = mount(<App />);
+      expect(wrapper.find('.card').at(0).hasClass('active')).toBe(false);
+
+      // draw card
+      const deckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (deckSelector) act(() => deckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+
+      // open hand
+      wrapper.find('.hand').at(0).simulate('click');
+      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
+      expect(wrapper.find(Hand).find(Card)).toHaveLength(1);
+
+      // enter mouse over card
+      wrapper.find('.hand').find('.card').at(0).simulate('mouseenter');
+      expect(wrapper.find(Hand).find(Card).find('.xIcon')).toHaveLength(1);
+
+      // click x icon on card
+      const xIconSelector = wrapper.find(Hand).find(Card).find('.xIcon').prop('onMouseDown');
+      if (xIconSelector) act(() => xIconSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.card').at(0).hasClass('active')).toBe(false);
+    });
   });
 
   describe('canDrawCard state', () => {

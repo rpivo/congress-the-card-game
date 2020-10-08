@@ -250,11 +250,16 @@
     "type": "place"
   },
   "50": {
+    "name": "Washington, D.C.",
+    "group": "capital",
+    "type": "place"
+  },
+  "51": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "51": {
+  "52": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -265,7 +270,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "52": {
+  "53": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -276,12 +281,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "53": {
+  "54": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "54": {
+  "55": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

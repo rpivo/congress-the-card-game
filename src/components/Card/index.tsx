@@ -40,7 +40,13 @@ const Card = ({
       onMouseEnter={handleOnMouseEnter}
     >
       {isHandCard && isMouseEnter &&
-        <span className='xIcon' onClick={(): void => handleXIconClick(id)}>x</span>
+        <span
+          className='xIcon'
+          onClick={(): void => handleXIconClick(id)}
+          onMouseDown={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}
+        >
+          x
+        </span>
       }
       <p className='title'>{title}</p>
       <p className={'subtext subtitle'}>{subtitle}</p>
