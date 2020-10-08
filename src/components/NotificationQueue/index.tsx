@@ -6,7 +6,7 @@ import Style from './style';
 
 const NotificationQueue = (): JSX.Element => {
   const { state } = React.useContext(Context);
-  const { canDrawCard, notifyHandIsFull } = state;
+  const { canDrawCard, isHandFull, notifyHandIsFull } = state;
 
   const didMount = React.useRef(false);
   const previousNotifyHandIsFull = React.useRef(false);
@@ -16,9 +16,7 @@ const NotificationQueue = (): JSX.Element => {
   const [timer, setTimer] = React.useState(Date.now);
 
   const startTimer = () => {
-    timerRef.current = setTimeout(() => {
-      setTimer(Date.now);
-    }, 1250);
+    timerRef.current = setTimeout(() => setTimer(Date.now), 1250);
   };
 
   React.useEffect(() => {
@@ -26,8 +24,10 @@ const NotificationQueue = (): JSX.Element => {
       const notification: NotificationType = { message: '', type: '' };
 
       if (notifyHandIsFull !== previousNotifyHandIsFull.current) {
-        notification.message = 'Your hand is full! Discard a card.';
-        notification.type = Notifications.RED;
+        if (canDrawCard && isHandFull) {
+          notification.message = 'Your hand is full! Discard a card.';
+          notification.type = Notifications.RED;
+        }
         previousNotifyHandIsFull.current = notifyHandIsFull;
       } else if (canDrawCard) {
         notification.message = 'New Turn';

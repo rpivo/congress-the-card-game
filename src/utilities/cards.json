@@ -245,11 +245,16 @@
     "type": "place"
   },
   "49": {
+    "name": "Wyoming",
+    "group": "state",
+    "type": "place"
+  },
+  "50": {
     "name": "President Donald Trump",
     "group": "president",
     "type": "person"
   },
-  "50": {
+  "51": {
     "abilities": {
       "ability1": {
         "title": "Judo Chop",
@@ -260,7 +265,7 @@
     "group": "cabinet",
     "type": "person"
   },
-  "51": {
+  "52": {
     "abilities": {
       "ability1": {
         "title": "Banshee Call",
@@ -271,12 +276,12 @@
     "group": "cabinet",
     "type": "person"
   },
-  "52": {
+  "53": {
     "name": "Gina Haspel",
     "group": "cabinet",
     "type": "person"
   },
-  "53": {
+  "54": {
     "name": "Lamar Alexander",
     "group": "congress",
     "type": "person"

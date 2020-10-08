@@ -22,6 +22,7 @@ Ends October 14, 2020
 - add SettingsIcon.
 - add tooltips for icons.
 - add ability to end the turn by pressing the Enter key (when turn is endable).
+- fix issue where Hand is Full notification would occur after discarding a card and then drawing a card.
 
 ## Sprint 4
 Ends September 16, 2020

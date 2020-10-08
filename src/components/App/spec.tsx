@@ -302,6 +302,122 @@ describe('App', () => {
     });
   });
 
+  describe('isHandFull state', () => {
+    it(`should not create a notification when the hand is initially full, a card is discard, and
+    then a card is drawn`, () => {
+      const wrapper = mount(<App />);
+      const event = {} as React.MouseEvent;
+
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      // draw first card
+      const deckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (deckSelector) act(() => deckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+
+      // draw second card
+      const endTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (endTurnSelector) act(() => endTurnSelector(event));
+      wrapper.update();
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+      const secondDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (secondDeckSelector) act(() => secondDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+
+      // // draw third card
+      const secondEndTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (secondEndTurnSelector) act(() => secondEndTurnSelector(event));
+      wrapper.update();
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+      const thirdDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (thirdDeckSelector) act(() => thirdDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+
+      // // draw fourth card
+      const thirdEndTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (thirdEndTurnSelector) act(() => thirdEndTurnSelector(event));
+      wrapper.update();
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+      const fourthDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (fourthDeckSelector) act(() => fourthDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+
+      // // draw fifth card
+      const fourthEndTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (fourthEndTurnSelector) act(() => fourthEndTurnSelector(event));
+      wrapper.update();
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+      const fifthDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (fifthDeckSelector) act(() => fifthDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
+
+      // // attempt to draw a sixth card
+      const fifthEndTurnSelector = wrapper.find('.endTurnIcon').at(0).prop('onClick');
+      if (fifthEndTurnSelector) act(() => fifthEndTurnSelector(event));
+      wrapper.update();
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+      const sixthDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (sixthDeckSelector) act(() => sixthDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(1);
+
+      act(() => {
+        jest.advanceTimersByTime(2000);
+      });
+      wrapper.update();
+
+      // enter mouse over card
+      wrapper.find('.hand').find('.card').at(0).simulate('mouseenter');
+      expect(wrapper.find(Hand).find(Card).find('.xIcon')).toHaveLength(1);
+
+      // click x icon on card
+      const xIconSelector = wrapper.find(Hand).find(Card).find('.xIcon').prop('onClick');
+      if (xIconSelector) act(() => xIconSelector(event));
+      wrapper.update();
+      expect(wrapper.find(Hand).find(Card)).toHaveLength(4);
+
+      const seventhDeckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
+      if (seventhDeckSelector) act(() => seventhDeckSelector(stopPropagationMouseEvent));
+      wrapper.update();
+      expect(wrapper.find(Notification)).toHaveLength(0);
+    });
+  });
+
   describe('shouldShowHand state', () => {
     it('should not hide the Hand component if it\'s already displaying and it\'s clicked', () => {
       const wrapper = mount(<App />);

@@ -26,6 +26,7 @@ export type StateShape = {
   canDrawCard: boolean;
   cardOrder: number[];
   handCards: number[];
+  isHandFull: boolean;
   notifyHandIsFull: boolean;
   playAreaCards: number[];
   shouldShowHand: boolean;
@@ -37,6 +38,7 @@ export const getDefaultState = (): StateShape => {
     canDrawCard: true,
     cardOrder,
     handCards: [],
+    isHandFull: false,
     notifyHandIsFull: false,
     playAreaCards: cardOrder.splice(0, 5),
     shouldShowHand: false,
@@ -53,6 +55,7 @@ export const Reducer = (state: StateShape, action: ActionType): StateShape => {
           ...state.handCards,
           state.cardOrder.shift(),
         ] as number[],
+        isHandFull: state.handCards.length === 4,
         notifyHandIsFull: false,
         shouldShowHand: true,
       };
@@ -60,6 +63,7 @@ export const Reducer = (state: StateShape, action: ActionType): StateShape => {
       return {
         ...state,
         handCards: state.handCards.filter(cardID => cardID !== action.data!.id),
+        isHandFull: false,
       };
     case END_TURN:
       return {
