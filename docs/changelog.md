@@ -24,6 +24,7 @@ Ends October 14, 2020
 - add ability to end the turn by pressing the Enter key (when turn is endable).
 - fix issue where Hand is Full notification would occur after discarding a card and then drawing a card.
 - fix issue where card is highlighted when its x icon is clicked.
+- fix issue where x icon continued to display for active hand cards.
 
 ## Sprint 4
 Ends September 16, 2020

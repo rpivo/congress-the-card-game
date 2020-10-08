@@ -39,7 +39,7 @@ const Card = ({
       onMouseLeave={() => setIsMouseEnter(false)}
       onMouseEnter={handleOnMouseEnter}
     >
-      {isHandCard && isMouseEnter &&
+      {isHandCard && isMouseEnter && !active &&
         <span
           className='xIcon'
           onClick={(): void => handleXIconClick(id)}
