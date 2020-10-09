@@ -55,6 +55,7 @@ module.exports = {
     "no-param-reassign": 0,
     "no-plusplus": 0,
     "no-process-env": 0,
+    "no-shadow": 0,
     "no-ternary": 0,
     "no-undefined": 0,
     "no-underscore-dangle": 0,
