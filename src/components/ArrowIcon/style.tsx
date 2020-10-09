@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Breakpoints } from '@utilities/types';
+import { Breakpoints } from '@utilities/enums';
 
 const Style = styled.div`
   cursor: pointer;

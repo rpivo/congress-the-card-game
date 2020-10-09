@@ -26,6 +26,8 @@ Ends October 14, 2020
 - fix issue where card is highlighted when its x icon is clicked.
 - fix issue where x icon continued to display for active hand cards.
 - add hand card movement event handlers.
+- fix 'enum is already declared in the upper scope' issue.
+- move shared enums to an enums file.
 
 ## Sprint 4
 Ends September 16, 2020

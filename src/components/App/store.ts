@@ -1,6 +1,6 @@
 import React from 'react';
 import cardData from '@utilities/cards.json';
-import { Actions } from '@utilities/types';
+import { Actions } from '@utilities/enums';
 
 const {
   DRAW_CARD,

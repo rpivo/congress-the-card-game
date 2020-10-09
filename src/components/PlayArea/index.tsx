@@ -2,7 +2,7 @@ import React from 'react';
 import Deck from '@components/Deck';
 import { Context } from '@components/App/store';
 import { getCards } from '@components/Card/util';
-import { Actions } from '@utilities/types';
+import { Actions } from '@utilities/enums';
 import Style from './style';
 
 type PlayAreaProps = {

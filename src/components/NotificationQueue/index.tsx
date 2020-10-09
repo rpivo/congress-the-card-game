@@ -1,7 +1,7 @@
 import React from 'react';
 import Notification from '@components/Notification';
 import { Context } from '@components/App/store';
-import { Notifications } from '@utilities/types';
+import { Notifications } from '@utilities/enums';
 import Style from './style';
 
 const NotificationQueue = (): JSX.Element => {

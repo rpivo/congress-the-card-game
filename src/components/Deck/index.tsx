@@ -2,7 +2,7 @@ import React from 'react';
 import ArrowIcon from '@components/ArrowIcon';
 import { Context } from '@components/App/store';
 import Style from '@components/Card/style';
-import { Actions, Icons } from '@utilities/types';
+import { Actions, Icons } from '@utilities/enums';
 
 const Deck = (): JSX.Element => {
   const { dispatch, state } = React.useContext(Context);

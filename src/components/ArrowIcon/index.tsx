@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
 import { Context } from '@components/App/store';
-import { Actions, Icons } from '@utilities/types';
+import { Actions, Icons } from '@utilities/enums';
 import Style from './style';
 
 type IconType = keyof typeof Icons;

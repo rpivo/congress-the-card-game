@@ -1,4 +1,4 @@
-import { Actions } from '@utilities/types';
+import { Actions } from '@utilities/enums';
 
 declare global {
   type ActionType = {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Notifications } from '@utilities/types';
+import { Notifications } from '@utilities/enums';
 
 type NotificationStyle = {
   type: string;

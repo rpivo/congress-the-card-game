@@ -1,7 +1,7 @@
 import React from 'react';
 import { Context } from '@components/App/store';
 import { getCards } from '@components/Card/util.tsx';
-import { Actions } from '@utilities/types';
+import { Actions } from '@utilities/enums';
 import Style from './style';
 
 type HandProps = {

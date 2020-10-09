@@ -5,7 +5,7 @@ import HandIcon from '@components/HandIcon';
 import NotificationQueue from '@components/NotificationQueue';
 import PlayArea from '@components/PlayArea';
 import SettingsIcon from '@components/SettingsIcon';
-import { Actions, Icons } from '@utilities/types';
+import { Actions, Icons } from '@utilities/enums';
 import { Context, getDefaultState, Reducer } from './store';
 import Style from './style';
 

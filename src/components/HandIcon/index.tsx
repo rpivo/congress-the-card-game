@@ -1,6 +1,6 @@
 import React from 'react';
 import { Context } from '@components/App/store';
-import { Actions } from '@utilities/types';
+import { Actions } from '@utilities/enums';
 import Style from './style';
 
 const HandIcon = (): JSX.Element => {
