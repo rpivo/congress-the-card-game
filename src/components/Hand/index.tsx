@@ -6,7 +6,7 @@ import Style from './style';
 
 type HandProps = {
   activeCard: number;
-  handleCardClick: (id: number) => void;
+  handleCardClick: (id: number, isHandCard?: boolean) => void;
 }
 
 const Hand = ({ activeCard, handleCardClick }: Readonly<HandProps>): JSX.Element => {

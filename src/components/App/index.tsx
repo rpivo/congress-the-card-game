@@ -40,9 +40,22 @@ const App = (): JSX.Element => {
     if (shouldShowHand) dispatch({ type: Actions.HIDE_HAND });
   };
 
-  const handleCardClick = (id: number) => {
+  const handleCardClick = (id: number, isHandCard?: boolean) => {
     if (id === activeCard) id = -1;
     setActiveCard(id);
+    if (isHandCard) registerCardMovementEvents();
+  };
+
+  const handleCardMove = (event: MouseEvent) => console.log({ x: event.offsetX, y: event.offsetY });
+
+  const handleCardDrop = () => {
+    window.removeEventListener('click', handleCardDrop);
+    window.removeEventListener('mousemove', handleCardMove);
+  };
+
+  const registerCardMovementEvents = () => {
+    window.addEventListener('click', handleCardDrop);
+    window.addEventListener('mousemove', handleCardMove);
   };
 
   return (

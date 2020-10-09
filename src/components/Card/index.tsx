@@ -7,7 +7,7 @@ type CardProps = {
   active?: boolean;
   id: number;
   isHandCard?: boolean;
-  handleCardMouseDown: (id: number) => void;
+  handleCardMouseDown: (id: number, isHandCard?: boolean) => void;
   handleXIconClick?: (id: number) => void;
   subtitle?: string;
   title?: string;
@@ -35,7 +35,7 @@ const Card = ({
     <Style
       className={`card${active ? ' active' : ''}`}
       onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}
-      onMouseDown={(): void => handleCardMouseDown(id)}
+      onMouseDown={(): void => handleCardMouseDown(id, isHandCard)}
       onMouseLeave={() => setIsMouseEnter(false)}
       onMouseEnter={handleOnMouseEnter}
     >
