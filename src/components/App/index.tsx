@@ -11,6 +11,8 @@ import Style from './style';
 
 const App = (): JSX.Element => {
   const [activeCard, setActiveCard] = React.useState(-1);
+  const [isCardMoving, setIsCardMoving] = React.useState(false);
+
   const [state, dispatch] = React.useReducer(Reducer, getDefaultState());
   const { canDrawCard, shouldShowHand } = state;
 
@@ -35,6 +37,11 @@ const App = (): JSX.Element => {
     return () => window.removeEventListener('keydown', handleKeyboardEvent);
   }, [handleKeyboardEvent]);
 
+  React.useEffect(() => {
+    if (isCardMoving) window.addEventListener('mousemove', handleCardMove);
+    return () => window.removeEventListener('mousemove', handleCardMove);
+  }, [isCardMoving]);
+
   const handleAppClick = () => {
     if (activeCard > -1) setActiveCard(-1);
     if (shouldShowHand) dispatch({ type: Actions.HIDE_HAND });
@@ -43,20 +50,10 @@ const App = (): JSX.Element => {
   const handleCardClick = (id: number, isHandCard?: boolean) => {
     if (id === activeCard) id = -1;
     setActiveCard(id);
-    if (isHandCard) registerCardMovementEvents();
+    if (isHandCard) setIsCardMoving(!isCardMoving);
   };
 
   const handleCardMove = (event: MouseEvent) => console.log({ x: event.offsetX, y: event.offsetY });
-
-  const handleCardDrop = () => {
-    window.removeEventListener('click', handleCardDrop);
-    window.removeEventListener('mousemove', handleCardMove);
-  };
-
-  const registerCardMovementEvents = () => {
-    window.addEventListener('click', handleCardDrop);
-    window.addEventListener('mousemove', handleCardMove);
-  };
 
   return (
     <Style className='app' onClick={handleAppClick}>

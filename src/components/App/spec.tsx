@@ -545,37 +545,10 @@ describe('App', () => {
   });
 
   describe('handleCardMove', () => {
-    it('should print to the console when a hand card is clicked and the mouse is moved', () => {
+    it(`should print to the console when a hand card is clicked and the mouse is moved, and then 
+    stop printing to the console after the hand card is clicked again`, () => {
       const wrapper = mount(<App />);
       const mouseMove = new MouseEvent('mousemove');
-      console.log = jest.fn();
-
-      // draw card
-      const deckSelector = wrapper.find('.stackedCard').find('div').at(0).prop('onClick');
-      if (deckSelector) act(() => deckSelector(stopPropagationMouseEvent));
-      wrapper.update();
-      expect(wrapper.find('.drawCardIcon').at(0)).toHaveLength(0);
-
-      // open hand
-      wrapper.find('.hand').at(0).simulate('click');
-      expect(wrapper.find(Hand).find('div').at(0).hasClass('hidden')).toBe(false);
-      expect(wrapper.find(Hand).find(Card)).toHaveLength(1);
-
-      // click hand card
-      const cardSelector = wrapper.find('.hand').find('.card').at(0).prop('onMouseDown');
-      if (cardSelector) act(() => cardSelector(stopPropagationMouseEvent));
-      wrapper.update();
-      expect(wrapper.find('.hand').find('.card').at(0).hasClass('active')).toBe(true);
-
-      window.dispatchEvent(mouseMove);
-      expect(console.log).toBeCalledWith({ 'x': undefined, 'y': undefined });
-    });
-
-    it(`should stop printing to the console when a hand card is clicked, the mouse is moved, and 
-    the mouse is clicked again`, () => {
-      const wrapper = mount(<App />);
-      const mouseMove = new MouseEvent('mousemove');
-      const mouseClick = new MouseEvent('click');
       console.log = jest.fn();
 
       // draw card
@@ -597,17 +570,18 @@ describe('App', () => {
 
       // move the mouse
       window.dispatchEvent(mouseMove);
-      expect(console.log).toBeCalledWith({ 'x': undefined, 'y': undefined });
-      expect(console.log).toHaveBeenCalledTimes(2);
+      expect(console.log).toHaveBeenCalledTimes(1);
 
       // move again just to be sure
       window.dispatchEvent(mouseMove);
-      expect(console.log).toHaveBeenCalledTimes(4);
+      expect(console.log).toHaveBeenCalledTimes(2);
 
-      // click the mouse, then move again
-      window.dispatchEvent(mouseClick);
+      // click hand card again, and the move the mouse
+      const secondCardSelector = wrapper.find('.hand').find('.card').at(0).prop('onMouseDown');
+      if (secondCardSelector) act(() => secondCardSelector(stopPropagationMouseEvent));
+      wrapper.update();
       window.dispatchEvent(mouseMove);
-      expect(console.log).toHaveBeenCalledTimes(4);
+      expect(console.log).toHaveBeenCalledTimes(2);
     });
   });
 

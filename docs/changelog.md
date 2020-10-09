@@ -28,6 +28,7 @@ Ends October 14, 2020
 - add hand card movement event handlers.
 - fix 'enum is already declared in the upper scope' issue.
 - move shared enums to an enums file.
+- update hand card mousemove event listeners to be toggled on and off by card click rather than window click.
 
 ## Sprint 4
 Ends September 16, 2020
