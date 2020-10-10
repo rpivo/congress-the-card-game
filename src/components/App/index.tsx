@@ -31,7 +31,7 @@ const App = (): JSX.Element => {
       default:
         break;
     }
-  }, [shouldShowHand]);
+  }, [canDrawCard, shouldShowHand]);
 
   React.useEffect(() => {
     window.addEventListener('keydown', handleKeyboardEvent);

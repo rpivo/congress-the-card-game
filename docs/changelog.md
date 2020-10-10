@@ -30,6 +30,7 @@ Ends October 14, 2020
 - move shared enums to an enums file.
 - update hand card mousemove event listeners to be toggled on and off by card click rather than window click.
 - update hand card styles during mousemove events.
+- add canDrawCard to handleKeyboardEvent useCallback's dependency array.
 
 ## Sprint 4
 Ends September 16, 2020
