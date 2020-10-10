@@ -569,18 +569,27 @@ describe('App', () => {
       expect(wrapper.find('.hand').find('.card').at(0).hasClass('active')).toBe(true);
 
       // move the mouse
-      window.dispatchEvent(mouseMove);
+      act(() => {
+        window.dispatchEvent(mouseMove);
+      });
+      wrapper.update();
       expect(console.log).toHaveBeenCalledTimes(1);
 
       // move again just to be sure
-      window.dispatchEvent(mouseMove);
+      act(() => {
+        window.dispatchEvent(mouseMove);
+      });
+      wrapper.update();
       expect(console.log).toHaveBeenCalledTimes(2);
 
       // click hand card again, and the move the mouse
       const secondCardSelector = wrapper.find('.hand').find('.card').at(0).prop('onMouseDown');
       if (secondCardSelector) act(() => secondCardSelector(stopPropagationMouseEvent));
       wrapper.update();
-      window.dispatchEvent(mouseMove);
+      act(() => {
+        window.dispatchEvent(mouseMove);
+      });
+      wrapper.update();
       expect(console.log).toHaveBeenCalledTimes(2);
     });
   });

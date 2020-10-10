@@ -9,6 +9,7 @@ type CardProps = {
   isHandCard?: boolean;
   handleCardMouseDown: (id: number, isHandCard?: boolean) => void;
   handleXIconClick?: (id: number) => void;
+  mouseCoordinates?: { x: number; y: number };
   subtitle?: string;
   title?: string;
 };
@@ -21,6 +22,7 @@ const Card = ({
   isHandCard,
   handleCardMouseDown,
   handleXIconClick = () => {},
+  mouseCoordinates,
   subtitle,
   title,
 }: Readonly<CardProps>): JSX.Element => {
@@ -33,7 +35,10 @@ const Card = ({
 
   return (
     <Style
+      active={active}
       className={`card${active ? ' active' : ''}`}
+      isHandCard={isHandCard}
+      mouseCoordinates={mouseCoordinates}
       onClick={(event: React.MouseEvent<HTMLInputElement>): void => event.stopPropagation()}
       onMouseDown={(): void => handleCardMouseDown(id, isHandCard)}
       onMouseLeave={() => setIsMouseEnter(false)}

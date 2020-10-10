@@ -9,7 +9,6 @@ exports[`PlayArea should render correctly 1`] = `
   height: 210px;
   padding: 8px;
   place-self: center;
-  position: relative;
   -webkit-transition: box-shadow 0.2s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
   width: 150px;
@@ -173,6 +172,13 @@ exports[`PlayArea should render correctly 1`] = `
     onMouseDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    style={
+      Object {
+        "left": "",
+        "position": "relative",
+        "top": "",
+      }
+    }
   >
     <p
       className="title"
@@ -191,6 +197,13 @@ exports[`PlayArea should render correctly 1`] = `
     onMouseDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    style={
+      Object {
+        "left": "",
+        "position": "relative",
+        "top": "",
+      }
+    }
   >
     <p
       className="title"
@@ -209,6 +222,13 @@ exports[`PlayArea should render correctly 1`] = `
     onMouseDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    style={
+      Object {
+        "left": "",
+        "position": "relative",
+        "top": "",
+      }
+    }
   >
     <p
       className="title"
@@ -227,6 +247,13 @@ exports[`PlayArea should render correctly 1`] = `
     onMouseDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    style={
+      Object {
+        "left": "",
+        "position": "relative",
+        "top": "",
+      }
+    }
   >
     <p
       className="title"
@@ -245,6 +272,13 @@ exports[`PlayArea should render correctly 1`] = `
     onMouseDown={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    style={
+      Object {
+        "left": "",
+        "position": "relative",
+        "top": "",
+      }
+    }
   >
     <p
       className="title"
@@ -259,10 +293,24 @@ exports[`PlayArea should render correctly 1`] = `
   </div>
   <div
     className="c1 deck"
+    style={
+      Object {
+        "left": "",
+        "position": "relative",
+        "top": "",
+      }
+    }
   >
     <div
       className="c1 stackedCard canDrawCard"
       onClick={[Function]}
+      style={
+        Object {
+          "left": "",
+          "position": "relative",
+          "top": "",
+        }
+      }
     >
       <div
         className="c2 drawCardIcon"

@@ -22,6 +22,7 @@ type GetCardsProps = {
   handleMouseDown: (id: number) => void;
   handleXIconClick?: (id: number) => void;
   isHandCard?: boolean;
+  mouseCoordinates?: { x: number; y: number; };
 };
 
 export const getCards = ({
@@ -30,6 +31,7 @@ export const getCards = ({
   handleMouseDown,
   handleXIconClick,
   isHandCard = false,
+  mouseCoordinates,
 }: Readonly<GetCardsProps>): JSX.Element[] => {
   const cards = [];
   for (const id of cardIDs) {
@@ -44,6 +46,7 @@ export const getCards = ({
         id={id}
         isHandCard={isHandCard}
         key={id}
+        mouseCoordinates={mouseCoordinates}
         title={name}
         subtitle={group}
       />

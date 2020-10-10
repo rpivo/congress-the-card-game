@@ -1,6 +1,21 @@
 import styled from 'styled-components';
 
-const Style = styled.div`
+type CardStyle = {
+  active?: boolean | undefined;
+  isHandCard?: boolean | undefined;
+  mouseCoordinates?: { x: number; y: number; };
+};
+
+const Style = styled.div.attrs((props: CardStyle) => {
+  const isMoving = (props.active && props.isHandCard) ?? false;
+  return {
+    style: {
+      left: isMoving ? `${props.mouseCoordinates!.x}px` : '',
+      position: isMoving ? 'absolute' : 'relative',
+      top: isMoving ? `${props.mouseCoordinates!.y}px` : '',
+    },
+  };
+}) <CardStyle>`
   background: #EAEAEA;
   border-radius: 5px;
   cursor: pointer;
@@ -8,7 +23,6 @@ const Style = styled.div`
   height: 210px;
   padding: 8px;
   place-self: center;
-  position: relative;
   transition: box-shadow 0.2s ease-in-out;
   width: 150px;
 

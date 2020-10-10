@@ -7,9 +7,14 @@ import Style from './style';
 type HandProps = {
   activeCard: number;
   handleCardClick: (id: number, isHandCard?: boolean) => void;
+  mouseCoordinates: { x: number; y: number };
 }
 
-const Hand = ({ activeCard, handleCardClick }: Readonly<HandProps>): JSX.Element => {
+const Hand = ({
+  activeCard,
+  handleCardClick,
+  mouseCoordinates,
+}: Readonly<HandProps>): JSX.Element => {
   const { dispatch, state } = React.useContext(Context);
   const { handCards, shouldShowHand } = state;
 
@@ -25,6 +30,7 @@ const Hand = ({ activeCard, handleCardClick }: Readonly<HandProps>): JSX.Element
     handleMouseDown: handleCardClick,
     handleXIconClick,
     isHandCard: true,
+    mouseCoordinates,
   });
 
   return (

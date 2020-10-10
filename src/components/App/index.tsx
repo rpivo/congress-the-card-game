@@ -12,6 +12,7 @@ import Style from './style';
 const App = (): JSX.Element => {
   const [activeCard, setActiveCard] = React.useState(-1);
   const [isCardMoving, setIsCardMoving] = React.useState(false);
+  const [mouseCoordinates, setMouseCoordinates] = React.useState({ x: 0, y: 0 });
 
   const [state, dispatch] = React.useReducer(Reducer, getDefaultState());
   const { canDrawCard, shouldShowHand } = state;
@@ -53,7 +54,10 @@ const App = (): JSX.Element => {
     if (isHandCard) setIsCardMoving(!isCardMoving);
   };
 
-  const handleCardMove = (event: MouseEvent) => console.log({ x: event.offsetX, y: event.offsetY });
+  const handleCardMove = (event: MouseEvent) => {
+    console.log({ x: event.offsetX, y: event.offsetY });
+    setMouseCoordinates({ x: event.offsetX, y: event.offsetY });
+  };
 
   return (
     <Style className='app' onClick={handleAppClick}>
@@ -62,7 +66,11 @@ const App = (): JSX.Element => {
         <SettingsIcon />
         <ArrowIcon iconType={Icons.END_TURN} />
         <HandIcon />
-        <Hand activeCard={activeCard} handleCardClick={handleCardClick} />
+        <Hand
+          activeCard={activeCard}
+          handleCardClick={handleCardClick}
+          mouseCoordinates={mouseCoordinates}
+        />
         <NotificationQueue />
       </Context.Provider>
     </Style>
