@@ -44,6 +44,7 @@ Ends October 14, 2020
 - update export default syntax in App component.
 - add flows for puppeteer automation.
 - refactor automation to run inside dedication automation folder.
+- set up POC for D3 chart visualization of example data (to eventually be used with automation).
 
 ## Sprint 4
 Ends September 16, 2020
