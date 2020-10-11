@@ -5,11 +5,11 @@ if [ "$PROFILE" ]
 then
 cp dist/index.profiler.js.br dist/index.js.br && rm dist/index.profiler.js.br;
 fi
-echo '\npreparing server...';
+echo '\npreparing server...\n';
 npm run serve &
 if [ "$PROFILE" ]
 then
-echo '\npreparing automation...';
+echo 'preparing automation...';
 node automation.js;
 echo '\nautomation finished.\n';
 fi

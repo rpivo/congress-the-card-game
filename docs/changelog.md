@@ -39,6 +39,7 @@ Ends October 14, 2020
 - add ability to save puppeteer automation logs to a JSON file.
 - refactor puppeteer automation file to be a js file rather than a ts file.
 - update automation output file to include date and time in file name.
+- set up flow logic for puppeteer automation.
 
 ## Sprint 4
 Ends September 16, 2020

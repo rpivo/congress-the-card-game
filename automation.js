@@ -5,6 +5,13 @@ const puppeteer = require('puppeteer');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
+  const flows = {
+    mount: async () => {
+      const logs = await page.evaluate(() => window.profiler);
+      writeToFile(logs);
+    },
+  };
+
   const hyphenateString = (str) => str
     .replace(/(\/|\s|:|\.)/g, '-')
     .replace(',', '')
@@ -12,6 +19,12 @@ const puppeteer = require('puppeteer');
     .replace(/-$/, '');
 
   const fileName = `${hyphenateString(`automation-${new Date().toLocaleString()}`)}.json`;
+
+  const writeToFile = logs =>
+    fs.writeFile(fileName, JSON.stringify(logs), (err) => {
+      if (err) throw err;
+      console.log(`\n\x1b[37mReport written as file: \x1b[36m${fileName}\n`);
+    });
 
   await page.goto('http://localhost:1235/index.html');
 
@@ -21,12 +34,12 @@ const puppeteer = require('puppeteer');
     width: 1920,
   });
 
-  const logs = await page.evaluate(() => window.profiler);
-
-  fs.writeFile(fileName, JSON.stringify(logs), (err) => {
-    if (err) throw err;
-    console.log(`\n\x1b[37mReport written as file: \x1b[36m${fileName}\n`);
-  });
+  for (const flow in flows) {
+    await flows[flow]();
+    await page.evaluate(() => {
+      window.profiler = [];
+    });
+  }
 
   await browser.close();
 })();
