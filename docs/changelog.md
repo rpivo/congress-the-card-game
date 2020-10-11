@@ -38,6 +38,7 @@ Ends October 14, 2020
 - add index.profiler.tsx to Jest's ignored files.
 - add ability to save puppeteer automation logs to a JSON file.
 - refactor puppeteer automation file to be a js file rather than a ts file.
+- update automation output file to include date and time in file name.
 
 ## Sprint 4
 Ends September 16, 2020

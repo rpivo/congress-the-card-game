@@ -3,8 +3,15 @@ const puppeteer = require('puppeteer');
 
 (async () => {
   const browser = await puppeteer.launch();
-  const fileName = 'automation.json';
   const page = await browser.newPage();
+
+  const hyphenateString = (str) => str
+    .replace(/(\/|\s|:|\.)/g, '-')
+    .replace(',', '')
+    .replace(/-{2,}/g, '-')
+    .replace(/-$/, '');
+
+  const fileName = `${hyphenateString(`automation-${new Date().toLocaleString()}`)}.json`;
 
   await page.goto('http://localhost:1235/index.html');
 
