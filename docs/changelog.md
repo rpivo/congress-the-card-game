@@ -41,6 +41,8 @@ Ends October 14, 2020
 - update automation output file to include date and time in file name.
 - set up flow logic for puppeteer automation.
 - update automation output files to include flow name.
+- update export default syntax in App component.
+- add flows for puppeteer automation.
 
 ## Sprint 4
 Ends September 16, 2020
