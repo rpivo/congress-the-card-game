@@ -36,6 +36,7 @@ Ends October 14, 2020
 - add puppeteer.
 - update puppeteer screenshot to be 1920x1080.
 - add index.profiler.tsx to Jest's ignored files.
+- add ability to save puppeteer automation logs to a JSON file.
 
 ## Sprint 4
 Ends September 16, 2020

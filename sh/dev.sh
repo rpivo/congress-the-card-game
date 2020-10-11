@@ -10,6 +10,8 @@ npm run serve &
 if [ "$PROFILE" ]
 then
 echo '\npreparing automation...';
-node puppeteer.ts;
+tsc automation.ts --skipLibCheck;
+node automation.js;
+rm automation.js;
 echo '\nautomation finished.\n';
 fi

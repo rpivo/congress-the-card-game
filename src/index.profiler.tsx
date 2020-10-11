@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from '@components/App';
 
+window.profiler = [];
+
 const handleRender = (
   id: string,
   phase: string,
@@ -11,9 +13,15 @@ const handleRender = (
   commitTime: number,
   interactions: Set<{ id: number; name: string; timestamp: number; }>,
 ) => {
-  console.info('profiler:',
-    { actualDuration, baseDuration, commitTime, id, interactions, phase, startTime },
-  );
+  window.profiler.push({
+    actualDuration,
+    baseDuration,
+    commitTime,
+    id,
+    interactions,
+    phase,
+    startTime,
+  });
 };
 
 render(
