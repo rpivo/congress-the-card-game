@@ -44,7 +44,7 @@ const puppeteer = require('puppeteer');
     const logs = await page.evaluate(() => window.profiler);
     const fileName = getFileName(label);
 
-    fs.writeFile(fileName, JSON.stringify(logs), (err) => {
+    fs.writeFile(`automation/${fileName}`, JSON.stringify(logs), (err) => {
       if (err) throw err;
       console.log(`\n\x1b[37mReport written as file: \x1b[36m${fileName}\n`);
     });

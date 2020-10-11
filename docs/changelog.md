@@ -43,6 +43,7 @@ Ends October 14, 2020
 - update automation output files to include flow name.
 - update export default syntax in App component.
 - add flows for puppeteer automation.
+- refactor automation to run inside dedication automation folder.
 
 ## Sprint 4
 Ends September 16, 2020

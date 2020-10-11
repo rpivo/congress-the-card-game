@@ -10,6 +10,6 @@ npm run serve &
 if [ "$PROFILE" ]
 then
 echo 'preparing automation...';
-node automation.js;
+node automation/automation.js;
 echo '\nautomation finished.\n';
 fi
