@@ -7,10 +7,11 @@ import replace from '@rollup/plugin-replace';
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 
+const profile = process.env.PROFILE;
 const env = process.env.NODE_ENV;
 
 export default {
-  input: 'src/index.tsx',
+  input: profile ? 'src/index.profiler.tsx' : 'src/index.tsx',
   output: {
     dir: 'dist',
     format: 'esm',

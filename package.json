@@ -49,6 +49,7 @@
     "clean": "bash ./sh/clean.sh",
     "dev": "export NODE_ENV=development && npm run watch",
     "prod": "export NODE_ENV=production && npm run watch",
+    "profile": "export NODE_ENV=development && export PROFILE=true && npm run watch",
     "serve": "express-compression-server --build=dist --port=1235",
     "test": "npx jest --watchAll --coverage --notify",
     "update": "npx npm-check-updates -u",
