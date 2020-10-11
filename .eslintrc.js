@@ -16,6 +16,7 @@ module.exports = {
     "@typescript-eslint/no-empty-function": 0,
     "@typescript-eslint/no-non-null-assertion": 0,
     "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/no-var-requires": 0,
     "array-bracket-newline": 0,
     "array-element-newline": 0,
     "arrow-body-style": 0,

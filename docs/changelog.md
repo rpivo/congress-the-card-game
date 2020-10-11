@@ -33,6 +33,7 @@ Ends October 14, 2020
 - add canDrawCard to handleKeyboardEvent useCallback's dependency array.
 - add profiler script to be used with React's Profiler API.
 - add handleRender profiler function.
+- add puppeteer.
 
 ## Sprint 4
 Ends September 16, 2020
