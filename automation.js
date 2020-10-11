@@ -14,10 +14,9 @@ const puppeteer = require('puppeteer');
     width: 1920,
   });
 
-  // @ts-ignore
   const logs = await page.evaluate(() => window.profiler);
 
-  fs.writeFile(fileName, JSON.stringify(logs), (err: Error) => {
+  fs.writeFile(fileName, JSON.stringify(logs), (err) => {
     if (err) throw err;
     console.log(`\n\x1b[37mReport written as file: \x1b[36m${fileName}\n`);
   });
