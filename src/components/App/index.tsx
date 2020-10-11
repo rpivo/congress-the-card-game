@@ -9,7 +9,7 @@ import { Actions, Icons } from '@utilities/enums';
 import { Context, getDefaultState, Reducer } from './store';
 import Style from './style';
 
-const App = (): JSX.Element => {
+export default (): JSX.Element => {
   const [activeCard, setActiveCard] = React.useState(-1);
   const [isCardMoving, setIsCardMoving] = React.useState(false);
   const [mouseCoordinates, setMouseCoordinates] = React.useState({ x: 0, y: 0 });
@@ -76,5 +76,3 @@ const App = (): JSX.Element => {
     </Style>
   );
 };
-
-export default App;
