@@ -4,7 +4,7 @@ module.exports = {
     "!**/node_modules/**",
     "!**/vendor/**",
   ],
-  coveragePathIgnorePatterns: ['src/index.tsx'],
+  coveragePathIgnorePatterns: ['src/index.tsx', 'src/index.profiler.tsx'],
   moduleNameMapper: {
     "@components/(.*)": "<rootDir>/src/components/$1",
     "@utilities/(.*)": "<rootDir>/src/utilities/$1",

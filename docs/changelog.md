@@ -35,6 +35,7 @@ Ends October 14, 2020
 - add handleRender profiler function.
 - add puppeteer.
 - update puppeteer screenshot to be 1920x1080.
+- add index.profiler.tsx to Jest's ignored files.
 
 ## Sprint 4
 Ends September 16, 2020
