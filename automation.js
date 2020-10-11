@@ -6,9 +6,9 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
 
   const flows = {
-    mount: async () => {
+    mount: async ({ label }) => {
       const logs = await page.evaluate(() => window.profiler);
-      writeToFile(logs);
+      writeToFile(logs, label);
     },
   };
 
@@ -18,13 +18,16 @@ const puppeteer = require('puppeteer');
     .replace(/-{2,}/g, '-')
     .replace(/-$/, '');
 
-  const fileName = `${hyphenateString(`automation-${new Date().toLocaleString()}`)}.json`;
+  const getFileName = label =>
+    `${hyphenateString(`automation-${label}-${new Date().toLocaleString()}`)}.json`;
 
-  const writeToFile = logs =>
+  const writeToFile = (logs, label) => {
+    const fileName = getFileName(label);
     fs.writeFile(fileName, JSON.stringify(logs), (err) => {
       if (err) throw err;
       console.log(`\n\x1b[37mReport written as file: \x1b[36m${fileName}\n`);
     });
+  };
 
   await page.goto('http://localhost:1235/index.html');
 
@@ -35,7 +38,7 @@ const puppeteer = require('puppeteer');
   });
 
   for (const flow in flows) {
-    await flows[flow]();
+    await flows[flow]({ label: flow });
     await page.evaluate(() => {
       window.profiler = [];
     });

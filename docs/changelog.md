@@ -40,6 +40,7 @@ Ends October 14, 2020
 - refactor puppeteer automation file to be a js file rather than a ts file.
 - update automation output file to include date and time in file name.
 - set up flow logic for puppeteer automation.
+- update automation output files to include flow name.
 
 ## Sprint 4
 Ends September 16, 2020
