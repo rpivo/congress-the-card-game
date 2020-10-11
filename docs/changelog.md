@@ -34,6 +34,7 @@ Ends October 14, 2020
 - add profiler script to be used with React's Profiler API.
 - add handleRender profiler function.
 - add puppeteer.
+- update puppeteer screenshot to be 1920x1080.
 
 ## Sprint 4
 Ends September 16, 2020
