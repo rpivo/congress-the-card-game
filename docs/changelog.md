@@ -47,6 +47,7 @@ Ends October 14, 2020
 - set up POC for D3 chart visualization of example data (to eventually be used with automation).
 - clean up and format shell scripts.
 - remove json files on each automation startup.
+- correctly wrap automation.html with html and head tags.
 
 ## Sprint 4
 Ends September 16, 2020
