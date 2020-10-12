@@ -10,25 +10,46 @@
       color: #FFF;
     }
 
+    h1 {
+      font-family: Arial;
+      font-weight: lighter;
+      margin: 50px;
+      text-align: center;
+    }
+
+    svg {
+      display: block;
+      margin: 0 auto;
+    }
+
     text {
-      fill: white;
+      fill: #FFF;
     }
   </style>
 </head>
 
 <body>
-  <svg id='chart' width='1000' height='500'></svg>
+  <h1>react automation</h1>
+  <svg id='chart' width='1500' height='800'></svg>
   <script src='https://d3js.org/d3.v6.min.js'></script>
   <script>
     (async () => {
-      const height = 500;
-      const width = 1000;
+      const height = 800;
+      const width = 1500;
       const margin = ({ top: 10, right: 10, bottom: 20, left: 40 });
 
       const csv = await d3.csv('data.csv');
-      const data = Object.assign(csv, { y: 'Milliseconds' });
+      const json = await d3.json('data.json');
+      // gets the csv data and stores it in a consumable object.
+      const data = Object.assign(csv);
+      // gets the first item from the columns key in the data object, which will be "Render".
+      // this is what the columns key looks like:
+      // ["Render", "Time Elapsed", "Actual Duration", "Base Duration"]
       const groupKey = data.columns[0];
+      // gets the rest of the items after "Render" in the columns key in the data object.
+      // ie ["Time Elapsed", "Actual Duration", "Base Duration"]
       const keys = data.columns.slice(1);
+      console.log({ data, json, groupKey, keys });
 
       const color = d3.scaleOrdinal().range(['#5A78E6', '#56A6FC', '#52C9F2']);
 
@@ -69,10 +90,14 @@
           .attr('x', 3)
           .attr('text-anchor', 'start')
           .attr('font-weight', 'bold')
-          .text(data.y));
+          .text('Milliseconds'));
 
       const x0 = d3.scaleBand()
-        .domain(data.map(d => d[groupKey]))
+        .domain(data.map(d => {
+          // d is each object in the data object
+          console.log({ d, dByGroupKey: d[groupKey] });
+          return d[groupKey];
+        }))
         .rangeRound([margin.left, width - margin.right])
         .paddingInner(0.1);
 
@@ -82,7 +107,7 @@
         .padding(0.05);
 
       const y = d3.scaleLinear()
-        .domain([0, 5.5]).nice()
+        .domain([0, 6.0]).nice()
         .rangeRound([height - margin.bottom, margin.top]);
 
       const chart = () => {
@@ -114,11 +139,7 @@
         return svg.node();
       };
 
-      console.log({
-        chart: chart(),
-        data,
-        keys,
-      });
+      chart();
     })();
 
   </script>
