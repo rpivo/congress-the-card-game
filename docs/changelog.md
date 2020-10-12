@@ -60,6 +60,7 @@ Ends October 14, 2020
 - store all automation json files and .dsv in a json subdirectory inside dist.
 - create a chart for each automation json file.
 - add heading for each automation graph.
+- get max value from all automation json data and use it to set max scale for all charts.
 
 ## Sprint 4
 Ends September 16, 2020

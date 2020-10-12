@@ -39,6 +39,35 @@
 
       const { columns: jsonFiles } = await d3.dsv(' ', 'json/jsonList.dsv');
 
+      const jsonData = [];
+      const allJsonValues = [];
+      for (const file of jsonFiles) jsonData.push(
+        await d3
+          .json(`json/${file}`)
+          .then(data =>
+            data.map((item, index) => {
+              item['Actual Duration'] = item.actualDuration;
+              item['Base Duration'] = item.baseDuration;
+              item['Time Elapsed'] = item.commitTime - item.startTime;
+
+              item.Render = `Render ${index + 1}`;
+
+              allJsonValues.push(item['Actual Duration'], item['Base Duration'], item['Time Elapsed']);
+
+              delete item.actualDuration;
+              delete item.baseDuration;
+              delete item.commitTime;
+              delete item.id;
+              delete item.interactions;
+              delete item.phase;
+              delete item.startTime;
+
+              return item;
+            })),
+      );
+
+      const scaleMax = Math.floor(Math.max(...allJsonValues)) + 1.5;
+
       for (const [id, file] of jsonFiles.entries()) {
         const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
@@ -54,26 +83,7 @@
         document.body.appendChild(h2El);
 
         const data = Object.assign(
-          await d3
-            .json(`json/${file}`)
-            .then(data =>
-              data.map((item, index) => {
-                item['Actual Duration'] = item.actualDuration;
-                item['Base Duration'] = item.baseDuration;
-                item['Time Elapsed'] = item.commitTime - item.startTime;
-
-                item.Render = `Render ${index + 1}`;
-
-                delete item.actualDuration;
-                delete item.baseDuration;
-                delete item.commitTime;
-                delete item.id;
-                delete item.interactions;
-                delete item.phase;
-                delete item.startTime;
-
-                return item;
-              })),
+          jsonData[id],
           { columns: ['Render', 'Time Elapsed', 'Actual Duration', 'Base Duration'] },
         );
 
@@ -132,7 +142,7 @@
           .padding(0.05);
 
         const y = d3.scaleLinear()
-          .domain([0, 25.0]).nice()
+          .domain([0, scaleMax]).nice()
           .rangeRound([height - margin.bottom, margin.top]);
 
         const chart = () => {
