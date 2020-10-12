@@ -12,6 +12,7 @@
 
     h1 {
       font-family: Arial;
+      font-size: 20px;
       font-weight: lighter;
       margin: 50px;
       text-align: center;
@@ -19,7 +20,7 @@
 
     svg {
       display: block;
-      margin: 0 auto;
+      margin: 100px auto;
     }
 
     text {
@@ -29,7 +30,6 @@
 </head>
 
 <body>
-  <h1>react automation</h1>
   <svg id='chart' width='1500' height='800'></svg>
   <script src='https://d3js.org/d3.v6.min.js'></script>
   <script>
@@ -38,18 +38,32 @@
       const width = 1500;
       const margin = ({ top: 10, right: 10, bottom: 20, left: 40 });
 
-      const csv = await d3.csv('data.csv');
-      const json = await d3.json('data.json');
-      // gets the csv data and stores it in a consumable object.
-      const data = Object.assign(csv);
-      // gets the first item from the columns key in the data object, which will be "Render".
-      // this is what the columns key looks like:
-      // ["Render", "Time Elapsed", "Actual Duration", "Base Duration"]
+      const data = Object.assign(
+        await d3
+        .json('data.json')
+        .then(data =>
+          data.map((item, index) => {
+            item['Actual Duration'] = item.actualDuration;
+            item['Base Duration'] = item.baseDuration;
+            item['Time Elapsed'] = item.commitTime - item.startTime;
+
+            item.Render = `Render ${index + 1}`;
+
+            delete item.actualDuration;
+            delete item.baseDuration;
+            delete item.commitTime;
+            delete item.id;
+            delete item.interactions;
+            delete item.phase;
+            delete item.startTime;
+
+            return item;
+          })),
+        { columns: ["Render", "Time Elapsed", "Actual Duration", "Base Duration"] },
+      );
+
       const groupKey = data.columns[0];
-      // gets the rest of the items after "Render" in the columns key in the data object.
-      // ie ["Time Elapsed", "Actual Duration", "Base Duration"]
       const keys = data.columns.slice(1);
-      console.log({ data, json, groupKey, keys });
 
       const color = d3.scaleOrdinal().range(['#5A78E6', '#56A6FC', '#52C9F2']);
 
@@ -93,11 +107,7 @@
           .text('Milliseconds'));
 
       const x0 = d3.scaleBand()
-        .domain(data.map(d => {
-          // d is each object in the data object
-          console.log({ d, dByGroupKey: d[groupKey] });
-          return d[groupKey];
-        }))
+        .domain(data.map(d => d[groupKey]))
         .rangeRound([margin.left, width - margin.right])
         .paddingInner(0.1);
 

@@ -53,6 +53,7 @@ Ends October 14, 2020
 - update automation.html chart to have only 3 bars per group.
 - finish porting real data to automation charts.
 - add style and comments to automation.html.
+- set up automation.html to consume json files instead of csv files.
 
 ## Sprint 4
 Ends September 16, 2020
