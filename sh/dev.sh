@@ -12,6 +12,6 @@ if [ "$PROFILE" ]
 then
 echo 'preparing automation...';
 node automation/automation.js;
-echo `ls automation/*.json` > dist/jsonList.txt;
+echo `ls automation/*.json` > dist/jsonList.dsv;
 echo '\nautomation finished.\n';
 fi
