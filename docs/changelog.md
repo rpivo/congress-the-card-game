@@ -50,6 +50,7 @@ Ends October 14, 2020
 - correctly wrap automation.html with html and head tags.
 - clean up automation.html.
 - refactor automation.html to use grouped bar chart.
+- update automation.html chart to have only 3 bars per group.
 
 ## Sprint 4
 Ends September 16, 2020

@@ -30,8 +30,7 @@
       const groupKey = data.columns[0];
       const keys = data.columns.slice(1);
 
-      const color = d3.scaleOrdinal()
-        .range(['#9FBDB6', '#7CA6A0', '#8652F2', '#5E56FC', '#5A78E6', '#56A6FC', '#52C9F2']);
+      const color = d3.scaleOrdinal().range(['#5A78E6', '#56A6FC', '#52C9F2']);
 
       const legend = svg => {
         const g = svg
@@ -83,7 +82,7 @@
         .padding(0.05);
 
       const y = d3.scaleLinear()
-        .domain([0, 10000000]).nice()
+        .domain([0, 5000000]).nice()
         .rangeRound([height - margin.bottom, margin.top]);
 
       const chart = () => {
