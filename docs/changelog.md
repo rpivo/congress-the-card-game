@@ -58,6 +58,7 @@ Ends October 14, 2020
 - update jsonList to be a .dsv file so that D3 can easily consume it.
 - dynamically create svg element in automation.html.
 - store all automation json files and .dsv in a json subdirectory inside dist.
+- create a chart for each automation json file.
 
 ## Sprint 4
 Ends September 16, 2020

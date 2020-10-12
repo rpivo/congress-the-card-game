@@ -14,7 +14,7 @@
       font-family: Arial;
       font-size: 20px;
       font-weight: lighter;
-      margin: 50px;
+      margin-top: -75px;
       text-align: center;
     }
 
@@ -37,129 +37,134 @@
       const width = 1500;
       const margin = ({ top: 10, right: 10, bottom: 20, left: 40 });
 
-      const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-
-      svgEl.setAttribute('id', 'chart');
-      svgEl.setAttribute('height', '800');
-      svgEl.setAttribute('width', '1500');
-
-      document.body.appendChild(svgEl);
-
-      const data = Object.assign(
-        await d3
-          .json('json/data.json')
-          .then(data =>
-            data.map((item, index) => {
-              item['Actual Duration'] = item.actualDuration;
-              item['Base Duration'] = item.baseDuration;
-              item['Time Elapsed'] = item.commitTime - item.startTime;
-
-              item.Render = `Render ${index + 1}`;
-
-              delete item.actualDuration;
-              delete item.baseDuration;
-              delete item.commitTime;
-              delete item.id;
-              delete item.interactions;
-              delete item.phase;
-              delete item.startTime;
-
-              return item;
-            })),
-        { columns: ['Render', 'Time Elapsed', 'Actual Duration', 'Base Duration'] },
-      );
-
       const { columns: jsonFiles } = await d3.dsv(' ', 'json/jsonList.dsv');
-      console.log({ jsonFiles });
 
-      const groupKey = data.columns[0];
-      const keys = data.columns.slice(1);
+      for (const [id, file] of jsonFiles.entries()) {
+        const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
-      const color = d3.scaleOrdinal().range(['#5A78E6', '#56A6FC', '#52C9F2']);
+        svgEl.setAttribute('id', `chart-${id}`);
+        svgEl.setAttribute('height', '800');
+        svgEl.setAttribute('width', '1500');
 
-      const legend = svg => {
-        const g = svg
-          .attr('transform', `translate(${width},0)`)
-          .attr('text-anchor', 'end')
-          .attr('font-family', 'sans-serif')
-          .attr('font-size', 10)
-          .selectAll('g')
-          .data(color.domain().slice().reverse())
-          .join('g')
-          .attr('transform', (d, i) => `translate(0,${i * 20})`);
+        const h1El = document.createElement('h1');
+        h1El.innerText = file;
 
-        g.append('rect')
-          .attr('x', -19)
-          .attr('width', 19)
-          .attr('height', 19)
-          .attr('fill', color);
+        document.body.appendChild(svgEl);
+        document.body.appendChild(h1El);
 
-        g.append('text')
-          .attr('x', -24)
-          .attr('y', 9.5)
-          .attr('dy', '0.35em')
-          .text(d => d);
-      };
+        const data = Object.assign(
+          await d3
+            .json(`json/${file}`)
+            .then(data =>
+              data.map((item, index) => {
+                item['Actual Duration'] = item.actualDuration;
+                item['Base Duration'] = item.baseDuration;
+                item['Time Elapsed'] = item.commitTime - item.startTime;
 
-      const xAxis = g => g
-        .attr('transform', `translate(0,${height - margin.bottom})`)
-        .call(d3.axisBottom(x0).tickSizeOuter(0))
-        .call(g => g.select('.domain').remove());
+                item.Render = `Render ${index + 1}`;
 
-      const yAxis = g => g
-        .attr('transform', `translate(${margin.left},0)`)
-        .call(d3.axisLeft(y).ticks(null, 's'))
-        .call(g => g.select('.domain').remove())
-        .call(g => g.select('.tick:last-of-type text').clone()
-          .attr('x', 3)
-          .attr('text-anchor', 'start')
-          .attr('font-weight', 'bold')
-          .text('Milliseconds'));
+                delete item.actualDuration;
+                delete item.baseDuration;
+                delete item.commitTime;
+                delete item.id;
+                delete item.interactions;
+                delete item.phase;
+                delete item.startTime;
 
-      const x0 = d3.scaleBand()
-        .domain(data.map(d => d[groupKey]))
-        .rangeRound([margin.left, width - margin.right])
-        .paddingInner(0.1);
+                return item;
+              })),
+          { columns: ['Render', 'Time Elapsed', 'Actual Duration', 'Base Duration'] },
+        );
 
-      const x1 = d3.scaleBand()
-        .domain(keys)
-        .rangeRound([0, x0.bandwidth()])
-        .padding(0.05);
+        const groupKey = data.columns[0];
+        const keys = data.columns.slice(1);
 
-      const y = d3.scaleLinear()
-        .domain([0, 6.0]).nice()
-        .rangeRound([height - margin.bottom, margin.top]);
+        const color = d3.scaleOrdinal().range(['#5A78E6', '#56A6FC', '#52C9F2']);
 
-      const chart = () => {
-        const svg = d3.select('#chart');
+        const legend = svg => {
+          const g = svg
+            .attr('transform', `translate(${width},0)`)
+            .attr('text-anchor', 'end')
+            .attr('font-family', 'sans-serif')
+            .attr('font-size', 10)
+            .selectAll('g')
+            .data(color.domain().slice().reverse())
+            .join('g')
+            .attr('transform', (d, i) => `translate(0,${i * 20})`);
 
-        svg.append('g')
-          .selectAll('g')
-          .data(data)
-          .join('g')
-          .attr('transform', d => `translate(${x0(d[groupKey])},0)`)
-          .selectAll('rect')
-          .data(d => keys.map(key => ({ key, value: d[key] })))
-          .join('rect')
-          .attr('x', d => x1(d.key))
-          .attr('y', d => y(d.value))
-          .attr('width', x1.bandwidth())
-          .attr('height', d => y(0) - y(d.value))
-          .attr('fill', d => color(d.key));
+          g.append('rect')
+            .attr('x', -19)
+            .attr('width', 19)
+            .attr('height', 19)
+            .attr('fill', color);
 
-        svg.append('g')
-          .call(xAxis);
+          g.append('text')
+            .attr('x', -24)
+            .attr('y', 9.5)
+            .attr('dy', '0.35em')
+            .text(d => d);
+        };
 
-        svg.append('g')
-          .call(yAxis);
+        const xAxis = g => g
+          .attr('transform', `translate(0,${height - margin.bottom})`)
+          .call(d3.axisBottom(x0).tickSizeOuter(0))
+          .call(g => g.select('.domain').remove());
 
-        svg.append('g')
-          .call(legend);
+        const yAxis = g => g
+          .attr('transform', `translate(${margin.left},0)`)
+          .call(d3.axisLeft(y).ticks(null, 's'))
+          .call(g => g.select('.domain').remove())
+          .call(g => g.select('.tick:last-of-type text').clone()
+            .attr('x', 3)
+            .attr('text-anchor', 'start')
+            .attr('font-weight', 'bold')
+            .text('Milliseconds'));
 
-        return svg.node();
-      };
+        const x0 = d3.scaleBand()
+          .domain(data.map(d => d[groupKey]))
+          .rangeRound([margin.left, width - margin.right])
+          .paddingInner(0.1);
 
-      chart();
+        const x1 = d3.scaleBand()
+          .domain(keys)
+          .rangeRound([0, x0.bandwidth()])
+          .padding(0.05);
+
+        const y = d3.scaleLinear()
+          .domain([0, 25.0]).nice()
+          .rangeRound([height - margin.bottom, margin.top]);
+
+        const chart = () => {
+          const svg = d3.select(`#chart-${id}`);
+
+          svg.append('g')
+            .selectAll('g')
+            .data(data)
+            .join('g')
+            .attr('transform', d => `translate(${x0(d[groupKey])},0)`)
+            .selectAll('rect')
+            .data(d => keys.map(key => ({ key, value: d[key] })))
+            .join('rect')
+            .attr('x', d => x1(d.key))
+            .attr('y', d => y(d.value))
+            .attr('width', x1.bandwidth())
+            .attr('height', d => y(0) - y(d.value))
+            .attr('fill', d => color(d.key));
+
+          svg.append('g')
+            .call(xAxis);
+
+          svg.append('g')
+            .call(yAxis);
+
+          svg.append('g')
+            .call(legend);
+
+          return svg.node();
+        };
+
+        chart();
+      }
     })();
 
   </script>

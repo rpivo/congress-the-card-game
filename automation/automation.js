@@ -57,7 +57,7 @@ const puppeteer = require('puppeteer');
     .replace(/-$/, '');
 
   const getFileName = label =>
-    `${hyphenateString(`automation-${label}-${new Date().toLocaleString()}`)}.json`;
+    `${hyphenateString(`${label}-${new Date().toLocaleString()}`)}.json`;
 
   await page.goto('http://localhost:1235/index.html');
 

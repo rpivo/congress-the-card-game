@@ -13,7 +13,8 @@ then
 echo 'preparing automation...';
 node automation/automation.js;
 mkdir dist/json;
-cp automation/*json dist/json/;
+cp automation/*.json dist/json/;
+rm automation/*.json;
 cd dist/json && echo `ls *.json` > jsonList.dsv && cd ../..;
 echo '\nautomation finished.\n';
 fi
