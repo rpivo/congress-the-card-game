@@ -49,6 +49,7 @@ Ends October 14, 2020
 - remove json files on each automation startup.
 - correctly wrap automation.html with html and head tags.
 - clean up automation.html.
+- refactor automation.html to use grouped bar chart.
 
 ## Sprint 4
 Ends September 16, 2020

@@ -1,87 +1,128 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <title>Congress: The Profiler Chart</title>
-    <style>
-      /* set the CSS */
-      rect.bar {
-        fill: steelblue;
-      }
-    </style>
-  </head>
-  <body>
-    <script src='https://d3js.org/d3.v6.min.js'></script>
-    <script>
-      // set the dimensions and margins of the graph
-      const margin = { top: 10, right: 30, bottom: 30, left: 40 },
-            width = 960 - margin.left - margin.right,
-            height = 500 - margin.top - margin.bottom;
 
-      // parse the date / time
-      const parseDate = d3.timeParse('%d-%m-%Y');
+<head>
+  <meta charset='utf-8'>
+  <title>Congress: The Profiler Chart</title>
+  <style>
+    body {
+      background: #333;
+      color: #FFF;
+    }
 
-      // set the ranges
-      const x = d3
-        .scaleTime()
-        .domain([new Date(2010, 6, 3), new Date(2012, 0, 1)])
-        .rangeRound([0, width]);
+    text {
+      fill: white;
+    }
+  </style>
+</head>
+
+<body>
+  <svg id='chart' width='1000' height='500'></svg>
+  <script src='https://d3js.org/d3.v6.min.js'></script>
+  <script>
+    (async () => {
+      const height = 500;
+      const width = 1000;
+      const margin = ({ top: 10, right: 10, bottom: 20, left: 40 });
+
+      const csv = await d3.csv('data.csv');
+      const data = Object.assign(csv, { y: 'Population' });
+      const groupKey = data.columns[0];
+      const keys = data.columns.slice(1);
+
+      const color = d3.scaleOrdinal()
+        .range(['#9FBDB6', '#7CA6A0', '#8652F2', '#5E56FC', '#5A78E6', '#56A6FC', '#52C9F2']);
+
+      const legend = svg => {
+        const g = svg
+          .attr('transform', `translate(${width},0)`)
+          .attr('text-anchor', 'end')
+          .attr('font-family', 'sans-serif')
+          .attr('font-size', 10)
+          .selectAll('g')
+          .data(color.domain().slice().reverse())
+          .join('g')
+          .attr('transform', (d, i) => `translate(0,${i * 20})`);
+
+        g.append('rect')
+          .attr('x', -19)
+          .attr('width', 19)
+          .attr('height', 19)
+          .attr('fill', color);
+
+        g.append('text')
+          .attr('x', -24)
+          .attr('y', 9.5)
+          .attr('dy', '0.35em')
+          .text(d => d);
+      };
+
+      const xAxis = g => g
+        .attr('transform', `translate(0,${height - margin.bottom})`)
+        .call(d3.axisBottom(x0).tickSizeOuter(0))
+        .call(g => g.select('.domain').remove());
+
+      const yAxis = g => g
+        .attr('transform', `translate(${margin.left},0)`)
+        .call(d3.axisLeft(y).ticks(null, 's'))
+        .call(g => g.select('.domain').remove())
+        .call(g => g.select('.tick:last-of-type text').clone()
+          .attr('x', 3)
+          .attr('text-anchor', 'start')
+          .attr('font-weight', 'bold')
+          .text(data.y));
+
+      const x0 = d3.scaleBand()
+        .domain(data.map(d => d[groupKey]))
+        .rangeRound([margin.left, width - margin.right])
+        .paddingInner(0.1);
+
+      const x1 = d3.scaleBand()
+        .domain(keys)
+        .rangeRound([0, x0.bandwidth()])
+        .padding(0.05);
+
       const y = d3.scaleLinear()
-        .range([height, 0]);
+        .domain([0, 10000000]).nice()
+        .rangeRound([height - margin.bottom, margin.top]);
 
-      // set the parameters for the histogram
-      const histogram = d3
-        .bin()
-        .value(d => d.date)
-        .domain(x.domain())
-        .thresholds(x.ticks(d3.timeMonth));
+      const chart = () => {
+        const svg = d3.select('#chart');
 
-      // append the svg object to the body of the page
-      // append a 'group' element to 'svg'
-      // moves the 'group' element to the top left margin
-      const svg = d3
-        .select('body')
-        .append('svg')
-        .attr('width', width + margin.left + margin.right)
-        .attr('height', height + margin.top + margin.bottom)
-        .append('g')
-        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-      // get the data
-      d3.csv('example.csv').then(data => {
-        // format the data
-        data.forEach(d => {
-          d.date = parseDate(d.dtg);
-        });
-
-        // group the data for the bars
-        const bins = histogram(data);
-
-        // Scale the range of the data in the y domain
-        y.domain([0, d3.max(bins, (d) => d.length)]);
-
-        // append the bar rectangles to the svg element
-        svg.selectAll('rect')
-          .data(bins)
-          .enter().append('rect')
-          .attr('class', 'bar')
-          .attr('x', 1)
-          .attr('transform', (d) => 'translate(' + x(d.x0) + ',' + y(d.length) + ')')
-          .attr('width', (d) => {
-            const width = x(d.x1) - x(d.x0) - 1;
-            return width < 0 ? 0 : width;
-          })
-          .attr('height', (d) => height - y(d.length));
-
-        // add the x Axis
         svg.append('g')
-          .attr('transform', 'translate(0,' + height + ')')
-          .call(d3.axisBottom(x));
+          .selectAll('g')
+          .data(data)
+          .join('g')
+          .attr('transform', d => `translate(${x0(d[groupKey])},0)`)
+          .selectAll('rect')
+          .data(d => keys.map(key => ({ key, value: d[key] })))
+          .join('rect')
+          .attr('x', d => x1(d.key))
+          .attr('y', d => y(d.value))
+          .attr('width', x1.bandwidth())
+          .attr('height', d => y(0) - y(d.value))
+          .attr('fill', d => color(d.key));
 
-        // add the y Axis
         svg.append('g')
-          .call(d3.axisLeft(y));
+          .call(xAxis);
+
+        svg.append('g')
+          .call(yAxis);
+
+        svg.append('g')
+          .call(legend);
+
+        return svg.node();
+      };
+
+      console.log({
+        chart: chart(),
+        data,
+        keys,
       });
-    </script>
-  </body>
+    })();
+
+  </script>
+</body>
+
 </html>

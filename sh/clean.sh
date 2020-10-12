@@ -5,5 +5,5 @@ cp src/favicon.ico dist/favicon.ico;
 if [ "$PROFILE" ]
 then
 cp automation/automation.html dist/automation.html;
-cp automation/example.csv dist/example.csv;
+cp automation/data.csv dist/data.csv;
 fi
