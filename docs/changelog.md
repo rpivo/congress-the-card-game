@@ -48,6 +48,7 @@ Ends October 14, 2020
 - clean up and format shell scripts.
 - remove json files on each automation startup.
 - correctly wrap automation.html with html and head tags.
+- clean up automation.html.
 
 ## Sprint 4
 Ends September 16, 2020
