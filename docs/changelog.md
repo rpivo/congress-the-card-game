@@ -59,6 +59,7 @@ Ends October 14, 2020
 - dynamically create svg element in automation.html.
 - store all automation json files and .dsv in a json subdirectory inside dist.
 - create a chart for each automation json file.
+- add heading for each automation graph.
 
 ## Sprint 4
 Ends September 16, 2020

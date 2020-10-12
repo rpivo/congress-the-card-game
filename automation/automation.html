@@ -10,7 +10,7 @@
       color: #FFF;
     }
 
-    h1 {
+    h2 {
       font-family: Arial;
       font-size: 20px;
       font-weight: lighter;
@@ -33,8 +33,8 @@
   <script src='https://d3js.org/d3.v6.min.js'></script>
   <script>
     (async () => {
-      const height = 800;
-      const width = 1500;
+      const height = 500;
+      const width = 1000;
       const margin = ({ top: 10, right: 10, bottom: 20, left: 40 });
 
       const { columns: jsonFiles } = await d3.dsv(' ', 'json/jsonList.dsv');
@@ -43,14 +43,15 @@
         const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
         svgEl.setAttribute('id', `chart-${id}`);
-        svgEl.setAttribute('height', '800');
-        svgEl.setAttribute('width', '1500');
+        svgEl.setAttribute('height', '500');
+        svgEl.setAttribute('width', '1000');
 
-        const h1El = document.createElement('h1');
-        h1El.innerText = file;
+        const h2El = document.createElement('h2');
+        const innerText = file.split('-')[0].replace(/([^A-Z])([A-Z])/g, '$1 $2');
+        h2El.innerText = innerText[0].toUpperCase() + innerText.substring(1);
 
         document.body.appendChild(svgEl);
-        document.body.appendChild(h1El);
+        document.body.appendChild(h2El);
 
         const data = Object.assign(
           await d3
