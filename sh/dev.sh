@@ -3,7 +3,8 @@ echo '\npreparing build...';
 npm run build;
 if [ "$PROFILE" ]
 then
-cp dist/index.profiler.js.br dist/index.js.br && rm dist/index.profiler.js.br;
+cp dist/index.profiler.js.br dist/index.js.br;
+rm dist/index.profiler.js.br;
 fi
 echo '\npreparing server...\n';
 npm run serve &

@@ -45,6 +45,8 @@ Ends October 14, 2020
 - add flows for puppeteer automation.
 - refactor automation to run inside dedication automation folder.
 - set up POC for D3 chart visualization of example data (to eventually be used with automation).
+- clean up and format shell scripts.
+- remove json files on each automation startup.
 
 ## Sprint 4
 Ends September 16, 2020
