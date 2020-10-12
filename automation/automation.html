@@ -30,7 +30,6 @@
 </head>
 
 <body>
-  <svg id='chart' width='1500' height='800'></svg>
   <script src='https://d3js.org/d3.v6.min.js'></script>
   <script>
     (async () => {
@@ -38,29 +37,40 @@
       const width = 1500;
       const margin = ({ top: 10, right: 10, bottom: 20, left: 40 });
 
+      const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+
+      svgEl.setAttribute('id', 'chart');
+      svgEl.setAttribute('height', '800');
+      svgEl.setAttribute('width', '1500');
+
+      document.body.appendChild(svgEl);
+
       const data = Object.assign(
         await d3
-        .json('data2.json')
-        .then(data =>
-          data.map((item, index) => {
-            item['Actual Duration'] = item.actualDuration;
-            item['Base Duration'] = item.baseDuration;
-            item['Time Elapsed'] = item.commitTime - item.startTime;
+          .json('json/data.json')
+          .then(data =>
+            data.map((item, index) => {
+              item['Actual Duration'] = item.actualDuration;
+              item['Base Duration'] = item.baseDuration;
+              item['Time Elapsed'] = item.commitTime - item.startTime;
 
-            item.Render = `Render ${index + 1}`;
+              item.Render = `Render ${index + 1}`;
 
-            delete item.actualDuration;
-            delete item.baseDuration;
-            delete item.commitTime;
-            delete item.id;
-            delete item.interactions;
-            delete item.phase;
-            delete item.startTime;
+              delete item.actualDuration;
+              delete item.baseDuration;
+              delete item.commitTime;
+              delete item.id;
+              delete item.interactions;
+              delete item.phase;
+              delete item.startTime;
 
-            return item;
-          })),
+              return item;
+            })),
         { columns: ['Render', 'Time Elapsed', 'Actual Duration', 'Base Duration'] },
       );
+
+      const { columns: jsonFiles } = await d3.dsv(' ', 'json/jsonList.dsv');
+      console.log({ jsonFiles });
 
       const groupKey = data.columns[0];
       const keys = data.columns.slice(1);
