@@ -7,36 +7,25 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
 
   const flows = {
-    // land on play page
-    mount: ({ label }) => collectLogs(label),
-    // hover over a playArea card. then hover over the playArea
-    playAreaCardHover: async ({ label }) => {
-      await page.hover('div.playArea div.card');
-      await page.click('div.playArea');
-      collectLogs(label);
-    },
     // toggle the active state of a playArea card
-    playAreaCardToggleActive: async ({ label }) => {
+    playAreaCardToggleActive: async () => {
       await page.click('div.playArea div.card');
       await page.click('div.playArea');
-      collectLogs(label);
     },
     // click on each card in the playArea, one by one. Click the playArea at the end to remove
     // card active state
-    clickEachPlayAreaCard: async ({ label }) => {
+    clickEachPlayAreaCard: async () => {
       await page.click('div.playArea div.card:nth-of-type(1)');
       await page.click('div.playArea div.card:nth-of-type(2)');
       await page.click('div.playArea div.card:nth-of-type(3)');
       await page.click('div.playArea div.card:nth-of-type(4)');
       await page.click('div.playArea div.card:nth-of-type(5)');
       await page.click('div.playArea');
-      collectLogs(label);
     },
     // draw a card. click the playArea afterward to put the hand back in the hidden state
-    drawCard: async ({ label }) => {
+    drawCard: async () => {
       await page.click('div.stackedCard');
       await page.click('div.playArea');
-      collectLogs(label);
     },
   };
 
@@ -47,6 +36,10 @@ const puppeteer = require('puppeteer');
     fs.writeFile(`automation/${fileName}`, JSON.stringify(logs), (err) => {
       if (err) throw err;
       console.log(`\n\x1b[37mReport written as file: \x1b[36m${fileName}\n`);
+    });
+
+    await page.evaluate(() => {
+      window.profiler = [];
     });
   };
 
@@ -67,12 +60,10 @@ const puppeteer = require('puppeteer');
     width: 1920,
   });
 
-  for (const flow in flows) {
-    await flows[flow]({ label: flow });
-    await page.evaluate(() => {
-      window.profiler = [];
-    });
-  }
+  collectLogs('mount');
+
+  for (const flow in flows) await flows[flow]()
+    .then(() => collectLogs(flow));
 
   await browser.close();
 })();
