@@ -64,6 +64,7 @@ Ends October 14, 2020
 - add version text to headings for automation charts.
 - add tooltip logic to automation.
 - style automation rects on hover.
+- add helper descriptions on rect hover for automation charts.
 
 ## Sprint 4
 Ends September 16, 2020
