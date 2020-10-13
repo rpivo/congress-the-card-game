@@ -71,7 +71,8 @@
   <script>
     (async () => {
       const height = 500;
-      const width = 1000;
+      let width = 1000;
+      let bodyWidth = 0;
       const margin = ({ top: 10, right: 10, bottom: 20, left: 40 });
 
       const fileNames = [];
@@ -86,6 +87,7 @@
 
       d3.select('html')
         .on('mousemove', (e => {
+          const windowWidth = window.innerWidth;
           const tooltip = document.getElementById('big-tooltip');
           const { clientX, clientY } = e;
           tooltip.style.left = `${clientX > (windowWidth - 350) ? clientX - (clientX - (windowWidth - 350)) : clientX}px`;
@@ -126,7 +128,6 @@
 
         svgEl.setAttribute('id', `chart-${id}`);
         svgEl.setAttribute('height', '525');
-        svgEl.setAttribute('width', '1000');
 
         const h2El = document.createElement('h2');
         let innerText = file.split('-')[0].replace(/([^A-Z])([A-Z])/g, '$1 $2');
@@ -150,6 +151,18 @@
           jsonData[id],
           { columns: ['Render', 'Time Elapsed', 'Actual Duration', 'Base Duration'] },
         );
+
+        if (data.length >= 30) {
+          width = 3000;
+          if (bodyWidth < 3600) bodyWidth = 3600;
+        }
+        else if (data.length >= 20 && data.length < 30) {
+          width = 2000;
+          if (bodyWidth < 2600) bodyWidth = 2600;
+        }
+        else width = 1000;
+
+        svgEl.setAttribute('width', width);
 
         const groupKey = data.columns[0];
         const keys = data.columns.slice(1);
@@ -271,6 +284,7 @@
 
         chart();
       }
+      if (bodyWidth) document.body.style.width = `${bodyWidth}px`;
     })();
 
   </script>
