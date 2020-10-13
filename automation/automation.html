@@ -215,11 +215,15 @@
 
           svg.selectAll('rect')
             .on('mouseover', e => {
+              e.target.style.outline = '1px solid white';
+              
               const span = document.querySelector('#big-tooltip span');
-              span.innerHTML = `${e.target['__data__'].value} ms`;
+              span.innerHTML = `${e.target['__data__'].key}: ${e.target['__data__'].value} ms`;
               span.style.opacity = 1;
             })
-            .on('mouseout', () => {
+            .on('mouseout', e => {
+              e.target.style.outline = 'none';
+              
               const span = document.querySelector('#big-tooltip span');
               span.innerHTML = '';
               span.style.opacity = 0;
