@@ -68,6 +68,7 @@ Ends October 14, 2020
 - create exportable AutomationProfiler component.
 - move the AutomationProfiler to its own component folder.
 - fix undefined issue when hovering over legends on automation charts.
+- add component ID to Render text on automation charts to identify which component rendered.
 
 ## Sprint 4
 Ends September 16, 2020

@@ -31,3 +31,5 @@ export const AutomationProfiler: React.FC<AutomationProfilerProps> =
     <React.Profiler id={id} onRender={handleRender}>
       {children}
     </React.Profiler>;
+
+export default AutomationProfiler;
