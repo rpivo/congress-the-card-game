@@ -102,7 +102,7 @@
               item['Base Duration'] = item.baseDuration;
               item['Time Elapsed'] = item.commitTime - item.startTime;
 
-              item.Render = `Render ${index + 1}: ${item.id}`;
+              item.Render = `${index + 1}: ${item.id}`;
 
               allJsonValues.push(item['Actual Duration'], item['Base Duration'], item['Time Elapsed']);
 
@@ -124,7 +124,7 @@
         const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
         svgEl.setAttribute('id', `chart-${id}`);
-        svgEl.setAttribute('height', '500');
+        svgEl.setAttribute('height', '525');
         svgEl.setAttribute('width', '1000');
 
         const h2El = document.createElement('h2');
@@ -233,6 +233,13 @@
 
           svg.append('g')
             .call(legend);
+
+          svg.append('text')
+            .attr('transform', `translate(50,${height - margin.bottom + 35})`)
+            .attr('text-align', 'start')
+            .attr('font-size', '11')
+            .attr('font-weight', 'bold')
+            .text('Renders');
 
           svg.selectAll('rect')
             .on('mouseover', e => {
