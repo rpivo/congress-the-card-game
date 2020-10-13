@@ -65,6 +65,7 @@ Ends October 14, 2020
 - add tooltip logic to automation.
 - style automation rects on hover.
 - add helper descriptions on rect hover for automation charts.
+- create exportable AutomationProfiler component.
 
 ## Sprint 4
 Ends September 16, 2020

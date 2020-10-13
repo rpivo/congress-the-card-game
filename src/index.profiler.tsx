@@ -4,7 +4,7 @@ import App from '@components/App';
 
 window.profiler = [];
 
-const handleRender = (
+export const handleRender = (
   id: string,
   phase: string,
   actualDuration: number,
@@ -12,7 +12,7 @@ const handleRender = (
   startTime: number,
   commitTime: number,
   interactions: Set<{ id: number; name: string; timestamp: number; }>,
-) => {
+): void => {
   window.profiler.push({
     actualDuration,
     baseDuration,
@@ -24,9 +24,20 @@ const handleRender = (
   });
 };
 
+type AutomationProfilerProps = {
+  children: React.ReactNode;
+  id: string;
+};
+
+export const AutomationProfiler: React.FC<AutomationProfilerProps> =
+  ({ children, id }: AutomationProfilerProps): JSX.Element =>
+    <React.Profiler id={id} onRender={handleRender}>
+      {children}
+    </React.Profiler>;
+
 render(
-  <React.Profiler id='app-profiler' onRender={handleRender}>
+  <AutomationProfiler id='profiler-app'>
     <App />
-  </React.Profiler>,
+  </AutomationProfiler>,
   document.getElementById('root'),
 );
