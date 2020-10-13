@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='utf-8'>
-  <title>Congress: The Profiler Chart</title>
+  <title>React Automation Profiler</title>
   <style>
     body {
       background: #333;
@@ -37,10 +37,12 @@
       const width = 1000;
       const margin = ({ top: 10, right: 10, bottom: 20, left: 40 });
 
-      const { columns: jsonFiles } = await d3.dsv(' ', 'json/jsonList.dsv');
-
+      const fileNames = [];
       const jsonData = [];
       const allJsonValues = [];
+
+      const { columns: jsonFiles } = await d3.dsv(' ', 'json/jsonList.dsv');
+
       for (const file of jsonFiles) jsonData.push(
         await d3
           .json(`json/${file}`)
@@ -76,8 +78,19 @@
         svgEl.setAttribute('width', '1000');
 
         const h2El = document.createElement('h2');
-        const innerText = file.split('-')[0].replace(/([^A-Z])([A-Z])/g, '$1 $2');
-        h2El.innerText = innerText[0].toUpperCase() + innerText.substring(1);
+        let innerText = file.split('-')[0].replace(/([^A-Z])([A-Z])/g, '$1 $2');
+        innerText = innerText[0].toUpperCase() + innerText.substring(1);
+
+        const versions = fileNames.filter(item => item == innerText).length;
+
+        if (versions > 0) {
+          fileNames.push(innerText);
+          innerText += ` - Version ${versions + 1}`;
+        } else {
+          fileNames.push(innerText);
+        }
+
+        h2El.innerText = innerText;
 
         document.body.appendChild(svgEl);
         document.body.appendChild(h2El);
