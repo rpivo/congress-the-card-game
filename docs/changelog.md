@@ -70,6 +70,7 @@ Ends October 14, 2020
 - fix undefined issue when hovering over legends on automation charts.
 - add component ID to Render text on automation charts to identify which component rendered.
 - add Renders label to x axis on automation charts.
+- fix wrapping issue for tooltip on wide automation charts.
 
 ## Sprint 4
 Ends September 16, 2020

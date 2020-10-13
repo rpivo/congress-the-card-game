@@ -87,8 +87,9 @@
       d3.select('html')
         .on('mousemove', (e => {
           const tooltip = document.getElementById('big-tooltip');
-          tooltip.style.left = `${e.clientX}px`;
-          tooltip.style.top = `${e.clientY}px`;
+          const { clientX, clientY } = e;
+          tooltip.style.left = `${clientX > (windowWidth - 350) ? clientX - (clientX - (windowWidth - 350)) : clientX}px`;
+          tooltip.style.top = `${clientY}px`;
         }));
 
       const { columns: jsonFiles } = await d3.dsv(' ', 'json/jsonList.dsv');
