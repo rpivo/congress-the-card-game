@@ -66,6 +66,7 @@ Ends October 14, 2020
 - style automation rects on hover.
 - add helper descriptions on rect hover for automation charts.
 - create exportable AutomationProfiler component.
+- move the AutomationProfiler to its own component folder.
 
 ## Sprint 4
 Ends September 16, 2020
