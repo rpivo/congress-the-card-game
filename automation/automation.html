@@ -237,25 +237,25 @@
           svg.selectAll('rect')
             .on('mouseover', e => {
               const key = e.target['__data__'].key;
+              if (key) {
+                const h4 = document.querySelector('h4');
+                h4.style.opacity = 1;
+                h4.innerHTML = `${key}: ${paragraphMap[key]}`;
 
-              const h4 = document.querySelector('h4');
-              h4.style.opacity = 1;
-              h4.innerHTML = `${key}: ${paragraphMap[key]}`;
-              
-              const span = document.querySelector('#big-tooltip span');
-              span.innerHTML = `${key}: ${e.target['__data__'].value} ms`;
-              span.style.opacity = 1;
-              
-              e.target.style.outline = '1px solid white';
+                const span = document.querySelector('#big-tooltip span');
+                span.innerHTML = `${key}: ${e.target['__data__'].value} ms`;
+                span.style.opacity = 1;
+
+                e.target.style.outline = '1px solid white';
+              }
             })
             .on('mouseout', e => {
               const span = document.querySelector('#big-tooltip span');
               span.innerHTML = '';
               span.style.opacity = 0;
-              
+
               e.target.style.outline = 'none';
               document.querySelector('h4').style.opacity = 0;
-              
             });
 
           return svg.node();

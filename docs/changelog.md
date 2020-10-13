@@ -67,6 +67,7 @@ Ends October 14, 2020
 - add helper descriptions on rect hover for automation charts.
 - create exportable AutomationProfiler component.
 - move the AutomationProfiler to its own component folder.
+- fix undefined issue when hovering over legends on automation charts.
 
 ## Sprint 4
 Ends September 16, 2020
