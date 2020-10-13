@@ -62,6 +62,7 @@ Ends October 14, 2020
 - add heading for each automation graph.
 - get max value from all automation json data and use it to set max scale for all charts.
 - add version text to headings for automation charts.
+- add tooltip logic to automation.
 
 ## Sprint 4
 Ends September 16, 2020
