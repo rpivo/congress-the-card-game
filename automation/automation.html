@@ -25,7 +25,7 @@
     h2 {
       font-size: 20px;
       font-weight: lighter;
-      margin-top: -75px;
+      margin-top: -150px;
       text-align: center;
     }
 
@@ -61,6 +61,15 @@
     text {
       fill: #FFF;
     }
+
+    text.total {
+      cursor: pointer;
+    }
+
+    text.total:hover {
+      text-decoration: underline;
+      fill: #FFF;
+    }
   </style>
 </head>
 
@@ -75,14 +84,18 @@
       let bodyWidth = 0;
       const margin = ({ top: 10, right: 10, bottom: 20, left: 40 });
 
+      const ACTUAL_DURATION = 'Actual Duration';
+      const TOTAL_AUTOMATION_TIME_ELAPSED = 'Total Automation Time Elapsed';
+      const BASE_DURATION = 'Base Duration';
+
       const fileNames = [];
       const jsonData = [];
       const allJsonValues = [];
 
       const paragraphMap = {
-        'Actual Duration': 'number - Time spent rendering the Profiler and its descendants for the current update. This indicates how well the subtree makes use of memoization (e.g. React.memo, useMemo, shouldComponentUpdate). Ideally this value should decrease significantly after the initial mount as many of the descendants will only need to re-render if their specific props change.',
-        'Base Duration': 'number - Duration of the most recent render time for each individual component within the Profiler tree. This value estimates a worst-case cost of rendering (e.g. the initial mount or a tree with no memoization).',
-        'Time Elapsed': 'number - Timestamp when React committed the current update minus the timestamp when React began rendering the current update.',
+        [ACTUAL_DURATION]: ' Time spent rendering the Profiler and its descendants for the current update. This indicates how well the subtree makes use of memoization (e.g. React.memo, useMemo, shouldComponentUpdate). Ideally this value should decrease significantly after the initial mount as many of the descendants will only need to re-render if their specific props change.',
+        [BASE_DURATION]: ' Duration of the most recent render time for each individual component within the Profiler tree. This value estimates a worst-case cost of rendering (e.g. the initial mount or a tree with no memoization).',
+        [TOTAL_AUTOMATION_TIME_ELAPSED]: ' The total time that elapsed during the automation flow. This does not indicate the total render time, but rather the total time it took for the automation to complete its flow.',
       };
 
       d3.select('html')
@@ -101,21 +114,18 @@
           .json(`json/${file}`)
           .then(data =>
             data.map((item, index) => {
-              item['Actual Duration'] = item.actualDuration;
-              item['Base Duration'] = item.baseDuration;
-              item['Time Elapsed'] = item.commitTime - item.startTime;
+              item[ACTUAL_DURATION] = item.actualDuration;
+              item[BASE_DURATION] = item.baseDuration;
 
               item.Render = `${index + 1}: ${item.id}`;
 
-              allJsonValues.push(item['Actual Duration'], item['Base Duration'], item['Time Elapsed']);
+              allJsonValues.push(item[ACTUAL_DURATION], item[BASE_DURATION]);
 
               delete item.actualDuration;
               delete item.baseDuration;
-              delete item.commitTime;
               delete item.id;
               delete item.interactions;
               delete item.phase;
-              delete item.startTime;
 
               return item;
             })),
@@ -127,7 +137,7 @@
         const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
         svgEl.setAttribute('id', `chart-${id}`);
-        svgEl.setAttribute('height', '525');
+        svgEl.setAttribute('height', '575');
 
         const h2El = document.createElement('h2');
         let innerText = file.split('-')[0].replace(/([^A-Z])([A-Z])/g, '$1 $2');
@@ -149,14 +159,16 @@
 
         const data = Object.assign(
           jsonData[id],
-          { columns: ['Render', 'Time Elapsed', 'Actual Duration', 'Base Duration'] },
+          { columns: ['Render', ACTUAL_DURATION, BASE_DURATION] },
         );
 
-        if (data.length >= 30) {
+        const totalTimeElapsed = data[data.length - 1].commitTime - data[0].startTime;
+
+        if (data.length >= 40) {
           width = 3000;
           if (bodyWidth < 3600) bodyWidth = 3600;
         }
-        else if (data.length >= 20 && data.length < 30) {
+        else if (data.length >= 30 && data.length < 40) {
           width = 2000;
           if (bodyWidth < 2600) bodyWidth = 2600;
         }
@@ -249,11 +261,29 @@
             .call(legend);
 
           svg.append('text')
-            .attr('transform', `translate(50,${height - margin.bottom + 35})`)
+            .attr('transform', `translate(45,${height - margin.bottom + 35})`)
             .attr('text-align', 'start')
             .attr('font-size', '11')
             .attr('font-weight', 'bold')
             .text('Renders');
+
+          svg.append('text')
+            .attr('transform', `translate(${width - 12},${height - margin.bottom + 35})`)
+            .attr('text-anchor', 'end')
+            .attr('font-size', '11')
+            .attr('font-weight', 'bold')
+            .attr('class', 'total')
+            .text(`${TOTAL_AUTOMATION_TIME_ELAPSED}: ${totalTimeElapsed} ms`);
+
+          svg.select('.total')
+            .on('mouseover', e => {
+              const h4 = document.querySelector('h4');
+              h4.style.opacity = 1;
+              h4.innerHTML = `${TOTAL_AUTOMATION_TIME_ELAPSED}: ${paragraphMap[TOTAL_AUTOMATION_TIME_ELAPSED]}`;
+            })
+            .on('mouseout', e => {
+              document.querySelector('h4').style.opacity = 0;
+            });
 
           svg.selectAll('rect')
             .on('mouseover', e => {
