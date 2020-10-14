@@ -1,10 +1,16 @@
+/* eslint-disable no-undef */
 import 'https://d3js.org/d3.v6.min.js';
 
 (async () => {
   const height = 500;
   let width = 1000;
   let bodyWidth = 0;
-  const margin = ({ top: 10, right: 10, bottom: 20, left: 40 });
+  const margin = ({
+    bottom: 20,
+    left: 40,
+    right: 10,
+    top: 10,
+  });
 
   const ACTUAL_DURATION = 'Actual Duration';
   const TOTAL_AUTOMATION_TIME_ELAPSED = 'Total Automation Time Elapsed';
@@ -15,9 +21,19 @@ import 'https://d3js.org/d3.v6.min.js';
   const allJsonValues = [];
 
   const paragraphMap = {
-    [ACTUAL_DURATION]: ' Time spent rendering the Profiler and its descendants for the current update. This indicates how well the subtree makes use of memoization (e.g. React.memo, useMemo, shouldComponentUpdate). Ideally this value should decrease significantly after the initial mount as many of the descendants will only need to re-render if their specific props change.',
-    [BASE_DURATION]: ' Duration of the most recent render time for each individual component within the Profiler tree. This value estimates a worst-case cost of rendering (e.g. the initial mount or a tree with no memoization).',
-    [TOTAL_AUTOMATION_TIME_ELAPSED]: ' The total time that elapsed during the automation flow. This does not indicate the total render time, but rather the total time it took for the automation to complete its flow.',
+    [ACTUAL_DURATION]:
+      ` Time spent rendering the Profiler and its descendants for the current update. This 
+        indicates how well the subtree makes use of memoization (e.g. React.memo, useMemo, 
+        shouldComponentUpdate). Ideally this value should decrease significantly after the initial 
+        mount as many of the descendants will only need to re-render if their specific props 
+        change.`,
+    [BASE_DURATION]:
+      ` Duration of the most recent render time for each individual component within the Profiler 
+        tree. This value estimates a worst-case cost of rendering (e.g. the initial mount or a tree
+        with no memoization).`,
+    [TOTAL_AUTOMATION_TIME_ELAPSED]:
+      ` The total time that elapsed during the automation flow. This does not indicate the total 
+        render time, but rather the total time it took for the automation to complete its flow.`,
   };
 
   d3.select('html')
@@ -25,7 +41,10 @@ import 'https://d3js.org/d3.v6.min.js';
       const windowWidth = window.innerWidth;
       const tooltip = document.getElementById('big-tooltip');
       const { clientX, clientY } = e;
-      tooltip.style.left = `${clientX > (windowWidth - 350) ? clientX - (clientX - (windowWidth - 350)) : clientX}px`;
+      const rightBuffer = windowWidth - 350;
+
+      tooltip.style.left =
+        `${clientX > rightBuffer ? clientX - (clientX - rightBuffer) : clientX}px`;
       tooltip.style.top = `${clientY}px`;
     }));
 
