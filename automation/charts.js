@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 /* eslint-disable no-undef */
 import 'https://d3js.org/d3.v6.min.js';
 
@@ -84,7 +85,7 @@ import 'https://d3js.org/d3.v6.min.js';
     let innerText = file.split('-')[0].replace(/([^A-Z])([A-Z])/g, '$1 $2');
     innerText = innerText[0].toUpperCase() + innerText.substring(1);
 
-    const versions = fileNames.filter(item => item == innerText).length;
+    const versions = fileNames.filter(item => item === innerText).length;
 
     if (versions > 0) {
       fileNames.push(innerText);
@@ -108,16 +109,14 @@ import 'https://d3js.org/d3.v6.min.js';
     if (data.length >= 40) {
       width = 3000;
       if (bodyWidth < 3600) bodyWidth = 3600;
-    }
-    else if (data.length >= 30 && data.length < 40) {
+    } else if (data.length >= 30 && data.length < 40) {
       width = 2000;
       if (bodyWidth < 2600) bodyWidth = 2600;
-    }
-    else width = 1000;
+    } else width = 1000;
 
     svgEl.setAttribute('width', width);
 
-    const groupKey = data.columns[0];
+    const [groupKey] = data.columns;
     const keys = data.columns.slice(1);
 
     const color = d3.scaleOrdinal().range(['#5A78E6', '#56A6FC', '#52C9F2']);
@@ -220,7 +219,8 @@ import 'https://d3js.org/d3.v6.min.js';
         .on('mouseover', e => {
           const h4 = document.querySelector('h4');
           h4.style.opacity = 1;
-          h4.innerHTML = `${TOTAL_AUTOMATION_TIME_ELAPSED}: ${paragraphMap[TOTAL_AUTOMATION_TIME_ELAPSED]}`;
+          h4.innerHTML =
+            `${TOTAL_AUTOMATION_TIME_ELAPSED}: ${paragraphMap[TOTAL_AUTOMATION_TIME_ELAPSED]}`;
         })
         .on('mouseout', e => {
           document.querySelector('h4').style.opacity = 0;
@@ -228,7 +228,7 @@ import 'https://d3js.org/d3.v6.min.js';
 
       svg.selectAll('rect')
         .on('mouseover', e => {
-          const key = e.target['__data__'].key;
+          const { key } = e.target['__data__'];
           if (key) {
             const h4 = document.querySelector('h4');
             h4.style.opacity = 1;
