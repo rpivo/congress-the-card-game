@@ -4,6 +4,7 @@ npm run build;
 if [ "$PROFILE" ]
 then
 cp dist/index.profiler.js.br dist/index.js.br;
+cp automation/charts.js dist/charts.js;
 rm dist/index.profiler.js.br;
 fi
 echo '\npreparing server...\n';

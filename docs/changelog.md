@@ -73,6 +73,7 @@ Ends October 14, 2020
 - fix wrapping issue for tooltip on wide automation charts.
 - update automation chart widths based on number of records in the chart.
 - add Total Automation Time Elapsed metric to all automation charts.
+- move D3 custom js to its own js file.
 
 ## Sprint 4
 Ends September 16, 2020
