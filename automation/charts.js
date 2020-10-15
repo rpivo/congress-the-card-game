@@ -73,7 +73,7 @@ import 'https://d3js.org/d3.v6.min.js';
         })),
   );
 
-  const scaleMax = Math.floor(Math.max(...allJsonValues)) + 1.5;
+  const scaleMax = Math.floor(Math.max(...allJsonValues)) + 1;
 
   for (const [id, file] of jsonFiles.entries()) {
     const svgEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -216,13 +216,13 @@ import 'https://d3js.org/d3.v6.min.js';
         .text(`${TOTAL_AUTOMATION_TIME_ELAPSED}: ${totalTimeElapsed} ms`);
 
       svg.select('.total')
-        .on('mouseover', e => {
+        .on('mouseover', () => {
           const h4 = document.querySelector('h4');
           h4.style.opacity = 1;
           h4.innerHTML =
             `${TOTAL_AUTOMATION_TIME_ELAPSED}: ${paragraphMap[TOTAL_AUTOMATION_TIME_ELAPSED]}`;
         })
-        .on('mouseout', e => {
+        .on('mouseout', () => {
           document.querySelector('h4').style.opacity = 0;
         });
 

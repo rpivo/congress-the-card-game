@@ -1,39 +1,18 @@
 /* eslint-disable sort-keys */
 const fs = require('fs');
 const puppeteer = require('puppeteer');
+const flows = require('./flows');
 
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
-  const flows = {
-    // toggle the active state of a playArea card
-    playAreaCardToggleActive: async () => {
-      await page.click('div.playArea div.card');
-      await page.click('div.playArea');
-    },
-    // click on each card in the playArea, one by one. Click the playArea at the end to remove
-    // card active state
-    clickEachPlayAreaCard: async () => {
-      await page.click('div.playArea div.card:nth-of-type(1)');
-      await page.click('div.playArea div.card:nth-of-type(2)');
-      await page.click('div.playArea div.card:nth-of-type(3)');
-      await page.click('div.playArea div.card:nth-of-type(4)');
-      await page.click('div.playArea div.card:nth-of-type(5)');
-      await page.click('div.playArea');
-    },
-    // draw a card. click the playArea afterward to put the hand back in the hidden state
-    drawCard: async () => {
-      await page.click('div.stackedCard');
-      await page.click('div.playArea');
-    },
-  };
-
-  const collectLogs = async (label) => {
+  const collectLogs = async ({ label, numberOfInteractions = 0 }) => {
     const logs = await page.evaluate(() => window.profiler);
+    console.log({ logs, numberOfInteractions });
     const fileName = getFileName(label);
 
-    fs.writeFile(`automation/${fileName}`, JSON.stringify(logs), (err) => {
+    fs.writeFile(`automation/${fileName}`, JSON.stringify(logs), err => {
       if (err) throw err;
       console.log(`\n\x1b[37mReport written as file: \x1b[36m${fileName}\n`);
     });
@@ -43,14 +22,24 @@ const puppeteer = require('puppeteer');
     });
   };
 
-  const hyphenateString = (str) => str
+  const formatLabel = label => label
+    .toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join('');
+
+  const handleActions = async actions => {
+    for (let i = 0; i < actions.length; i += 2) await page[actions[i]](actions[i + 1]);
+  };
+
+  const hyphenateString = str => str
     .replace(/(\/|\s|:|\.)/g, '-')
     .replace(',', '')
     .replace(/-{2,}/g, '-')
     .replace(/-$/, '');
 
   const getFileName = label =>
-    `${hyphenateString(`${label}-${new Date().toLocaleString()}`)}.json`;
+    `${hyphenateString(`${formatLabel(label)}-${new Date().toLocaleString()}`)}.json`;
 
   await page.goto('http://localhost:1235/index.html');
 
@@ -60,10 +49,15 @@ const puppeteer = require('puppeteer');
     width: 1920,
   });
 
-  collectLogs('mount');
+  collectLogs({ label: 'Mount' });
 
-  for (const flow in flows) await flows[flow]()
-    .then(() => collectLogs(flow));
+  for (const [flow, actions] of Object.entries(flows)) {
+    await handleActions(actions)
+      .then(() => collectLogs({
+        label: flow,
+        numberOfInteractions: actions.length / 2,
+      }));
+  }
 
   await browser.close();
 })();
