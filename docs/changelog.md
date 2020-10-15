@@ -79,6 +79,7 @@ Ends October 14, 2020
 - add in HOVER and FOCUS enums for react-automation-profiler action types.
 - add copy of AutomationProfiler componet to the automation folder (will be migrating this later to a new package).
 - add in Number of Interactions metric to each automation chart.
+- add react-automation-profiler as a dev dependency.
 
 ## Sprint 4
 Ends September 16, 2020
