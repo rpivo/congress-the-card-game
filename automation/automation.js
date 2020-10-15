@@ -9,13 +9,15 @@ const flows = require('./flows');
 
   const collectLogs = async ({ label, numberOfInteractions = 0 }) => {
     const logs = await page.evaluate(() => window.profiler);
-    console.log({ logs, numberOfInteractions });
     const fileName = getFileName(label);
 
-    fs.writeFile(`automation/${fileName}`, JSON.stringify(logs), err => {
-      if (err) throw err;
-      console.log(`\n\x1b[37mReport written as file: \x1b[36m${fileName}\n`);
-    });
+    fs.writeFile(
+      `automation/${fileName}`,
+      JSON.stringify({ logs, numberOfInteractions },
+      ), err => {
+        if (err) throw err;
+        console.log(`\n\x1b[37mReport written as file: \x1b[36m${fileName}\n`);
+      });
 
     await page.evaluate(() => {
       window.profiler = [];

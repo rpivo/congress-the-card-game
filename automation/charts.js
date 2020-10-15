@@ -14,10 +14,12 @@ import 'https://d3js.org/d3.v6.min.js';
   });
 
   const ACTUAL_DURATION = 'Actual Duration';
+  const NUMBER_OF_INTERACTIONS = 'Number of Interactions';
   const TOTAL_AUTOMATION_TIME_ELAPSED = 'Total Automation Time Elapsed';
   const BASE_DURATION = 'Base Duration';
 
   const fileNames = [];
+  const interactions = [];
   const jsonData = [];
   const allJsonValues = [];
 
@@ -32,6 +34,8 @@ import 'https://d3js.org/d3.v6.min.js';
       ` Duration of the most recent render time for each individual component within the Profiler 
         tree. This value estimates a worst-case cost of rendering (e.g. the initial mount or a tree
         with no memoization).`,
+    [NUMBER_OF_INTERACTIONS]: `The total number of page interactions that occurred during the 
+      automation flow.`,
     [TOTAL_AUTOMATION_TIME_ELAPSED]:
       ` The total time that elapsed during the automation flow. This does not indicate the total 
         render time, but rather the total time it took for the automation to complete its flow.`,
@@ -54,8 +58,10 @@ import 'https://d3js.org/d3.v6.min.js';
   for (const file of jsonFiles) jsonData.push(
     await d3
       .json(`json/${file}`)
-      .then(data =>
-        data.map((item, index) => {
+      .then(data => {
+        interactions.push(data.numberOfInteractions);
+
+        return data.logs.map((item, index) => {
           item[ACTUAL_DURATION] = item.actualDuration;
           item[BASE_DURATION] = item.baseDuration;
 
@@ -70,7 +76,8 @@ import 'https://d3js.org/d3.v6.min.js';
           delete item.phase;
 
           return item;
-        })),
+        });
+      })
   );
 
   const scaleMax = Math.floor(Math.max(...allJsonValues)) + 1;
@@ -215,12 +222,31 @@ import 'https://d3js.org/d3.v6.min.js';
         .attr('class', 'total')
         .text(`${TOTAL_AUTOMATION_TIME_ELAPSED}: ${totalTimeElapsed} ms`);
 
+      svg.append('text')
+        .attr('transform', `translate(${width - 12},${height - margin.bottom + 55})`)
+        .attr('text-anchor', 'end')
+        .attr('font-size', '11')
+        .attr('font-weight', 'bold')
+        .attr('class', 'interactions')
+        .text(`${NUMBER_OF_INTERACTIONS}: ${interactions.shift()}`);
+
       svg.select('.total')
         .on('mouseover', () => {
           const h4 = document.querySelector('h4');
           h4.style.opacity = 1;
           h4.innerHTML =
             `${TOTAL_AUTOMATION_TIME_ELAPSED}: ${paragraphMap[TOTAL_AUTOMATION_TIME_ELAPSED]}`;
+        })
+        .on('mouseout', () => {
+          document.querySelector('h4').style.opacity = 0;
+        });
+
+      svg.select('.interactions')
+        .on('mouseover', () => {
+          const h4 = document.querySelector('h4');
+          h4.style.opacity = 1;
+          h4.innerHTML =
+            `${NUMBER_OF_INTERACTIONS}: ${paragraphMap[NUMBER_OF_INTERACTIONS]}`;
         })
         .on('mouseout', () => {
           document.querySelector('h4').style.opacity = 0;
