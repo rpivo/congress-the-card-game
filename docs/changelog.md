@@ -75,6 +75,8 @@ Ends October 14, 2020
 - add Total Automation Time Elapsed metric to all automation charts.
 - move D3 custom js to its own js file.
 - fix linting errors in charts.js.
+- refactor automation flows to be self-contained.
+- add in HOVER and FOCUS enums for react-automation-profiler action types.
 
 ## Sprint 4
 Ends September 16, 2020
