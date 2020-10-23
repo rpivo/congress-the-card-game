@@ -1,7 +1,5 @@
 /* eslint-disable sort-keys */
-const { ActionTypes } = require('./enums');
-
-const { CLICK } = ActionTypes;
+const CLICK = 'click';
 
 module.exports = {
   'Toggle PlayArea Card Active': [
