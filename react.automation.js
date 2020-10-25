@@ -22,4 +22,7 @@ module.exports = {
     CLICK, 'div.handIcon',
     CLICK, 'div.playArea',
   ],
+  'End Turn': [
+    CLICK, 'div.endable',
+  ],
 };
