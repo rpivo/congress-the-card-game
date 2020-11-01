@@ -28,7 +28,7 @@
     "jest": "^26.5.2",
     "jest-styled-components": "^7.0.3",
     "nodemon": "^2.0.4",
-    "react-automation-profiler": "^0.6.0",
+    "react-automation-profiler": "^0.7.5",
     "react-test-renderer": "^16.13.1",
     "rollup": "^2.28.2",
     "rollup-plugin-gzip": "^2.5.0",

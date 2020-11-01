@@ -1,5 +1,6 @@
 /* eslint-disable sort-keys */
 const CLICK = 'click';
+// const HOVER = 'hover';
 
 module.exports = {
   'Toggle PlayArea Card Active': [
@@ -25,4 +26,7 @@ module.exports = {
   'End Turn': [
     CLICK, 'div.endable',
   ],
+  // 'Open Hand and Discard Card': [
+  //   CLICK, 'div.handIcon',
+  // ],
 };
